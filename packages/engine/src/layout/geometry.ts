@@ -44,7 +44,12 @@ export function cardGeometry(art: 'paizo' | 'generic' | 'none', fontScale = 1): 
 }
 
 export const SECTION = {
-  pad: 18,
+  // Artwork and card outlines already leave space on the left and above.
+  // Smaller leading insets balance that space against the right and bottom.
+  padLeft: 8,
+  padTop: 0,
+  padRight: 18,
+  padBottom: 18,
   header: 30,
   gapX: 22,
   gapY: 20,
@@ -62,11 +67,11 @@ export const POSTER = {
 };
 
 export function sectionWidth(card: CardGeometry, cols: number): number {
-  return 2 * SECTION.pad + cols * card.width + (cols - 1) * SECTION.gapX;
+  return SECTION.padLeft + SECTION.padRight + cols * card.width + (cols - 1) * SECTION.gapX;
 }
 
 export function sectionHeight(card: CardGeometry, rows: number): number {
-  return SECTION.header + 2 * SECTION.pad + rows * card.height + (rows - 1) * SECTION.gapY;
+  return SECTION.header + SECTION.padTop + SECTION.padBottom + rows * card.height + (rows - 1) * SECTION.gapY;
 }
 
 /** Rough legend height for a given width; only used to choose an arrangement, Typst measures the real one. */

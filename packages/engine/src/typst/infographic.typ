@@ -218,14 +218,14 @@
 
 #let section-width(cols) = {
   let S = L.section
-  u(2 * S.pad + cols * L.card.width + (cols - 1) * S.gapX)
+  u(S.padLeft + S.padRight + cols * L.card.width + (cols - 1) * S.gapX)
 }
 
 #let section-block(s, cols, height: auto) = {
   let S = L.section
   block(width: section-width(cols), height: height, stroke: u(S.stroke) + ink, breakable: false, {
     place(top + left, banner(s.label, u(S.bannerSize) * fs))
-    pad(top: u(S.header + S.pad), x: u(S.pad), bottom: u(S.pad), grid(
+    pad(top: u(S.header + S.padTop), left: u(S.padLeft), right: u(S.padRight), bottom: u(S.padBottom), grid(
       columns: (u(L.card.width),) * cols,
       column-gutter: u(S.gapX),
       row-gutter: u(S.gapY),
