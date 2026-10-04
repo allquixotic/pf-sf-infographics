@@ -134,3 +134,54 @@ describe('export layout regressions', () => {
     }
   }, 60_000);
 });
+
+test('Auto chooses a fitted poster size that improves printed class text', async () => {
+  const options = { game: 'pf2e', size: 'poster-24x36', format: 'pdf' as const };
+  const auto = await engine.autoSize({ content, options });
+  expect(auto.fontScale).toBeGreaterThan(1);
+  expect(auto.fontScale).toBeLessThan(1.3);
+  expect(auto.coverage).toBeGreaterThan(0.9);
+  const sizes: number[] = [];
+  for (const fontScale of [1, auto.fontScale]) {
+    const result = await engine.render({ content, options: { ...options, fontScale } });
+    const pages = await textPages(result.files[0]!.data);
+    expect(pages.length).toBe(1);
+    const feature = pages[0]!.find((item) => item.str.includes('Speaker for spirits'));
+    expect(feature).toBeDefined();
+    sizes.push(feature!.height);
+  }
+  expect(sizes[1]!).toBeGreaterThan(sizes[0]!);
+}, 60_000);
+
+test('explicit Paizo upload credits survive legend removal, without crediting ordinary custom art', async () => {
+  for (const paizoCredit of [false, true]) {
+    const art = new ArtLibrary();
+    art.addLocal(
+      'pf2e',
+      'necromancer.svg',
+      new TextEncoder().encode(
+        '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="10" cy="10" r="9"/></svg>',
+      ),
+      'User supplied portrait',
+      paizoCredit,
+    );
+    const result = await engine.render({
+      content,
+      art,
+      options: {
+        only: ['necromancer'],
+        art: 'paizo',
+        format: 'pdf',
+        legend: false,
+        attribution: true,
+      },
+    });
+    const pages = await textPages(result.files[0]!.data);
+    const text = pages
+      .flat()
+      .map((item) => item.str)
+      .join(' ');
+    expect(text.includes('Wayne Reynolds')).toBe(paizoCredit);
+    expect(text.includes('Artwork © Paizo Inc.')).toBe(paizoCredit);
+  }
+}, 60_000);

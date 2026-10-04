@@ -1,6 +1,6 @@
 import type { ArtLibrary } from '../art/library';
 import type { ContentBundle } from '../content/load';
-import { computeLayout } from '../layout';
+import { computeLayout, type Layout } from '../layout';
 import { buildModel, type DocModel, type VirtualFile } from '../model/build';
 import {
   MAX_RASTER_PIXELS,
@@ -93,6 +93,40 @@ export class Engine {
       this.session = await TypstSession.create(this.runtime, fonts, key);
     }
     return this.session;
+  }
+
+  /** Compare the supported UI slider steps using actual fitted body text and page coverage. */
+  async autoSize(req: RenderRequest): Promise<{ fontScale: number; textSize: number; coverage: number }> {
+    type Metric =
+      | { kind: 'text'; size: number; page: number }
+      | { kind: 'page'; scale: number; coverage: number };
+    let best: { fontScale: number; textSize: number; coverage: number; score: number } | undefined;
+    for (let step = 16; step <= 26; step++) {
+      const fontScale = step / 20;
+      req.onProgress?.(`Comparing text sizes (${step - 15}/11)`);
+      const doc = prepareDocument({ ...req, options: { ...req.options, fontScale } });
+      const session = await this.sessionFor(doc.fonts);
+      const metrics = await session.metrics<Metric[]>(doc.main, doc.files);
+      const text = metrics.filter((m) => m.kind === 'text');
+      if (!text.length) throw new Error('Select at least one class before using Auto.');
+      const layout = doc.model.layout as Layout;
+      const page = metrics.find((m) => m.kind === 'page');
+      const scale = page?.scale ?? (layout.kind === 'booklet' ? layout.cardScale : 1);
+      // Booklets: count only class pages, excluding the introductory legend/credits pages.
+      const area =
+        (layout.page.width! - 2 * layout.page.margin) * (layout.page.height! - 2 * layout.page.margin);
+      const coverage = Math.min(
+        1,
+        page?.coverage ??
+          (text.length * layout.card.width * layout.card.height * scale ** 2) /
+            (new Set(text.map((m) => m.page)).size * area),
+      );
+      const textSize = Math.min(...text.map((m) => m.size)) * scale;
+      const score = textSize * Math.sqrt(coverage);
+      if (!Number.isFinite(score) || score <= 0) throw new Error('Could not measure this layout.');
+      if (!best || score > best.score + 0.0001) best = { fontScale, textSize, coverage, score };
+    }
+    return { fontScale: best!.fontScale, textSize: best!.textSize, coverage: best!.coverage };
   }
 
   async render(req: RenderRequest): Promise<RenderResult> {

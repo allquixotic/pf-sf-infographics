@@ -7,7 +7,16 @@ import PreviewPane from './components/PreviewPane.vue';
 import SourcePanel from './components/SourcePanel.vue';
 import { EngineClient } from './engine/client';
 import type { ContentSummary, GameSummary, OutFile, SourceSpec } from './engine/protocol';
-import { defaultUiOptions, toRenderOptions, type UiOptions } from './state/options';
+import { printPages } from './printing';
+import {
+  defaultUiOptions,
+  type GameOptions,
+  restoreOptions,
+  type SharedOptions,
+  splitOptions,
+  toRenderOptions,
+  type UiOptions,
+} from './state/options';
 import { allArt, clearArt, loadJson, putArt, saveJson } from './state/persist';
 
 const LOCAL = __PFSF_LOCAL__;
@@ -17,11 +26,14 @@ const summary = shallowRef<ContentSummary>();
 const loadError = ref('');
 const gameId = ref(loadJson('pfsf:game', { id: 'pf2e' }).id);
 const savedOptions = loadJson<Record<string, Partial<UiOptions>>>('pfsf:options', {});
-const optionsByGame = reactive<Record<string, UiOptions>>(
-  Object.fromEntries(
-    Object.entries(savedOptions).map(([id, saved]) => [id, { ...defaultUiOptions(), ...saved }]),
-  ),
+const restored = restoreOptions(
+  gameId.value,
+  savedOptions,
+  loadJson<Partial<SharedOptions>>('pfsf:shared-options', {}),
+  loadJson<Record<string, GameOptions>>('pfsf:game-options', {}),
 );
+const ui = ref<UiOptions>(restored.ui);
+const gameOptions = reactive(restored.games);
 const siteTheme = ref(loadJson('pfsf:site-theme', { value: 'dark' }).value === 'light' ? 'light' : 'dark');
 watch(
   siteTheme,
@@ -34,10 +46,6 @@ watch(
 const source = ref<SourceSpec>(initialSource());
 
 const game = computed<GameSummary | undefined>(() => summary.value?.games.find((g) => g.id === gameId.value));
-const ui = computed<UiOptions>(() => {
-  if (!optionsByGame[gameId.value]) optionsByGame[gameId.value] = defaultUiOptions();
-  return optionsByGame[gameId.value]!;
-});
 
 function initialSource(): SourceSpec {
   const q = new URLSearchParams(location.search);
@@ -78,7 +86,7 @@ async function refreshSummary(): Promise<void> {
 
 const artMessage = ref('');
 
-async function addArtFiles(files: File[], targetGame: string): Promise<void> {
+async function addArtFiles(files: File[], targetGame: string, paizoCredit = false): Promise<void> {
   const messages: string[] = [];
   for (const file of files) {
     try {
@@ -89,6 +97,7 @@ async function addArtFiles(files: File[], targetGame: string): Promise<void> {
           type: 'addZip',
           name: file.name,
           game: targetGame,
+          paizoCredit,
           bytes: bytes.slice(0),
         });
         if (packs.length || matched) {
@@ -97,6 +106,7 @@ async function addArtFiles(files: File[], targetGame: string): Promise<void> {
             key: `zip:${targetGame}/${file.name}`,
             kind: 'zip',
             game: targetGame,
+            paizoCredit,
             name: file.name,
             bytes,
           });
@@ -105,11 +115,18 @@ async function addArtFiles(files: File[], targetGame: string): Promise<void> {
             `${file.name}: no matching class images. Name files like fighter.png or animist.svg.`,
           );
       } else if (/\.(png|jpe?g|svg|webp|gif)$/i.test(file.name)) {
-        await engine.call({ type: 'addImage', game: targetGame, name: file.name, bytes: bytes.slice(0) });
+        await engine.call({
+          type: 'addImage',
+          game: targetGame,
+          name: file.name,
+          paizoCredit,
+          bytes: bytes.slice(0),
+        });
         stored = await putArt({
           key: `img:${targetGame}/${file.name}`,
           kind: 'image',
           game: targetGame,
+          paizoCredit,
           name: file.name,
           bytes,
         });
@@ -138,13 +155,20 @@ async function restoreArt(): Promise<void> {
   for (const item of await allArt()) {
     try {
       if (item.kind === 'zip')
-        await engine.call({ type: 'addZip', game: item.game, name: item.name, bytes: item.bytes });
+        await engine.call({
+          type: 'addZip',
+          game: item.game,
+          name: item.name,
+          paizoCredit: item.paizoCredit,
+          bytes: item.bytes,
+        });
       else
         await engine.call({
           type: 'addImage',
           game: item.game ?? 'pf2e',
           name: item.name,
           bytes: item.bytes,
+          paizoCredit: item.paizoCredit,
         });
     } catch {
       artMessage.value =
@@ -222,6 +246,58 @@ async function renderPreview(): Promise<void> {
 }
 
 const exporting = ref(false);
+const printing = ref(false);
+const sizing = ref(false);
+const autoMessage = ref('');
+watch(
+  ui,
+  () => {
+    autoMessage.value = '';
+  },
+  { deep: true, flush: 'sync' },
+);
+
+async function autoSize(): Promise<void> {
+  sizing.value = true;
+  autoMessage.value = '';
+  const options = toRenderOptions(gameId.value, ui.value, 'svg');
+  const snapshot = JSON.stringify(options);
+  try {
+    const result = await engine.call(
+      { type: 'autoSize', options },
+      { progress: (m) => (progress.value = m) },
+    );
+    if (snapshot !== JSON.stringify(toRenderOptions(gameId.value, ui.value, 'svg'))) {
+      autoMessage.value = 'Settings changed during sizing. Try Auto again.';
+      return;
+    }
+    ui.value.fontScale = result.fontScale;
+    autoMessage.value = `Auto: ${Math.round(result.fontScale * 100)}% for this layout.`;
+  } catch (err) {
+    autoMessage.value = (err as Error).message;
+  } finally {
+    sizing.value = false;
+    progress.value = '';
+  }
+}
+
+async function printCurrent(): Promise<void> {
+  printing.value = true;
+  renderError.value = '';
+  try {
+    const res = await engine.call(
+      { type: 'render', options: toRenderOptions(gameId.value, ui.value, 'svg') },
+      { progress: (m) => (progress.value = m) },
+    );
+    warnings.value = res.warnings;
+    await printPages(res.files);
+  } catch (err) {
+    renderError.value = (err as Error).message;
+  } finally {
+    printing.value = false;
+    progress.value = '';
+  }
+}
 
 function download(name: string, blob: Blob): void {
   const a = document.createElement('a');
@@ -261,17 +337,27 @@ async function exportFile(): Promise<void> {
 }
 
 watch(
-  optionsByGame,
+  ui,
   () => {
-    saveJson('pfsf:options', optionsByGame);
+    const parts = splitOptions(ui.value);
+    gameOptions[gameId.value] = parts.game;
+    saveJson('pfsf:shared-options', parts.shared);
+    saveJson('pfsf:game-options', gameOptions);
     schedulePreview();
   },
   { deep: true },
 );
-watch(gameId, (id) => {
-  saveJson('pfsf:game', { id });
-  schedulePreview();
-});
+watch(
+  gameId,
+  (id, previous) => {
+    gameOptions[previous] = splitOptions(ui.value).game;
+    Object.assign(ui.value, gameOptions[id] ?? splitOptions(defaultUiOptions()).game);
+    autoMessage.value = '';
+    saveJson('pfsf:game', { id });
+    schedulePreview();
+  },
+  { flush: 'sync' },
+);
 watch(summary, schedulePreview);
 
 onMounted(async () => {
@@ -325,12 +411,12 @@ const theme = computed(() => ui.value.theme);
     <main class="layout">
       <aside class="sidebar">
         <template v-if="game">
-          <OptionsPanel v-model="optionsByGame[gameId]!" :game="game" />
+          <OptionsPanel v-model="ui" :game="game" :sizing="sizing" :auto-message="autoMessage" @auto="autoSize" />
           <ArtPanel
-            v-model:art="optionsByGame[gameId]!.art"
+            v-model:art="ui.art"
             :game="game"
             :message="artMessage"
-            @files="(files: File[]) => addArtFiles(files, gameId)"
+            @files="(files: File[], paizoCredit: boolean) => addArtFiles(files, gameId, paizoCredit)"
             @forget="forgetArt"
           />
         </template>
@@ -358,13 +444,14 @@ const theme = computed(() => ui.value.theme);
           <label v-if="['jpg', 'webp'].includes(ui.format)">
             Quality <input v-model.number="ui.quality" type="number" min="1" max="100" />
           </label>
-          <button class="primary" :disabled="exporting || !summary" @click="exportFile">
+          <button class="primary" :disabled="exporting || printing || sizing || !summary" @click="exportFile">
             {{ exporting ? 'Rendering…' : 'Download' }}
           </button>
+          <button :disabled="printing || exporting || sizing || !summary" @click="printCurrent">{{ printing ? 'Preparing…' : 'Print' }}</button>
         </div>
         <PreviewPane
           :pages="pages"
-          :busy="busy || exporting"
+          :busy="busy || exporting || printing || sizing"
           :progress="progress"
           :warnings="warnings"
           :error="renderError"

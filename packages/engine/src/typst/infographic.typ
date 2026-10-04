@@ -66,7 +66,7 @@
 }
 
 // Shrinks text until it fits the box (down to `min` of the requested size).
-#let fit-text(body, width, height, size, min: 0.7) = context {
+#let fit-text(body, width, height, size, min: 0.7, track: false) = context {
   let chosen = size * min
   for k in range(12) {
     let f = 1 - k * (1 - min) / 11
@@ -78,6 +78,9 @@
   }
   let fitted = block(width: width, text(size: chosen, body))
   let measured = measure(fitted)
+  if track {
+    [#metadata((kind: "text", size: chosen.pt() * calc.min(1, height / measured.height), page: here().page())) <sizing>]
+  }
   block(width: width, height: height, {
     if measured.height > height {
       scale(height / measured.height * 100%, origin: left + top, reflow: true, fitted)
@@ -204,7 +207,7 @@
       features(c),
       W - u(g.textX) - u(g.textPadRight),
       body-bottom - body-top,
-      u(g.bodySize) * fs,
+      u(g.bodySize) * fs, track: true,
     ))
   })
 }
@@ -371,6 +374,7 @@
   }
   if L.page.width == none {
     set page(width: auto, height: auto, margin: u(L.page.margin), fill: page-fill)
+    [#metadata((kind: "page", scale: 1, coverage: 1)) <sizing>]
     content
   } else {
     set page(width: u(L.page.width), height: u(L.page.height), margin: u(L.page.margin), fill: page-fill)
@@ -379,6 +383,7 @@
     context {
       let m = measure(content)
       let s = calc.min(avail-w / m.width, avail-h / m.height)
+      [#metadata((kind: "page", scale: s, coverage: s * s * (m.width / avail-w) * (m.height / avail-h))) <sizing>]
       align(center + horizon, scale(s * 100%, reflow: true, content))
     }
   }

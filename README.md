@@ -108,3 +108,21 @@ This website uses trademarks and/or copyrights owned by Paizo Inc., used under P
 ([paizo.com/licenses/communityuse](https://paizo.com/licenses/communityuse)). We are expressly prohibited from
 charging you to use or access this content. This website is not published, endorsed, or specifically approved by
 Paizo. For more information about Paizo Inc. and Paizo products, visit [paizo.com](https://paizo.com).
+
+### Printing and saved settings
+
+Layout, paper, appearance, artwork mode, text size and export settings are shared between game tabs. Class
+selections and custom title/date text remain specific to each game. Old saved settings migrate using the active
+game’s common values. Browser storage is local to the current site address.
+
+**Default** restores text size to 100%. **Auto** compares every 5% step from 80% through 130%, using the actual
+fitted class text. Its score balances the smallest body text with page coverage (text size × square root of
+coverage); booklet coverage counts class-card area on class pages. It keeps paper, margins and selected classes
+unchanged. This is an optimization across the available slider settings, not a guarantee of zero whitespace.
+Run it again after changing layout, paper or content.
+
+**Print**, next to Download, opens the browser print dialog with fresh vector pages at the selected dimensions.
+Choose the matching printer paper and 100% scale; browser/printer overrides still apply. No file is downloaded.
+
+For the custom address, follow [the Namecheap and GitHub Pages setup guide](docs/custom-domain.md).
+For Necromancer and Runesmith portraits, see [the Paizo source and permission notes](docs/paizo-assets.md#necromancer-and-runesmith-portraits).

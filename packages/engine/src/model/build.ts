@@ -154,7 +154,7 @@ export function buildModel(bundle: GameBundle, o: ResolvedOptions, art: ArtLibra
         local: c.art.local,
       });
       if (img) {
-        if (img.officialPack) usedPaizoArt = true;
+        if (img.officialPack || img.paizoCredit) usedPaizoArt = true;
         const path = `/art/${c.id}.${img.ext}`;
         files.push({ path, bytes: img.bytes });
         artModel = { kind: 'image', path };
@@ -255,6 +255,13 @@ export function buildModel(bundle: GameBundle, o: ResolvedOptions, art: ArtLibra
   const notices: Span[][] = o.attribution
     ? [game.notices.design, game.notices.cup, game.notices.license].map(parseRichText)
     : [];
+
+  if (o.attribution && usedPaizoArt) {
+    const artists = game.credits.filter((cr) => cr.when === 'paizo-art').flatMap((cr) => cr.names);
+    notices.push(
+      parseRichText(`Artwork © Paizo Inc.${artists.length ? ` Illustration: ${artists.join(', ')}.` : ''}`),
+    );
+  }
 
   const model: DocModel = {
     meta: {

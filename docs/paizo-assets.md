@@ -38,16 +38,44 @@ Official portraits currently referenced:
 
 The rest of the package (logos, maps, organization, regional and religious symbols) is not used by the infographic.
 
-## Classes without a Community Use portrait
+## Necromancer and Runesmith portraits
 
-As of September 2026 the package has no portraits for the Pathfinder **runesmith** (Pallemi) and **necromancer**
-(Usharak), the **daredevil** and **slayer** playtests, or the Starfinder **mechanic** (Quig), **technomancer** (Raia)
-and **luminary** (Prisma). Those cards use our emblems.
+Checked 2026-10-04: Paizo’s [Remaster pregen archive](https://downloads.paizo.com/PathfinderSecondEditionRemasteredPregens.zip)
+contains Pallemi (Runesmith) and Usharak (Necromancer), including their Level 5 PDFs updated September 11, 2026.
+The sheets carry Paizo copyright and permission to photocopy for personal use only (Pallemi’s footer says ©2025;
+Usharak’s says ©2026). No Creative Commons or open artwork license appears in those PDFs. A rules license such
+as ORC does not itself license the illustrations. Do not describe the portraits as Apache, CC BY, or ORC artwork,
+or infer a broad extraction/redistribution license merely because the pregen download is free.
 
-You can supply your own images in `local-assets/art/<game>/<class-id>.png` (or drop them into the web app). Keep in
-mind that the Community Use Policy only covers art from the package, the Paizo blog and product covers. Art taken
-from other Paizo products (for example pregenerated character sheets) is fine on your own computer, but an image you
-**share** that contains it is outside the policy.
+There is a clearer independent source for these portraits: Paizo published them in its official blog, credited to
+**Wayne Reynolds**:
+
+- [Meet the Iconics: Usharak](https://paizo.com/blog/meet-the-iconics-usharak) — Necromancer.
+- [Meet the Iconics: Pallemi](https://paizo.com/blog/meet-the-iconics-pallemi), June 18, 2026 — Runesmith.
+
+The [Community Use Policy](https://paizo.com/licenses/communityuse), updated August 22, 2024, permits eligible
+Paizo blog artwork in qualifying free, non-commercial community projects, subject to its exclusions and conditions.
+These illustrated character posts provide a CUP route independent of the narrower notice printed on the sheets.
+This is conditional permission from Paizo, not an open-source artwork license. Retain copyright, artist credits,
+and the Community Use notice when distributing an infographic containing these portraits.
+
+In the web app, choose **Official / custom art**, expand **Necromancer & Runesmith portraits**, and:
+
+1. Open the relevant Paizo post, open its portrait, and save the image locally.
+2. Rename the image to `necromancer` or `runesmith`, retaining the actual extension (for example `.png`, `.jpg`,
+   or `.webp`). A rename does not convert an image’s format.
+3. Check **My next uploads are Wayne Reynolds / Paizo portraits (include credits)**, then upload those images,
+   individually or in a ZIP. Uncheck it before uploading unrelated custom artwork.
+4. Keep **Credits & notices** enabled when sharing. The upload’s credit flag is saved with the artwork and
+   restored on reload. The output also includes an artist/copyright line when the legend is hidden.
+
+No PDF extraction is required and this repository still distributes no Paizo images. If you already uploaded
+these portraits as ordinary custom art, upload them again with the credit checkbox selected.
+
+The standard portrait ZIP still lacks these two images. The Pathfinder daredevil/slayer playtests and Starfinder
+mechanic/technomancer/luminary also fall back to emblems unless supplied with suitable images. For any other
+artwork, check whether its particular source is covered by the CUP or obtain separate permission; do not assume
+all pregen art is prohibited or that every freely downloadable Paizo image is covered.
 
 ## Custom artwork
 

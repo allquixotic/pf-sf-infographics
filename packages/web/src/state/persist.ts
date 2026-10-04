@@ -28,6 +28,7 @@ export interface StoredArt {
   name: string;
   bytes: ArrayBuffer;
   updatedAt?: number;
+  paizoCredit?: boolean;
 }
 
 const DB = 'pfsf-art';

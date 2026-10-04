@@ -1,6 +1,6 @@
 {
   "name": "pf-sf-infographics",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "description": "Generate Pathfinder 2e and Starfinder 2e class infographics (poster or booklet) as SVG, PNG, JPG, WebP or PDF.",
   "license": "Apache-2.0",
@@ -16,7 +16,7 @@
     "preview": "bun run --cwd packages/web preview",
     "cli": "bun packages/cli/src/main.ts",
     "test": "bun test",
-    "typecheck": "tsc -p packages/engine && tsc -p packages/engine/test && tsc -p packages/cli && tsc -p packages/cli/test && tsc -p tools && bun run --cwd packages/web typecheck",
+    "typecheck": "tsc -p packages/engine && tsc -p packages/engine/test && tsc -p packages/cli && tsc -p packages/cli/test && tsc -p tools && tsc -p packages/web/test && bun run --cwd packages/web typecheck",
     "lint": "biome check .",
     "format": "biome format --write .",
     "content:manifest": "bun tools/build-manifest.ts",

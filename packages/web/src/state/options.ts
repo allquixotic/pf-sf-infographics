@@ -1,7 +1,7 @@
 import type { OutputFormat, RenderOptionsInput } from '@pfsf/engine';
 import { defaultSizeFor } from '@pfsf/engine/presets';
 
-/** Everything the options panel edits, per game tab. Kept flat and JSON-friendly for localStorage. */
+/** Flat, JSON-friendly settings; only class selections and custom headings are game-specific. */
 export interface UiOptions {
   layout: 'poster' | 'booklet';
   intent: 'print' | 'screen';
@@ -100,5 +100,37 @@ export function toRenderOptions(game: string, ui: UiOptions, format: OutputForma
     quality: ui.quality,
     bleed: ui.bleed,
     pageNumbers: ui.pageNumbers,
+  };
+}
+
+export type GameOptions = Pick<UiOptions, 'exclude' | 'title' | 'asOf'>;
+export type SharedOptions = Omit<UiOptions, keyof GameOptions>;
+
+export function splitOptions({ exclude, title, asOf, ...shared }: UiOptions): {
+  shared: SharedOptions;
+  game: GameOptions;
+} {
+  return { shared, game: { exclude: [...exclude], title, asOf } };
+}
+
+/** Migrate old per-game preferences using the currently selected game's common settings. */
+export function restoreOptions(
+  activeGame: string,
+  legacy: Record<string, Partial<UiOptions>>,
+  shared: Partial<SharedOptions>,
+  games: Record<string, GameOptions>,
+): { ui: UiOptions; games: Record<string, GameOptions> } {
+  const migrated = Object.fromEntries(
+    Object.entries(legacy).map(([id, saved]) => [id, splitOptions({ ...defaultUiOptions(), ...saved }).game]),
+  );
+  const perGame = { ...migrated, ...games };
+  return {
+    ui: {
+      ...defaultUiOptions(),
+      ...splitOptions({ ...defaultUiOptions(), ...legacy[activeGame] }).shared,
+      ...shared,
+      ...(perGame[activeGame] ?? splitOptions(defaultUiOptions()).game),
+    },
+    games: perGame,
   };
 }

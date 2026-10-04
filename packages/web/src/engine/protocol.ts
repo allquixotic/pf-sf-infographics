@@ -45,13 +45,15 @@ export interface OutFile {
 
 export type Request =
   | { type: 'load'; source: SourceSpec }
-  | { type: 'addZip'; name: string; game?: string; bytes: ArrayBuffer }
-  | { type: 'addImage'; game: string; name: string; bytes: ArrayBuffer }
+  | { type: 'addZip'; name: string; game?: string; paizoCredit?: boolean; bytes: ArrayBuffer }
+  | { type: 'addImage'; game: string; name: string; paizoCredit?: boolean; bytes: ArrayBuffer }
   | { type: 'clearArt' }
   | { type: 'summary' }
+  | { type: 'autoSize'; options: RenderOptionsInput }
   | { type: 'render'; options: RenderOptionsInput; baseName?: string };
 
 export interface Responses {
+  autoSize: { fontScale: number; textSize: number; coverage: number };
   load: ContentSummary;
   addZip: { packs: string[]; matched: number };
   addImage: { ok: true };

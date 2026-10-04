@@ -36,8 +36,8 @@ const engine = new Engine(runtime);
 let content: ContentBundle | undefined;
 let art = new ArtLibrary();
 /** Zips and images kept so they can be re-applied when content is reloaded. */
-const zips = new Map<string, { name: string; game: string; bytes: Uint8Array }>();
-const images: { game: string; name: string; bytes: Uint8Array }[] = [];
+const zips = new Map<string, { name: string; game: string; paizoCredit?: boolean; bytes: Uint8Array }>();
+const images: { game: string; name: string; paizoCredit?: boolean; bytes: Uint8Array }[] = [];
 
 function sourceFor(spec: SourceSpec): ContentSource {
   switch (spec.kind) {
@@ -57,7 +57,12 @@ function sourceFor(spec: SourceSpec): ContentSource {
 }
 
 /** Works out which art pack a zip is, by its file name or by how many referenced files it contains. */
-function registerZip(name: string, bytes: Uint8Array, game = 'pf2e'): { packs: string[]; matched: number } {
+function registerZip(
+  name: string,
+  bytes: Uint8Array,
+  game = 'pf2e',
+  paizoCredit = false,
+): { packs: string[]; matched: number } {
   if (!content) return { packs: [], matched: 0 };
   const found: string[] = [];
   let officialName = false;
@@ -81,14 +86,14 @@ function registerZip(name: string, bytes: Uint8Array, game = 'pf2e'): { packs: s
       .get(game)
       ?.classes.filter((c) => custom.findByClassName(c.id) || custom.findByClassName(c.name)).length ?? 0;
   // A custom archive can contain both official filenames and additional class images.
-  if (!officialName && matched) art.addCustomPack(game, custom);
+  if (!officialName && matched) art.addCustomPack(game, custom, paizoCredit);
   return { packs: found, matched };
 }
 
 function rebuildArt(): void {
   art = new ArtLibrary();
-  for (const zip of zips.values()) registerZip(zip.name, zip.bytes, zip.game);
-  for (const img of images) art.addLocal(img.game, img.name, img.bytes);
+  for (const zip of zips.values()) registerZip(zip.name, zip.bytes, zip.game, zip.paizoCredit);
+  for (const img of images) art.addLocal(img.game, img.name, img.bytes, img.name, img.paizoCredit);
 }
 
 function summary(): ContentSummary {
@@ -141,20 +146,33 @@ async function handle(id: number, req: Request): Promise<unknown> {
     case 'addZip': {
       const bytes = new Uint8Array(req.bytes);
       const game = req.game ?? 'pf2e';
-      const result = registerZip(req.name, bytes, game);
+      const result = registerZip(req.name, bytes, game, req.paizoCredit);
       if (result.packs.length || result.matched)
-        zips.set(`${game}/${req.name}`, { name: req.name, game, bytes });
+        zips.set(`${game}/${req.name}`, { name: req.name, game, bytes, paizoCredit: req.paizoCredit });
       return result;
     }
     case 'addImage':
-      images.push({ game: req.game, name: req.name, bytes: new Uint8Array(req.bytes) });
-      art.addLocal(req.game, req.name, new Uint8Array(req.bytes));
+      images.push({
+        game: req.game,
+        name: req.name,
+        bytes: new Uint8Array(req.bytes),
+        paizoCredit: req.paizoCredit,
+      });
+      art.addLocal(req.game, req.name, new Uint8Array(req.bytes), req.name, req.paizoCredit);
       return { ok: true };
     case 'clearArt':
       zips.clear();
       images.length = 0;
       art = new ArtLibrary();
       return { ok: true };
+    case 'autoSize':
+      if (!content) throw new Error('No content loaded');
+      return engine.autoSize({
+        content,
+        art,
+        options: req.options,
+        onProgress: (m) => self.postMessage({ id, progress: m } satisfies WorkerMessage),
+      });
     case 'render': {
       if (!content) throw new Error('No content loaded');
       const result = await engine.render({

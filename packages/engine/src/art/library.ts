@@ -15,6 +15,8 @@ export interface ArtImage {
   origin: string;
   /** Present only when resolved through a referenced official pack. */
   officialPack?: string;
+  /** User identifies a supplied image as Paizo artwork, so its artist credit must be retained. */
+  paizoCredit?: boolean;
 }
 
 export interface ArtRequest {
@@ -129,11 +131,11 @@ export class ArtPack {
 
 export class ArtLibrary {
   private readonly packs = new Map<string, ArtPack>();
-  private readonly customPacks = new Map<string, { game: string; pack: ArtPack }>();
+  private readonly customPacks = new Map<string, { game: string; pack: ArtPack; paizoCredit: boolean }>();
 
-  addCustomPack(game: string, pack: ArtPack): void {
+  addCustomPack(game: string, pack: ArtPack, paizoCredit = false): void {
     this.customPacks.delete(`${game}/${pack.id}`);
-    this.customPacks.set(`${game}/${pack.id}`, { game, pack });
+    this.customPacks.set(`${game}/${pack.id}`, { game, pack, paizoCredit });
   }
   /** Loose images keyed by `${game}/${normalized filename}`. */
   private readonly local = new Map<string, ArtImage>();
@@ -159,11 +161,11 @@ export class ArtLibrary {
   }
 
   /** Registers a loose image for a game, addressed by file name without extension (usually the class id). */
-  addLocal(game: string, fileName: string, bytes: Uint8Array, origin = fileName): void {
+  addLocal(game: string, fileName: string, bytes: Uint8Array, origin = fileName, paizoCredit = false): void {
     const ext = extOf(fileName);
     if (!ext) throw new Error(`Unsupported image type: ${fileName} (use PNG, JPG, SVG, WebP or GIF)`);
     const clean = ext === 'png' ? stripPngMetadata(bytes) : bytes;
-    this.local.set(`${game}/${norm(fileName)}`, { bytes: clean, ext, origin });
+    this.local.set(`${game}/${norm(fileName)}`, { bytes: clean, ext, origin, paizoCredit });
   }
 
   get localCount(): number {
@@ -179,10 +181,13 @@ export class ArtLibrary {
         preferred(localNames.filter((k) => matchesClass(k, stem(name))));
       if (key) return this.local.get(key);
     }
-    for (const { game, pack } of [...this.customPacks.values()].reverse()) {
+    for (const { game, pack, paizoCredit } of [...this.customPacks.values()].reverse()) {
       if (game !== req.game) continue;
       const name = pack.findByClassName(req.classId) ?? pack.findByClassName(req.className);
-      if (name) return pack.get(name);
+      if (name) {
+        const image = pack.get(name);
+        if (image) return { ...image, paizoCredit };
+      }
     }
     if (req.paizo) {
       const pack = this.packs.get(req.paizo.pack);

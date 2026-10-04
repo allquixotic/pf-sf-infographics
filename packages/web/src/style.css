@@ -577,3 +577,21 @@ input[type="color"] {
     opacity: 1;
   }
 }
+
+.text-size-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+.text-size-controls label {
+  margin-right: auto;
+}
+.text-size-controls label span {
+  color: var(--muted);
+  font-size: 0.85em;
+}
+button.small {
+  padding: 0.25rem 0.45rem;
+  font-size: 0.78rem;
+}

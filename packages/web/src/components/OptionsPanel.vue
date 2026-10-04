@@ -5,7 +5,8 @@ import type { GameSummary } from '../engine/protocol';
 import type { UiOptions } from '../state/options';
 import HelpTip from './HelpTip.vue';
 
-const props = defineProps<{ game: GameSummary }>();
+const props = defineProps<{ game: GameSummary; sizing: boolean; autoMessage: string }>();
+const emit = defineEmits<{ auto: [] }>();
 const o = defineModel<UiOptions>({ required: true });
 
 const presets = computed(() => SIZE_PRESETS.filter((p) => p.intent === o.value.intent));
@@ -126,10 +127,16 @@ const shown = computed(
         <option value="grayscale">Grayscale</option>
       </select>
     </div>
-    <label class="field">
-      Text size
-      <input v-model.number="o.fontScale" type="range" min="0.8" max="1.3" step="0.05" />
-    </label>
+    <div class="field">
+      <div class="text-size-controls">
+        <label for="text-size">Text size <span>{{ Math.round(o.fontScale * 100) }}%</span></label>
+        <button type="button" class="small" :disabled="sizing" @click="o.fontScale = 1">Default</button>
+        <button type="button" class="small" :disabled="sizing || !shown" @click="emit('auto')">{{ sizing ? 'Sizing…' : 'Auto' }}</button>
+        <HelpTip label="automatic text size" text="Auto compares every slider size using the rendered layout, balancing readable text with page coverage. Run it again after changing paper, artwork or classes. Default restores 100%." />
+      </div>
+      <input id="text-size" v-model.number="o.fontScale" type="range" min="0.8" max="1.3" step="0.05" :disabled="sizing" />
+      <p v-if="autoMessage" class="hint" role="status">{{ autoMessage }}</p>
+    </div>
   </section>
 
   <section class="panel">
