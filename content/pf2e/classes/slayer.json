@@ -16,20 +16,23 @@
   "casting": null,
   "hp": 10,
   "ratings": {
-    "offense": 4.5,
+    "offense": [
+      4,
+      4.5
+    ],
     "defense": 3.5,
     "support": 2,
-    "utility": 3,
-    "difficulty": 3
+    "utility": 3.5,
+    "difficulty": 3.5
   },
   "features": [
     {
       "title": "Monster hunter",
-      "text": "Slayers study their prey and turn knowledge of monsters into a decisive edge."
+      "text": "Slayers study dangerous creatures and prepare special hunting tools. Ten minutes of research lets them mark a creature of their level or higher as quarry."
     },
     {
-      "title": "Quarry and trophies",
-      "text": "A slayer marks one powerful foe as quarry, then takes trophies from kills to upgrade their signature hunting tool."
+      "title": "Claim trophies",
+      "text": "Defeat that quarry and take a trophy to strengthen your tools for the next hunt. Preparation gives a slayer an edge against a chosen foe."
     }
   ],
   "art": {

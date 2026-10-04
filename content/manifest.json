@@ -21,8 +21,8 @@
     },
     {
       "path": "pf2e/classes/animist.json",
-      "size": 1182,
-      "sha256": "b9669bfac8a117c16fd94ef72c9f37d9de47f9b39c818b7a1e6bd85917b61c47"
+      "size": 1163,
+      "sha256": "72d71de7d9715a0dd3e83bcdab72324b8efcb305ef655e9e63c0750d27cc7591"
     },
     {
       "path": "pf2e/classes/barbarian.json",
@@ -46,13 +46,13 @@
     },
     {
       "path": "pf2e/classes/commander.json",
-      "size": 1130,
-      "sha256": "6ed73261407b4ad44f3f9cbcf803f933c3be06595a7604cf871ad1082bc0743e"
+      "size": 1113,
+      "sha256": "a182bc751430ca575816669f34902af2542d9dc6e3c5f9becc61a34cea386843"
     },
     {
       "path": "pf2e/classes/daredevil.json",
-      "size": 904,
-      "sha256": "e1e712557a358e7b7d75bab0dfcbb2457ba194f1bb7ef53158bff2da731ba5ee"
+      "size": 943,
+      "sha256": "510945b2af45e257382bd894aa19c46d472d75602404766f21ac1ec7f2fea630"
     },
     {
       "path": "pf2e/classes/druid.json",
@@ -61,8 +61,8 @@
     },
     {
       "path": "pf2e/classes/exemplar.json",
-      "size": 1142,
-      "sha256": "92f9bf48bba285fa13aa6e866a988846be4096dcb3812a087acc199896408788"
+      "size": 1248,
+      "sha256": "630abe98c4ea6579aa62c896085432cbc41b178aa5f52e38c26425b470099ae3"
     },
     {
       "path": "pf2e/classes/fighter.json",
@@ -71,8 +71,8 @@
     },
     {
       "path": "pf2e/classes/guardian.json",
-      "size": 1118,
-      "sha256": "ea5ccd28be4c035d9e62bf10cc1b91ce72f4949c6fc71ee8404161ab030a4538"
+      "size": 1147,
+      "sha256": "e03b23aace052a43606dbf146c3ae1ade8c419118b6148623eb701ad827f55eb"
     },
     {
       "path": "pf2e/classes/gunslinger.json",
@@ -91,8 +91,8 @@
     },
     {
       "path": "pf2e/classes/kineticist.json",
-      "size": 1162,
-      "sha256": "286b526f34efa9956f0e16ffeb796972d98e2e00bd17cf7ffa6ebed8c5126ef8"
+      "size": 1289,
+      "sha256": "2d3d6edeb9270befe8392c3c345c5a763dfab894ce05b21f94f894667a558f7c"
     },
     {
       "path": "pf2e/classes/magus.json",
@@ -106,8 +106,8 @@
     },
     {
       "path": "pf2e/classes/necromancer.json",
-      "size": 1075,
-      "sha256": "02151ba76d1ba5edd5a99570b78e45d00b4d702e04d6e364c16841958eb6b2a6"
+      "size": 1100,
+      "sha256": "0bd7f486782e08b2978d3767a8bd054c153d6e0c2c07db896895f5b0f4901744"
     },
     {
       "path": "pf2e/classes/oracle.json",
@@ -131,13 +131,13 @@
     },
     {
       "path": "pf2e/classes/runesmith.json",
-      "size": 1011,
-      "sha256": "f30e226104224b259d142e6a2ba403286fc284045bcab5e323bf6551579cb545"
+      "size": 1066,
+      "sha256": "111dc5e203a449b2f7885c6b68170a4109203562d192b953259c04619ad2ba67"
     },
     {
       "path": "pf2e/classes/slayer.json",
-      "size": 850,
-      "sha256": "6eb2964c7be0761e4a505499b4d91a8e8bf13ad5d0fa9cddd28b3500270b0ab2"
+      "size": 972,
+      "sha256": "2da0164e7fb12729934eed8ce29c0c45b39e26541400001934c79603f8467a02"
     },
     {
       "path": "pf2e/classes/sorcerer.json",
@@ -351,48 +351,48 @@
     },
     {
       "path": "sf2e/classes/envoy.json",
-      "size": 1132,
-      "sha256": "8cda63b78e52f1c44958accc0e83b6fab6e531a00c360de629808249c3a6e34a"
+      "size": 1169,
+      "sha256": "45443679d8b63073e4a0688d952b44aced47f9e63ece545f231095f0a6ab4095"
     },
     {
       "path": "sf2e/classes/luminary.json",
-      "size": 945,
-      "sha256": "5148ca409f33c399ff521078752006217fdd95adc3e44eea546f8252df94e664"
+      "size": 1041,
+      "sha256": "64554abdaf75ce5371c2ba198bbcc90b5369c76c0f82432eba1261242e9b458f"
     },
     {
       "path": "sf2e/classes/mechanic.json",
-      "size": 912,
-      "sha256": "5bf380e76b22fdd2a5fd010ddcf12c37d57a9edd4e9307d27e9154d89c727559"
+      "size": 1012,
+      "sha256": "132db8f1cb8460750f348a615ac656a89fd80ada322f990878b2978cdb1a86ea"
     },
     {
       "path": "sf2e/classes/mystic.json",
-      "size": 1266,
-      "sha256": "4e95a716b03d15f4345dfd6556ee5f49a10fa81185ff16c720bc14b3685fe4d8"
+      "size": 1294,
+      "sha256": "803760cc01ac6bf60530e7471d62e03dc489b9c8da0dc20caf10a65e15456411"
     },
     {
       "path": "sf2e/classes/operative.json",
-      "size": 1091,
-      "sha256": "5c24eca6de83f384e64df6b8521d2187947aaafad1e79ac36dbb716bc008b795"
+      "size": 1204,
+      "sha256": "4001e073964fb5e6e07fc0fa4260d7810f3d67506139a96a2456af2f93a40e8b"
     },
     {
       "path": "sf2e/classes/solarian.json",
-      "size": 1158,
-      "sha256": "bace3137d9dd60d49d5ad35e5d24fc364e42179cf3980d393571382ff834687f"
+      "size": 1244,
+      "sha256": "d09c228b10f8d95538feb93becce5c3e71ab2b9cab27f0034de237173fd7181b"
     },
     {
       "path": "sf2e/classes/soldier.json",
-      "size": 1102,
-      "sha256": "6a002a525cd33e0d7bee5e74e5d4b03f75415a32d0a5ec168e24b0f30af5ae56"
+      "size": 1188,
+      "sha256": "daf42a6a4eacf37fcd765875d48d739a16c2a92a9302c227abcde55eb0cff12a"
     },
     {
       "path": "sf2e/classes/technomancer.json",
-      "size": 984,
-      "sha256": "04e136fe8e04cfa22cb23fc044ac213db22e13105bcc93aea8305c74472d03a0"
+      "size": 1167,
+      "sha256": "553cbbf8d2617089a25c2a1a8b444dd33e81489e3f3d4787b75820a9c6e5e30f"
     },
     {
       "path": "sf2e/classes/witchwarper.json",
-      "size": 1221,
-      "sha256": "b53fed6a0d39e014175b615c3b54478861b59b153c7ee45e5def7811708ca928"
+      "size": 1318,
+      "sha256": "1b69715c50096e564abd685b4ad57a56a68bf20e05c071b2c9f0e08ec74c7858"
     },
     {
       "path": "sf2e/emblems/envoy.svg",

@@ -15,20 +15,26 @@
   "casting": null,
   "hp": 10,
   "ratings": {
-    "offense": 4.5,
+    "offense": [
+      4,
+      4.5
+    ],
     "defense": 3.5,
-    "support": 2,
+    "support": [
+      2,
+      3
+    ],
     "utility": 2,
     "difficulty": 3.5
   },
   "features": [
     {
       "title": "Warrior of the stars",
-      "text": "Solarians draw power from the cycle of stars and black holes and fight with a weapon of stellar energy."
+      "text": "Solarians form weapons from stellar energy. Photon power favors damage and light, while graviton power pulls enemies around and hinders them."
     },
     {
-      "title": "Photon and graviton",
-      "text": "Actions shift the solarian between photon (fiery damage and light) and graviton (pulling and hindering foes); balancing the two is the class's rhythm."
+      "title": "Attunement",
+      "text": "Cycle actions switch between photon and graviton. Powerful disharmony abilities leave the solarian unattuned, so they must attune again to regain those benefits."
     }
   ],
   "iconic": {

@@ -22,21 +22,21 @@
   "ratings": {
     "offense": [
       2,
-      3
+      4
     ],
     "defense": 2,
     "support": 5,
     "utility": 4,
-    "difficulty": 3
+    "difficulty": 3.5
   },
   "features": [
     {
-      "title": "Spiritual healer",
-      "text": "Mystics tap a connection to something greater, such as the elements, a cosmic rhythm or the shadows, and cast divine, occult or primal spells."
+      "title": "Spiritual connection",
+      "text": "Mystics draw divine, occult or primal magic from their connection. They can bond with up to ten other creatures and sense when those companions need help."
     },
     {
-      "title": "Bond and vitality",
-      "text": "A mystic links with up to ten allies, senses how they are doing and pours healing into them from a self-refilling vitality network."
+      "title": "Vitality network",
+      "text": "Transfer healing from a shared reserve to yourself or a bonded ally. The reserve replenishes each turn in combat and refills when you Refocus."
     }
   ],
   "iconic": {

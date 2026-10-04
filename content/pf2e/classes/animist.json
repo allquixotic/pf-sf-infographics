@@ -17,20 +17,23 @@
   "casting": "hybrid",
   "hp": 8,
   "ratings": {
-    "offense": 2.5,
-    "defense": 2,
+    "offense": [
+      2.5,
+      4
+    ],
+    "defense": 3,
     "support": 4.5,
     "utility": 4.5,
-    "difficulty": 4
+    "difficulty": 4.5
   },
   "features": [
     {
       "title": "Speaker for spirits",
-      "text": "Animists form daily pacts with apparitions, the spirits of places and ideas, and channel them as divine magic. New apparitions can reshape the character each morning."
+      "text": "Animists speak for apparitions, the spirits of places and ideas. They choose new spirit partners each day to gain Lore and magic."
     },
     {
-      "title": "Apparitions",
-      "text": "Each attuned spirit adds spells and skills. The primary apparition also grants vessel spells, focus magic that changes along with it."
+      "title": "Two ways to cast",
+      "text": "They prepare divine spells and cast apparition spells spontaneously. Their primary apparition grants vessel focus spells."
     }
   ],
   "iconic": {

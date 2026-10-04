@@ -15,20 +15,20 @@
   "casting": null,
   "hp": 8,
   "ratings": {
-    "offense": 2,
-    "defense": 3,
+    "offense": 2.5,
+    "defense": 3.5,
     "support": 5,
-    "utility": 3,
+    "utility": 3.5,
     "difficulty": 4
   },
   "features": [
     {
       "title": "Tactical leader",
-      "text": "Commanders win battles by directing others. Their banner steadies everyone nearby, and a folio of tactics moves the party like pieces on a board."
+      "text": "Commanders train a squad in battle tactics. Their banner helps nearby allies resist fear."
     },
     {
       "title": "Tactics",
-      "text": "Prepared orders give allies extra movement, attacks or defenses, turning the commander's own actions into the whole party's advantage."
+      "text": "Spend actions to give squadmates extra moves, attacks or defenses, often outside their own turns. Once a round, one ally can gain an extra reaction to follow a tactic."
     }
   ],
   "iconic": {

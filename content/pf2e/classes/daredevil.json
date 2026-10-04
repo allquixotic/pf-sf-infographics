@@ -18,18 +18,18 @@
   "ratings": {
     "offense": 4,
     "defense": 3,
-    "support": 2,
+    "support": 3,
     "utility": 3,
-    "difficulty": 3.5
+    "difficulty": 4
   },
   "features": [
     {
       "title": "Living on the edge",
-      "text": "Daredevils chase danger for the thrill of it, betting on skill and luck. The riskier the move, the stronger they get."
+      "text": "Daredevils leap into danger, using movement and maneuvers to set up attacks. A daring stunt can knock an enemy down or push them out of position."
     },
     {
       "title": "Adrenaline",
-      "text": "Bold, risky actions build adrenaline that fuels powerful feats until their next turn. Misjudge the risk and it can backfire."
+      "text": "Starting a risky action grants adrenaline even if the roll fails. It powers special attacks until the start of the daredevil's next turn."
     }
   ],
   "art": {

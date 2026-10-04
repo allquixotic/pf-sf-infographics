@@ -26,12 +26,12 @@
   },
   "features": [
     {
-      "title": "Gadgeteer",
-      "text": "Mechanics build, hack and modify technology, improving gear on the fly."
+      "title": "Field engineer",
+      "text": "Mechanics hack and repair technology. Temporary modifications can improve a weapon's range or let armor hover above the ground."
     },
     {
       "title": "Exocortex",
-      "text": "A neural implant runs the mechanic's pet project: a combat drone, a remote turret or a network of mines."
+      "text": "An exocortex links their mind to a drone, turret or set of mines. Directing it takes actions that could otherwise go toward attacks or repairs."
     }
   ],
   "iconic": {

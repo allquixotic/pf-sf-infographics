@@ -16,19 +16,19 @@
   "hp": 8,
   "ratings": {
     "offense": 3.5,
-    "defense": 2.5,
+    "defense": 3,
     "support": 4,
-    "utility": 3,
+    "utility": 3.5,
     "difficulty": 4.5
   },
   "features": [
     {
-      "title": "Carver of runes",
-      "text": "Runesmiths wield ancient runes of power instead of spells, etching them onto weapons, armor, allies and even enemies."
+      "title": "Etch and trace",
+      "text": "Runesmiths draw magic runes on creatures and equipment. Etched runes last until spent or removed, while traced runes fade at the end of the next turn."
     },
     {
       "title": "Invoke Rune",
-      "text": "Runes grant ongoing benefits and can be invoked to release a stronger burst of power all at once, then traced anew."
+      "text": "Runes grant ongoing effects. Invoking a rune releases its power and consumes it, so the choice is whether to keep its benefit or spend it."
     }
   ],
   "iconic": {

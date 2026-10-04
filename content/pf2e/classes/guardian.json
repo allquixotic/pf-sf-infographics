@@ -19,16 +19,16 @@
     "defense": 5,
     "support": 3.5,
     "utility": 1.5,
-    "difficulty": 2
+    "difficulty": 3.5
   },
   "features": [
     {
       "title": "Living shield",
-      "text": "Guardians are built to take hits so others don't. In heavy armor they resist physical damage that would fell anyone else."
+      "text": "Guardians wear medium or heavy armor to resist physical damage and stay close enough to protect their allies."
     },
     {
       "title": "Taunt and intercept",
-      "text": "Guardians draw enemy attention and step in to absorb blows meant for nearby allies, making them the purest defender in the game."
+      "text": "Taunt penalizes enemies that attack allies instead of the guardian. Intercept Attack lets a guardian step beside a nearby ally and take physical damage in their place."
     }
   ],
   "iconic": {

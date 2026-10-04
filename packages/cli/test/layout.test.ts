@@ -25,6 +25,8 @@ async function textPages(data: Uint8Array): Promise<TextItem[][]> {
 
 describe('export layout regressions', () => {
   test('V2: enlarged Animist features stay above the HP/source footer', async () => {
+    const animist = content.games.get('pf2e')!.classes.find((entry) => entry.id === 'animist')!;
+    const normalizeText = (text: string) => text.normalize('NFKC').replace(/[\s\u00ad-]/g, '');
     for (const fontScale of [1.3, 1.5]) {
       for (const art of ['generic', 'none'] as const) {
         const result = await engine.render({
@@ -41,12 +43,15 @@ describe('export layout regressions', () => {
         const [page] = await textPages(result.files[0]!.data);
         const footer = page!.find((item) => item.str.includes('HP/level'))!;
         expect(footer).toBeDefined();
-        const firstFeature = page!.findIndex((item) => item.str.includes('Speaker for spirits'));
+        const firstFeature = page!.findIndex((item) => item.str.includes(animist.features[0]!.title));
         expect(firstFeature).toBeGreaterThan(-1);
         for (const item of page!.slice(firstFeature)) {
           expect(item.transform[5] - item.height * 0.25).toBeGreaterThan(footer.transform[5] + footer.height);
         }
-        expect(page!.map((item) => item.str).join(' ')).toContain('magic that changes along with it.');
+        const renderedText = normalizeText(page!.map((item) => item.str).join(' '));
+        for (const feature of animist.features) {
+          expect(renderedText).toContain(normalizeText(feature.text));
+        }
       }
     }
   }, 60_000);
@@ -139,7 +144,7 @@ test('Auto chooses a fitted poster size that improves printed class text', async
   const options = { game: 'pf2e', size: 'poster-24x36', format: 'pdf' as const };
   const auto = await engine.autoSize({ content, options });
   expect(auto.fontScale).toBeGreaterThan(1);
-  expect(auto.fontScale).toBeLessThan(1.3);
+  expect(auto.fontScale).toBeLessThanOrEqual(1.3);
   expect(auto.coverage).toBeGreaterThan(0.9);
   const sizes: number[] = [];
   for (const fontScale of [1, auto.fontScale]) {

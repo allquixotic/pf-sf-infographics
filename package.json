@@ -1,6 +1,6 @@
 {
   "name": "pf-sf-infographics",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "private": true,
   "description": "Generate Pathfinder 2e and Starfinder 2e class infographics (poster or booklet) as SVG, PNG, JPG, WebP or PDF.",
   "license": "Apache-2.0",

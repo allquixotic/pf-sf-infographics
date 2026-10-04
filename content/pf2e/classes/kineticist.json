@@ -17,20 +17,32 @@
   "casting": null,
   "hp": 8,
   "ratings": {
-    "offense": 4,
-    "defense": 3,
-    "support": 3,
-    "utility": 3.5,
-    "difficulty": 2.5
+    "offense": [
+      3,
+      4
+    ],
+    "defense": [
+      2.5,
+      4
+    ],
+    "support": [
+      2,
+      4.5
+    ],
+    "utility": [
+      3,
+      4.5
+    ],
+    "difficulty": 3.5
   },
   "features": [
     {
       "title": "Elemental conduit",
-      "text": "Kineticists are a living gateway to air, earth, fire, metal, water or wood. They have no spell slots, just endless elemental power."
+      "text": "Kineticists channel chosen elements through magical impulses instead of spell slots. They can master one element or learn others as they grow."
     },
     {
-      "title": "Impulses",
-      "text": "An elemental aura powers impulses that blast foes, reshape terrain or protect allies, and the kinetic gate opens to more elements over time."
+      "title": "Channel and overflow",
+      "text": "Their elemental aura fuels powers that harm foes or help allies. Overflow impulses close the aura. Channel again to reopen it and use more impulses."
     }
   ],
   "iconic": {

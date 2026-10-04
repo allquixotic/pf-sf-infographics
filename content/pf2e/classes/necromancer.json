@@ -19,18 +19,21 @@
   "ratings": {
     "offense": 3.5,
     "defense": 2,
-    "support": 3,
-    "utility": 3.5,
+    "support": [
+      3,
+      4
+    ],
+    "utility": 4,
     "difficulty": 4.5
   },
   "features": [
     {
       "title": "Master of the dead",
-      "text": "Necromancers wield occult magic over life and death, raising fragile undead thralls in the middle of a fight."
+      "text": "Necromancers study occult magic to command the dead. They prepare spells of life and death and raise fragile undead thralls."
     },
     {
       "title": "Thralls",
-      "text": "Thralls are expendable undead that help flank and fuel spells, but cannot block movement. They act only through necromancer abilities, not normal minion commands."
+      "text": "Place thralls to help allies flank, then destroy them to fuel spells. Creatures can pass through them, and they act only through necromancer abilities."
     }
   ],
   "iconic": {

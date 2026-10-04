@@ -20,8 +20,11 @@
   "casting": "spontaneous",
   "hp": 8,
   "ratings": {
-    "offense": 3,
-    "defense": 1.5,
+    "offense": [
+      3,
+      4
+    ],
+    "defense": 2.5,
     "support": 4,
     "utility": 4,
     "difficulty": 4
@@ -29,11 +32,11 @@
   "features": [
     {
       "title": "Reality bender",
-      "text": "Witchwarpers pull power from alternate realities, bending space, time and probability around them."
+      "text": "Witchwarpers draw magic from alternate realities. Their paradox determines whether they cast arcane or occult spells and how their quantum field changes the battlefield."
     },
     {
       "title": "Quantum field",
-      "text": "A zone of warped reality hinders foes or shields allies, and warp spells require the field to be active; the paradox decides its effect."
+      "text": "Keep this zone active to use warp focus spells. Casting one on your turn also sustains the field. Each spell sets its own targets and area."
     }
   ],
   "iconic": {

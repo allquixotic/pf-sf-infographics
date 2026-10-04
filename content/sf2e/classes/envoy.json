@@ -15,7 +15,10 @@
   "casting": null,
   "hp": 8,
   "ratings": {
-    "offense": 2.5,
+    "offense": [
+      2.5,
+      3.5
+    ],
     "defense": 2.5,
     "support": 5,
     "utility": 4.5,
@@ -23,12 +26,12 @@
   },
   "features": [
     {
-      "title": "Born leader",
-      "text": "Envoys talk, inspire and improvise. They are the party's face and its field commander, with a skill for nearly every situation."
+      "title": "Skilled leader",
+      "text": "Envoys lead through words and example. They have many skills, with particular strength in persuading people or talking the party out of trouble."
     },
     {
       "title": "Directives",
-      "text": "Once a round an envoy calls out a directive such as Get 'Em!, rewarding allies who act on it, and can lead by example for a stronger effect."
+      "text": "Issue one directive each round to help allies attack or defend. Take its linked action to lead by example and strengthen the effect."
     }
   ],
   "iconic": {

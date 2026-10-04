@@ -276,6 +276,10 @@ input[type="number"] {
   color: var(--muted);
 }
 
+.classes .check {
+  flex-wrap: wrap;
+}
+
 .classes summary {
   cursor: pointer;
   font-weight: 700;

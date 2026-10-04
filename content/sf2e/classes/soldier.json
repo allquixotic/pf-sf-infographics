@@ -15,20 +15,23 @@
   "casting": null,
   "hp": 10,
   "ratings": {
-    "offense": 4,
+    "offense": [
+      3,
+      4.5
+    ],
     "defense": 5,
     "support": 3,
-    "utility": 1.5,
-    "difficulty": 2
+    "utility": 2,
+    "difficulty": 3
   },
   "features": [
     {
-      "title": "Heavy hitter",
-      "text": "Soldiers are tough, well armored and carry the biggest guns, built to hold the line."
+      "title": "Armored firepower",
+      "text": "Soldiers wear heavy armor and use area weapons to attack groups. Enemies that fail their saves become suppressed, slowing them and spoiling their aim."
     },
     {
-      "title": "Suppressing Fire",
-      "text": "Area and automatic weapons leave enemies suppressed, less accurate and slower, while a primary target shot focuses the blast on one foe."
+      "title": "Primary target",
+      "text": "Before an area attack, make an extra Strike against the nearest creature in its cone or line, or the one nearest a burst's center."
     }
   ],
   "iconic": {

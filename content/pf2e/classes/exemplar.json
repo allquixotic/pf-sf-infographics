@@ -7,7 +7,7 @@
     "title": "War of Immortals",
     "date": "2024-10"
   },
-  "group": "no-magic",
+  "group": "moderate-magic",
   "keyAttributes": [
     "str",
     "dex"
@@ -16,20 +16,32 @@
   "casting": null,
   "hp": 10,
   "ratings": {
-    "offense": 5,
-    "defense": 3,
-    "support": 2,
-    "utility": 2,
-    "difficulty": 3
+    "offense": [
+      4,
+      5
+    ],
+    "defense": [
+      3,
+      4
+    ],
+    "support": [
+      2,
+      4
+    ],
+    "utility": [
+      2,
+      3
+    ],
+    "difficulty": 3.5
   },
   "features": [
     {
       "title": "Touched by divinity",
-      "text": "Exemplars are mortals on the road to legend. A divine spark lives in their ikons: three signature weapons, items or body parts."
+      "text": "Exemplars carry a divine spark in three ikons, special weapons, worn items or parts of their body. One ikon holds the spark at a time."
     },
     {
-      "title": "Divine spark",
-      "text": "Moving the spark between ikons empowers each in turn, and releasing it unleashes a dramatic transcendent effect before it settles elsewhere."
+      "title": "Spark transcendence",
+      "text": "The active ikon grants an ongoing benefit. Release its special power to move the spark to another ikon and gain that ikon's benefit."
     }
   ],
   "iconic": {

@@ -17,20 +17,29 @@
   "casting": "prepared",
   "hp": 6,
   "ratings": {
-    "offense": 3.5,
-    "defense": 1.5,
+    "offense": [
+      3,
+      4
+    ],
+    "defense": [
+      2,
+      3
+    ],
     "support": 3.5,
-    "utility": 5,
+    "utility": [
+      4,
+      5
+    ],
     "difficulty": 4.5
   },
   "features": [
     {
       "title": "Code and sorcery",
-      "text": "Technomancers treat magic as software, casting arcane spells and hacking them like programs."
+      "text": "Technomancers prepare arcane spells as programs. A programming language determines which gear they can overclock with magic left over from a spell."
     },
     {
-      "title": "Overclock",
-      "text": "Leftover magic from a spell can overclock the technomancer's gear, and jailbreaks rewrite spells with extra effects."
+      "title": "Overclock and jailbreak",
+      "text": "Cast a non-cantrip spell, then Overclock Gear to boost compatible equipment. Jailbreak spends that boost to add a spellshape and its extra effects to the next spell."
     }
   ],
   "iconic": {

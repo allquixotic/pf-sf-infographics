@@ -5,8 +5,11 @@ Reviewed 4 October 2026. This covers all nine Starfinder classes and the nine Pa
 exemplar, guardian, kineticist, necromancer, runesmith and slayer. The original 22 Pathfinder entries are outside
 this review and remain unchanged.
 
-**Status:** the only applied class-text changes are the two factual corrections below. All alternative wording,
-ratings and grouping changes in this document are proposals. No class ratings have been changed.
+**Status:** approved and applied on 4 October 2026. All 18 reviewed descriptions have been edited for plain,
+compact language, and all proposed rating changes are now in the class files. The tables retain the previous
+scores for comparison. Mechanic keeps its existing ratings. Exemplar now belongs to **Moderate magic ability**,
+which already includes classes whose magic comes from class powers rather than spell slots. The original 22
+Pathfinder entries and the shared group labels remain unchanged. Playtest badges and source versions are retained.
 
 ## Corrections applied
 
@@ -17,12 +20,11 @@ ratings and grouping changes in this document are proposals. No class ratings ha
   that they work only inside it. Individual spells still have their own targets and areas.
   [Archives of Nethys: witchwarper, Quantum Field](https://2e.aonsrd.com/classes/6-witchwarper).
 
-## How to interpret these recommendations
+## How to interpret the ratings
 
 The five scores are editorial judgments, not official rules or measured damage rankings. These recommendations
 assume a competent, reasonably typical build in a mixed party, with most weight on levels 5–12. Level, encounter
-design, feats and party composition can change the result substantially. They need table feedback before being
-treated as calibrated replacements.
+design, feats and party composition can change the result substantially. They remain editorial estimates rather than calibrated measurements.
 
 The tables use **O / D / S / U / C**: offense, defense, support, utility and complexity (the displayed
 **difficulty** score). Each is out of five. A range represents meaningful build or encounter variation, not statistical
@@ -32,8 +34,8 @@ not a weaker class. Do not add these five numbers into an overall class ranking.
 
 The biggest design improvements would be to distinguish everyday play from exceptional builds, describe one
 concrete turn pattern per class, and reserve maximal scores for a clearly stated specialty. Existing hatched
-rating ranges can express build differences without making the cards longer. These standards are proposed for
-the added entries; they do not imply edits to Rachelle's entries.
+rating ranges can express build differences without making the cards longer. These standards apply to
+the added entries only.
 
 Playtest entries describe their cited public playtest rules. A finished feedback period does not make those
 rules a final release. In particular, Paizo has discussed changing the luminary's spotlight loop; that discussion
@@ -41,7 +43,7 @@ is not a replacement rules document. [Paizo's August 2026 luminary follow-up](ht
 
 ## Pathfinder additions
 
-| Class | Current O / D / S / U / C | Suggested O / D / S / U / C |
+| Class | Before review O / D / S / U / C | Applied O / D / S / U / C |
 | --- | --- | --- |
 | Animist | 2.5 / 2 / 4.5 / 4.5 / 4 | 2.5–4 / 3 / 4.5 / 4.5 / 4.5 |
 | Commander | 2 / 3 / 5 / 3 / 4 | 2.5 / 3.5 / 5 / 3.5 / 4 |
@@ -63,9 +65,7 @@ deserves a range because apparition choices change its damage tools. Eight HP an
 overly pessimistic. Keep strong support and utility for healing, spell flexibility and apparition Lore; managing
 the parallel casting systems merits difficulty 4.5. [Animist rules](https://2e.aonprd.com/Classes.aspx?ID=64).
 
-Suggested copy: **Spirit partners:** Choose apparitions each day to gain Lore and additional magic.
-**Two ways to cast:** Prepare divine spells, cast apparition spells spontaneously, and channel your primary
-apparition through vessel focus spells.
+Applied copy: **Speaker for spirits:** Animists speak for apparitions, the spirits of places and ideas. They choose new spirit partners each day to gain Lore and magic. **Two ways to cast:** They prepare divine spells and cast apparition spells spontaneously. Their primary apparition grants vessel focus spells.
 
 ### Commander
 
@@ -75,9 +75,7 @@ personal offense; all armor and Shield Block support defense 3.5. Support 5 fits
 and Warfare Lore warrant utility 3.5; difficulty 4 appropriately includes coordinating other players.
 [Commander rules](https://2e.aonprd.com/Classes.aspx?ID=66).
 
-Suggested copy: **Tactical leader:** Train a squad and prepare tactics that turn your actions into coordinated
-teamwork. **Orders and reactions:** Help allies move, attack and defend while managing their reactions; your
-banner bolsters them against fear.
+Applied copy: **Tactical leader:** Commanders train a squad in battle tactics. Their banner helps nearby allies resist fear. **Tactics:** Spend actions to give squadmates extra moves, attacks or defenses, often outside their own turns. Once a round, one ally can gain an extra reaction to follow a tactic.
 
 ### Daredevil — playtest
 
@@ -85,8 +83,7 @@ banner bolsters them against fear.
 risky action starts, even if its roll fails. Keep offense 4, defense 3 and utility 3. Maneuvers justify support 3;
 sequencing risks, movement and attacks suggests difficulty 4. [Playtest, pp. 2–5](https://downloads.paizo.com/RisksandRewards_Playtest.pdf).
 
-Suggested copy: **Adrenaline:** Begin a risky stunt to gain adrenaline until your next turn. **Battlefield
-acrobat:** Combine movement and maneuvers to disrupt enemies and set up attacks.
+Applied copy: **Living on the edge:** Daredevils leap into danger, using movement and maneuvers to set up attacks. A daring stunt can knock an enemy down or push them out of position. **Adrenaline:** Starting a risky action grants adrenaline even if the roll fails. It powers special attacks until the start of the daredevil's next turn.
 
 ### Exemplar
 
@@ -97,8 +94,7 @@ The current **No magic ability** grouping also misrepresents divine supernatural
 group or a “no spell slots” taxonomy separately; changing shared group labels could affect original entries.
 [Exemplar rules](https://2e.aonprd.com/Classes.aspx?ID=65).
 
-Suggested copy: **Three ikons:** Your divine spark empowers one signature weapon, item or body ikon at a time.
-**Transcend:** Release that ikon's special power, then shift the spark to another and gain its ongoing benefit.
+Applied copy: **Touched by divinity:** Exemplars carry a divine spark in three ikons, special weapons, worn items or parts of their body. One ikon holds the spark at a time. **Spark transcendence:** The active ikon grants an ongoing benefit. Release its special power to move the spark to another ikon and gain that ikon's benefit.
 
 ### Guardian
 
@@ -108,9 +104,7 @@ discourages attacks on allies; it does not force a target to attack you. Keep of
 support 3.5 and utility 1.5 as a defensible profile. Difficulty 2 is the major concern: reaction timing, reach
 and deciding which damage to intercept warrant about 3.5. [Guardian rules](https://2e.aonprd.com/Classes.aspx?ID=67).
 
-Suggested copy: **Armored protector:** Resist physical damage and position yourself to protect the party.
-**Taunt and intercept:** Make attacks on allies less effective, or step beside a nearby ally and take a physical
-hit in their place.
+Applied copy: **Living shield:** Guardians wear medium or heavy armor to resist physical damage and stay close enough to protect their allies. **Taunt and intercept:** Taunt penalizes enemies that attack allies instead of the guardian. Intercept Attack lets a guardian step beside a nearby ally and take physical damage in their place.
 
 ### Kineticist
 
@@ -120,9 +114,7 @@ damage, armor, healing, movement and exploration enough to justify ranges on all
 Difficulty 2.5 underrates impulse selection, aura positioning and overflow sequencing; 3.5 is a better middle.
 [Kineticist rules](https://2e.aonprd.com/Classes.aspx?ID=23).
 
-Suggested copy: **Elemental gateway:** Shape selected elements through impulses instead of spell slots.
-**Channel and overflow:** Your aura fuels attacks, protection and movement; overflow impulses close it until
-you channel again. Deepen one element or branch into others.
+Applied copy: **Elemental conduit:** Kineticists channel chosen elements through magical impulses instead of spell slots. They can master one element or learn others as they grow. **Channel and overflow:** Their elemental aura fuels powers that harm foes or help allies. Overflow impulses close the aura. Channel again to reopen it and use more impulses.
 
 ### Necromancer
 
@@ -131,9 +123,7 @@ movement blocking. Offense 3.5 and defense 2 are reasonable starting points. Con
 to acknowledge occult control and problem-solving beyond the thrall engine. Difficulty 4.5 remains appropriate
 for prepared spells, placement and deciding when to spend thralls. [Necromancer rules](https://2e.aonprd.com/Classes.aspx?ID=75).
 
-Optional shorter copy: **Occult necromancy:** Prepare spells of life and death and raise fragile undead thralls.
-**Create and spend:** Use thralls to help flank and fuel your abilities. They do not block movement or take
-ordinary minion turns.
+Applied copy: **Master of the dead:** Necromancers study occult magic to command the dead. They prepare spells of life and death and raise fragile undead thralls. **Thralls:** Place thralls to help allies flank, then destroy them to fuel spells. Creatures can pass through them, and they act only through necromancer abilities.
 
 ### Runesmith
 
@@ -143,8 +133,7 @@ offense 3.5 and support 4. Medium armor and Shield Block make defense 3 more rep
 Crafting and rune options support utility 3.5. Difficulty 4.5 captures placement, duration and invocation
 decisions. [Runesmith rules](https://2e.aonprd.com/Classes.aspx?ID=76).
 
-Suggested copy: **Etch and trace:** Prepare lasting runes or quickly trace temporary ones onto creatures and
-equipment. **Invoke:** Keep a rune's ongoing benefit or consume it for a stronger effect, then replace it.
+Applied copy: **Etch and trace:** Runesmiths draw magic runes on creatures and equipment. Etched runes last until spent or removed, while traced runes fade at the end of the next turn. **Invoke Rune:** Runes grant ongoing effects. Invoking a rune releases its power and consumes it, so the choice is whether to keep its benefit or spend it.
 
 ### Slayer — playtest
 
@@ -153,12 +142,11 @@ better distinguishes prepared hunts from incidental fights. Keep defense 3.5 and
 tracking suggest utility 3.5. Tools, trophies and preparation raise difficulty to 3.5.
 [Playtest, pp. 12–16](https://downloads.paizo.com/RisksandRewards_Playtest.pdf).
 
-Suggested copy: **Study the quarry:** Research a formidable creature and ready your hunting tools.
-**Claim trophies:** Take a trophy from defeated quarry and use it to reinforce your arsenal for future hunts.
+Applied copy: **Monster hunter:** Slayers study dangerous creatures and prepare special hunting tools. Ten minutes of research lets them mark a creature of their level or higher as quarry. **Claim trophies:** Defeat that quarry and take a trophy to strengthen your tools for the next hunt. Preparation gives a slayer an edge against a chosen foe.
 
 ## All Starfinder classes
 
-| Class | Current O / D / S / U / C | Suggested O / D / S / U / C |
+| Class | Before review O / D / S / U / C | Applied O / D / S / U / C |
 | --- | --- | --- |
 | Envoy | 2.5 / 2.5 / 5 / 4.5 / 3 | 2.5–3.5 / 2.5 / 5 / 4.5 / 3 |
 | Luminary † | 2 / 2.5 / 5 / 3.5 / 3.5 | 2.5–3.5 / 3 / 4–5 / 3.5 / 4 |
@@ -178,9 +166,7 @@ and leading by example justify a higher ceiling. Keep defense 2.5 for a lightly 
 for repeatable party benefits, utility 4.5 for skills and social strengths, and difficulty 3 for coordinating
 directives with personal actions. [Envoy rules](https://2e.aonsrd.com/classes/1-envoy).
 
-Suggested copy: **Skilled coordinator:** Handle social challenges and bring broad skills to the party.
-**Lead by example:** Issue one directive each round, then perform its linked action to strengthen the benefit
-for your allies.
+Applied copy: **Skilled leader:** Envoys lead through words and example. They have many skills, with particular strength in persuading people or talking the party out of trouble. **Directives:** Issue one directive each round to help allies attack or defend. Take its linked action to lead by example and strengthen the effect.
 
 ### Luminary — playtest
 
@@ -191,9 +177,7 @@ justify difficulty 4. State that the jumping spotlight describes the playtest; P
 complexity as a redesign target. [Playtest, pp. 2–6](https://downloads.paizo.com/PZO22010_LuminaryClassPlaytest.pdf),
 [designer follow-up](https://cdn.paizo.com/blog/a-round-of-applause-to-our-luminaries).
 
-Suggested copy: **Performer or director:** Use occult stagecraft to help allies and disrupt enemies.
-**Spotlight:** Assign roles whose effects apply while a creature is spotlighted; pass the spotlight as creatures
-interact, and add special effects with focus spells.
+Applied copy: **Star of the show:** Luminaries turn performance into occult magic, fighting with weapons and casting focus spells to help allies or hinder enemies. **Spotlight:** Assign roles to friends and foes, then spotlight a creature to apply its role. Pass the spotlight as creatures target each other to keep the effects in play.
 
 ### Mechanic — playtest
 
@@ -202,8 +186,7 @@ is its specialty, and managing gear plus a device merits difficulty 4. The text 
 not more gadget flavor. Avoid presenting all exocortexes as pets.
 [Tech playtest, pp. 3–7](https://downloads.paizo.com/PZO22006_TechClass_Playtest.pdf).
 
-Suggested copy: **Field engineer:** Hack, repair and temporarily modify gear. **Exocortex:** Coordinate a drone,
-deploy a turret or place mines, balancing your actions between your equipment and your creation.
+Applied copy: **Field engineer:** Mechanics hack and repair technology. Temporary modifications can improve a weapon's range or let armor hover above the ground. **Exocortex:** An exocortex links their mind to a drone, turret or set of mines. Directing it takes actions that could otherwise go toward attacks or repairs.
 
 ### Mystic
 
@@ -213,9 +196,7 @@ the mystic. Offense 2–3 undervalues damage-focused choices: widen it to 2–4.
 for renewable healing and spell support, and utility 4 for magic. Difficulty 3.5 accounts for spells, network
 points, range and healing timing. [Mystic rules](https://2e.aonsrd.com/classes/2-mystic).
 
-Suggested copy: **Spiritual connection:** Cast divine, occult or primal spells, depending on your connection.
-**Bonded healer:** Link with companions and transfer vitality to heal them, replenishing your network during
-combat and when you Refocus.
+Applied copy: **Spiritual connection:** Mystics draw divine, occult or primal magic from their connection. They can bond with up to ten other creatures and sense when those companions need help. **Vitality network:** Transfer healing from a shared reserve to yourself or a bonded ally. The reserve replenishes each turn in combat and refills when you Refocus.
 
 ### Operative
 
@@ -226,9 +207,7 @@ utility 3.5 remain reasonable, with utility coming from scouting and selected sk
 expertise. Difficulty 3 acknowledges Aim, reloads, positioning and specialization choices.
 [Operative rules](https://2e.aonsrd.com/classes/3-operative).
 
-Suggested copy: **Precision attacker:** Combine exceptional shooting with a chosen combat specialty.
-**Aim:** Mark a target for precision damage, then use positioning and your specialization to make the most of
-your attacks.
+Applied copy: **Precision specialist:** Operatives rely on weapon accuracy and a chosen combat specialty. Some move in close, while others use stealth or keep their distance. **Aim:** Pick a target to deal extra precision damage with ranged attacks. Plan movement and reloads around those shots, using the tricks granted by your specialization.
 
 ### Solarian
 
@@ -238,9 +217,7 @@ damage-focused role and keep defense 3.5. Graviton control warrants support 2–
 general exploration tools. Difficulty 3.5 is appropriate for choosing actions around attunement.
 [Solarian rules](https://2e.aonsrd.com/classes/4-solarian).
 
-Suggested copy: **Stellar warrior:** Manifest a solar weapon and channel photon or graviton power.
-**Attunement:** Cycle between damage and control effects; some powerful abilities leave you unattuned until you
-attune again.
+Applied copy: **Warrior of the stars:** Solarians form weapons from stellar energy. Photon power favors damage and light, while graviton power pulls enemies around and hinders them. **Attunement:** Cycle actions switch between photon and graviton. Powerful disharmony abilities leave the solarian unattuned, so they must attune again to regain those benefits.
 
 ### Soldier
 
@@ -250,9 +227,7 @@ Offense should distinguish single-target fights from clustered enemies: 3–4.5.
 Constitution-based intimidation merits utility 2. Difficulty 2 undersells area placement, allies in the line of
 fire, ammunition and targeting: propose 3. [Soldier rules](https://2e.aonsrd.com/classes/5-soldier).
 
-Suggested copy: **Armored firepower:** Endure punishment and attack groups with heavy weapons.
-**Suppress and focus:** Enemies that fail saves against your area fire become slower and less accurate; Primary
-Target adds a Strike under its targeting rules.
+Applied copy: **Armored firepower:** Soldiers wear heavy armor and use area weapons to attack groups. Enemies that fail their saves become suppressed, slowing them and spoiling their aim. **Primary target:** Before an area attack, make an extra Strike against the nearest creature in its cone or line, or the one nearest a burst's center.
 
 ### Technomancer — playtest
 
@@ -261,8 +236,7 @@ defense 2–3 and utility 4–5 better express build variation than fixed extrem
 4.5 for preparation, gear and spellshape choices.
 [Tech playtest, pp. 20–26](https://downloads.paizo.com/PZO22006_TechClass_Playtest.pdf).
 
-Suggested copy: **Arcane programmer:** Prepare spells as programs. **Overclock and jailbreak:** Follow a
-non-cantrip spell by overclocking compatible gear, and modify spells with spellshapes and jailbreak effects.
+Applied copy: **Code and sorcery:** Technomancers prepare arcane spells as programs. A programming language determines which gear they can overclock with magic left over from a spell. **Overclock and jailbreak:** Cast a non-cantrip spell, then Overclock Gear to boost compatible equipment. Jailbreak spends that boost to add a spellshape and its extra effects to the next spell.
 
 ### Witchwarper
 
@@ -272,17 +246,14 @@ occult choices differ; keep support 4 and utility 4 for control and broad magic.
 defense 1.5 unduly harsh: propose 2.5. Difficulty 4 fits spell choice, field position and upkeep.
 [Witchwarper rules](https://2e.aonsrd.com/classes/6-witchwarper).
 
-Suggested copy: **Alternate realities:** Cast arcane or occult spells shaped by your paradox.
-**Quantum field:** Maintain a zone that changes the fight. An active field enables your warp spells, whose own
-rules determine their targets and effects.
+Applied copy: **Reality bender:** Witchwarpers draw magic from alternate realities. Their paradox determines whether they cast arcane or occult spells and how their quantum field changes the battlefield. **Quantum field:** Keep this zone active to use warp focus spells. Casting one on your turn also sustains the field. Each spell sets its own targets and area.
 
-## Recommended editorial order
+## Implementation notes
 
-1. Approve the short explanations before calibrating numbers; clearer scope makes scores easier to assess.
-2. Address difficulty first for guardian, kineticist, soldier and luminary, where the current cards most risk
-   misleading a newcomer about the work involved.
-3. Add ranges where subclass or element selection substantially changes a role, especially exemplar and kineticist.
-4. Resolve the exemplar's grouping without changing the original entries or conflating supernatural powers with
-   spell slots.
-5. Recheck playtest cards against final publications before removing their playtest badges. Keep the source
-   document and version visible; do not blend announced redesign ideas into currently published playtest mechanics.
+All approved recommendations have been applied. The rationale above records the review of the previous text;
+**Applied copy** shows the final wording. The descriptions use the original chart's short feature headings,
+plain words and concrete actions. Ratings and ranges follow the approved tables exactly.
+
+Exemplar moved into the existing Moderate magic ability group. No group labels or original entries changed.
+The five playtest classes keep their badges and cited rules versions. Announced redesigns have not been mixed
+into published playtest mechanics. Recheck these entries against final publications before removing their badges.
