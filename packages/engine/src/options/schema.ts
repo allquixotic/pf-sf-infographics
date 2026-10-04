@@ -36,6 +36,18 @@ export const renderOptionsSchema = z.object({
     .describe(`Preset id (${SIZE_PRESETS.map((p) => p.id).join(', ')}), "fit", or a custom size.`),
   orientation: z.enum(['auto', 'portrait', 'landscape']).default('auto'),
   theme: z.enum(['light', 'dark']).default('light'),
+  backgroundColor: z
+    .string()
+    .regex(/^#[0-9a-f]{6}$/i)
+    .optional(),
+  fontColor: z
+    .string()
+    .regex(/^#[0-9a-f]{6}$/i)
+    .optional(),
+  repeatSectionTitles: z
+    .boolean()
+    .default(true)
+    .describe('Repeat booklet section titles on continuation pages.'),
   background: z.boolean().default(true).describe('false renders a transparent background.'),
   art: z
     .enum(['paizo', 'generic', 'none'])

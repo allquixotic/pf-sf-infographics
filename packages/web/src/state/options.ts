@@ -12,6 +12,9 @@ export interface UiOptions {
   orientation: 'auto' | 'portrait' | 'landscape';
   theme: 'light' | 'dark';
   background: boolean;
+  backgroundColor: string;
+  fontColor: string;
+  repeatSectionTitles: boolean;
   art: 'paizo' | 'generic' | 'none';
   attribution: boolean;
   includePlaytest: boolean;
@@ -43,6 +46,9 @@ export function defaultUiOptions(): UiOptions {
     orientation: 'auto',
     theme: 'light',
     background: true,
+    backgroundColor: '',
+    fontColor: '',
+    repeatSectionTitles: true,
     art: 'generic',
     attribution: true,
     includePlaytest: false,
@@ -74,6 +80,9 @@ export function toRenderOptions(game: string, ui: UiOptions, format: OutputForma
     orientation: ui.orientation,
     theme: ui.theme,
     background: ui.background,
+    backgroundColor: ui.backgroundColor || undefined,
+    fontColor: ui.fontColor || undefined,
+    repeatSectionTitles: ui.repeatSectionTitles,
     art: ui.art,
     attribution: ui.attribution,
     includePlaytest: ui.includePlaytest,

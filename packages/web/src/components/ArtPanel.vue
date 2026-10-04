@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import type { GameSummary } from '../engine/protocol';
+import HelpTip from './HelpTip.vue';
 
 const props = defineProps<{ game: GameSummary; message: string }>();
 const art = defineModel<'paizo' | 'generic' | 'none'>('art', { required: true });
@@ -28,8 +29,9 @@ function onPick(ev: Event): void {
 <template>
   <section class="panel">
     <h2>Artwork</h2>
+    <div class="field-label">Custom artwork<HelpTip label="custom artwork" text="Upload images or a ZIP with class names: fighter.png, Witchwarper.svg, or Animist - Samo.jpg. PNG, JPG/JPEG, SVG, WebP and GIF work; folders, case, spaces and separators are ignored. Applied to the selected game. Uploaded art overrides official art; missing classes use emblems." /></div>
     <div class="seg" role="radiogroup" aria-label="Artwork">
-      <label><input v-model="art" type="radio" value="paizo" /> Official iconics</label>
+      <label><input v-model="art" type="radio" value="paizo" /> Official / custom art</label>
       <label><input v-model="art" type="radio" value="generic" /> Emblems</label>
       <label><input v-model="art" type="radio" value="none" /> None</label>
     </div>
@@ -57,12 +59,13 @@ function onPick(ev: Event): void {
         @dragleave="dragging = false"
         @drop.prevent="onDrop"
       >
-        Drop a Community Use Package zip, or class images named like <code>runesmith.png</code>
-        <input ref="input" type="file" accept=".zip,.png,.jpg,.jpeg,.svg" multiple hidden @change="onPick" />
+        Drop an official or custom ZIP, or class images named like <code>runesmith.png</code>
+        <input ref="input" type="file" accept=".zip,.png,.jpg,.jpeg,.svg,.webp,.gif" multiple hidden @change="onPick" />
       </div>
       <p class="hint">Art found for {{ withArt }} of {{ game.classes.length }} classes.</p>
       <p v-if="missing.length" class="hint">Emblems used for: {{ missing.join(', ') }}.</p>
-      <p v-if="message" class="hint">{{ message }}</p>
+      <p v-if="message" class="hint art-message" role="status">{{ message }}</p>
+      <p class="hint">Settings and uploaded art are saved in this browser when storage is available.</p>
       <button type="button" class="link" @click="emit('forget')">Forget supplied art</button>
     </template>
   </section>

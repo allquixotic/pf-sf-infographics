@@ -6,13 +6,15 @@
 import { unzipSync } from 'fflate';
 import { stripPngMetadata } from './png';
 
-export type ImageExt = 'png' | 'jpg' | 'svg';
+export type ImageExt = 'png' | 'jpg' | 'svg' | 'webp' | 'gif';
 
 export interface ArtImage {
   bytes: Uint8Array;
   ext: ImageExt;
   /** Where the image came from, for messages. */
   origin: string;
+  /** Present only when resolved through a referenced official pack. */
+  officialPack?: string;
 }
 
 export interface ArtRequest {
@@ -23,7 +25,7 @@ export interface ArtRequest {
   local?: string | undefined;
 }
 
-const EXT_RE = /\.(png|jpe?g|svg)$/i;
+const EXT_RE = /\.(png|jpe?g|svg|webp|gif)$/i;
 
 function extOf(name: string): ImageExt | undefined {
   const m = EXT_RE.exec(name);
@@ -33,8 +35,28 @@ function extOf(name: string): ImageExt | undefined {
 }
 
 const norm = (s: string) => s.toLowerCase().replace(/\\/g, '/');
-const basename = (s: string) => s.slice(s.lastIndexOf('/') + 1);
+const basename = (s: string) => norm(s).split('/').pop()!;
 const stem = (s: string) => basename(s).replace(/\.[^.]+$/, '');
+const classKey = (s: string) =>
+  s
+    .normalize('NFKD')
+    .replace(/\p{M}/gu, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, '');
+function matchesClass(file: string, name: string): boolean {
+  const value = stem(file).trim();
+  const key = classKey(name);
+  return (
+    classKey(value) === key ||
+    value
+      .split(/[\s_.()—–-]+/)
+      .some((_, i, words) => i < words.length - 1 && classKey(words.slice(0, i + 1).join('')) === key)
+  );
+}
+function preferred(names: string[]): string | undefined {
+  const order = ['png', 'svg', 'webp', 'jpg', 'gif'];
+  return names.sort((a, b) => order.indexOf(extOf(a)!) - order.indexOf(extOf(b)!) || a.localeCompare(b))[0];
+}
 
 /** A set of images addressed by their path inside a zip or folder. Decompression is lazy. */
 export class ArtPack {
@@ -47,7 +69,13 @@ export class ArtPack {
     private readonly read: (name: string) => Uint8Array | undefined,
     names: string[],
   ) {
-    this.names = names.filter((n) => extOf(n) && !n.startsWith('__MACOSX/'));
+    this.names = names.filter(
+      (n) =>
+        extOf(n) &&
+        !norm(n)
+          .split('/')
+          .some((part) => part.startsWith('.') || part === '__macosx'),
+    );
   }
 
   static fromZip(id: string, label: string, zip: Uint8Array): ArtPack {
@@ -81,12 +109,8 @@ export class ArtPack {
 
   /** Finds an image whose file name starts with the class name, e.g. "PNG/Alchemist - Fumbus.png". PNG preferred. */
   findByClassName(className: string): string | undefined {
-    const prefix = norm(className);
-    const hits = this.names.filter((n) => {
-      const s = norm(stem(n));
-      return s === prefix || s.startsWith(`${prefix} -`) || s.startsWith(`${prefix}_`);
-    });
-    return hits.find((n) => extOf(n) === 'png') ?? hits[0];
+    const exact = this.names.filter((n) => classKey(stem(n)) === classKey(className));
+    return preferred(exact) ?? preferred(this.names.filter((n) => matchesClass(n, className)));
   }
 
   get(name: string): ArtImage | undefined {
@@ -105,7 +129,13 @@ export class ArtPack {
 
 export class ArtLibrary {
   private readonly packs = new Map<string, ArtPack>();
-  /** Loose images keyed by `${game}/${lowercase stem}`. */
+  private readonly customPacks = new Map<string, { game: string; pack: ArtPack }>();
+
+  addCustomPack(game: string, pack: ArtPack): void {
+    this.customPacks.delete(`${game}/${pack.id}`);
+    this.customPacks.set(`${game}/${pack.id}`, { game, pack });
+  }
+  /** Loose images keyed by `${game}/${normalized filename}`. */
   private readonly local = new Map<string, ArtImage>();
 
   addPack(pack: ArtPack): void {
@@ -124,12 +154,16 @@ export class ArtLibrary {
     return [...this.packs.keys()];
   }
 
+  get customPackCount(): number {
+    return this.customPacks.size;
+  }
+
   /** Registers a loose image for a game, addressed by file name without extension (usually the class id). */
   addLocal(game: string, fileName: string, bytes: Uint8Array, origin = fileName): void {
     const ext = extOf(fileName);
-    if (!ext) throw new Error(`Unsupported image type: ${fileName} (use PNG, JPG or SVG)`);
+    if (!ext) throw new Error(`Unsupported image type: ${fileName} (use PNG, JPG, SVG, WebP or GIF)`);
     const clean = ext === 'png' ? stripPngMetadata(bytes) : bytes;
-    this.local.set(`${game}/${norm(stem(fileName))}`, { bytes: clean, ext, origin });
+    this.local.set(`${game}/${norm(fileName)}`, { bytes: clean, ext, origin });
   }
 
   get localCount(): number {
@@ -138,16 +172,26 @@ export class ArtLibrary {
 
   /** Local override first, then the referenced Community Use Package image. */
   resolve(req: ArtRequest): ArtImage | undefined {
-    const localKeys = [req.local, req.classId].filter((k): k is string => !!k).map((k) => norm(stem(k)));
-    for (const k of localKeys) {
-      const hit = this.local.get(`${req.game}/${k}`);
-      if (hit) return hit;
+    const localNames = [...this.local.keys()].filter((key) => key.startsWith(`${req.game}/`));
+    for (const name of [req.local, req.classId, req.className].filter((n): n is string => !!n)) {
+      const key =
+        preferred(localNames.filter((k) => classKey(stem(k)) === classKey(stem(name)))) ??
+        preferred(localNames.filter((k) => matchesClass(k, stem(name))));
+      if (key) return this.local.get(key);
+    }
+    for (const { game, pack } of [...this.customPacks.values()].reverse()) {
+      if (game !== req.game) continue;
+      const name = pack.findByClassName(req.classId) ?? pack.findByClassName(req.className);
+      if (name) return pack.get(name);
     }
     if (req.paizo) {
       const pack = this.packs.get(req.paizo.pack);
       if (pack) {
         const name = pack.find(req.paizo.file) ?? pack.findByClassName(req.className);
-        if (name) return pack.get(name);
+        if (name) {
+          const image = pack.get(name);
+          if (image) return { ...image, officialPack: req.paizo.pack };
+        }
       }
     }
     return undefined;

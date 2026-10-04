@@ -76,7 +76,13 @@
       break
     }
   }
-  block(width: width, height: height, text(size: chosen, body))
+  let fitted = block(width: width, text(size: chosen, body))
+  let measured = measure(fitted)
+  block(width: width, height: height, {
+    if measured.height > height {
+      scale(height / measured.height * 100%, origin: left + top, reflow: true, fitted)
+    } else { fitted }
+  })
 }
 
 // Scales content down (never up) so it is at most `width` wide.
@@ -124,11 +130,11 @@
   set text(size: u(g.smallSize) * fs)
   let rows = ()
   for r in c.ratings {
-    rows.push(text(fill: ink, r.label))
+    rows.push(box(text(fill: ink, r.label)))
     rows.push(rating-bar(r, u(g.square), u(g.squareGap)))
   }
   grid(
-    columns: (u(g.labelW), auto),
+    columns: (auto, auto),
     column-gutter: 4pt,
     row-gutter: u(g.rowGap),
     align: (right + horizon, left + horizon),
@@ -174,23 +180,30 @@
   let bx = u(g.boxX)
   let by = u(g.boxY)
   let top = by + 11pt
-  let body-top = by + 38pt
+  let body-top = by + 38pt * calc.max(1, fs)
+  let footer-h = if O.stats { 15pt * fs } else { 0pt }
+  let body-bottom = H - 8pt - footer-h
   box(width: W, height: H, {
     place(dx: bx, dy: by, rect(width: W - bx, height: H - by, stroke: u(g.stroke) + ink, fill: card-fill))
     art-area(c, g)
     place(dx: u(g.contentX), dy: top, fit-width(header-row(c, g), W - u(g.contentX) - u(g.textPadRight)))
-    place(dx: u(g.contentX), dy: body-top, ratings-block(c, g))
+    place(dx: u(g.contentX), dy: body-top, fit-text(
+      fit-width(ratings-block(c, g), u(g.textX - g.contentX - 8)), u(g.textX - g.contentX - 8), body-bottom - body-top, u(g.smallSize) * fs,
+    ))
     if O.stats {
       place(
-        dx: u(g.contentX) + u(g.labelW) + 4pt,
-        dy: H - 14pt,
-        text(size: u(g.smallSize) * 0.95 * fs, fill: muted, [#c.hp HP/level · #c.source]),
+        dx: u(g.contentX),
+        dy: body-bottom + 5pt,
+        fit-text(
+          text(fill: muted, [#c.hp HP/level · #c.source]),
+          W - u(g.contentX) - u(g.textPadRight), footer-h - 3pt, u(g.smallSize) * 0.95 * fs,
+        ),
       )
     }
     place(dx: u(g.textX), dy: body-top - 1pt, fit-text(
       features(c),
       W - u(g.textX) - u(g.textPadRight),
-      H - body-top - 7pt,
+      body-bottom - body-top,
       u(g.bodySize) * fs,
     ))
   })
@@ -339,12 +352,15 @@
     })
     block(width: u(A.width), {
       set align(left + top)
-      grid(
-        columns: (1fr, auto),
-        align: (left + bottom, right + bottom),
-        text(font: heading-font, size: u(L.poster.titleSize) * fs, upper(data.meta.title)),
-        text(font: heading-font, size: u(L.poster.asOfSize) * fs, [Accurate as of #data.meta.asOf]),
-      )
+      let title = box(text(font: heading-font, size: u(L.poster.titleSize) * fs, upper(data.meta.title)))
+      let date = box(text(font: heading-font, size: u(L.poster.asOfSize) * fs, [Accurate as of #data.meta.asOf]))
+      if measure(title).width + measure(date).width + 20pt <= u(A.width) {
+        grid(columns: (1fr, auto), column-gutter: 20pt, align: (left + bottom, right + bottom), title, date)
+      } else {
+        fit-width(title, u(A.width))
+        v(4pt)
+        align(right, fit-width(date, u(A.width)))
+      }
       v(u(L.poster.titleGap))
       stack(dir: ltr, spacing: gap, ..columns)
       if data.notices.len() > 0 {
@@ -397,13 +413,16 @@
   }
   for s in data.sections {
     pagebreak(weak: true)
-    align(center, banner(s.label, 14pt * fs))
-    v(10pt)
-    grid(
+    table(
       columns: (1fr,) * L.cols,
       column-gutter: u(L.section.gapX),
       row-gutter: u(L.section.gapY),
-      ..s.cards.map(c => block(breakable: false, scale(L.cardScale * 100%, reflow: true, card(c, g)))),
+      stroke: none,
+      inset: 0pt,
+      table.header(repeat: O.repeatSectionTitles,
+        table.cell(colspan: L.cols, align(center, banner(s.label, 14pt * fs))),
+      ),
+      ..s.cards.map(c => table.cell(breakable: false, scale(L.cardScale * 100%, reflow: true, card(c, g)))),
     )
   }
 }

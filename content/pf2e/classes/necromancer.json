@@ -30,7 +30,7 @@
     },
     {
       "title": "Thralls",
-      "text": "Thralls are expendable minions that block, flank and fuel spells; spending them at the right moment is the heart of the class."
+      "text": "Thralls are expendable undead that help flank and fuel spells, but cannot block movement. They act only through necromancer abilities, not normal minion commands."
     }
   ],
   "iconic": {

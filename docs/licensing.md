@@ -7,7 +7,7 @@ This project has been posted with permission of Rachelle Willemsma.
 | Code: `packages/`, `tools/`, `scripts/`, launchers | Apache License 2.0 ([LICENSE](../LICENSE)) |
 | Content: `content/` text, ratings, data, icons, emblems | CC BY 4.0 ([LICENSES/CC-BY-4.0.txt](../LICENSES/CC-BY-4.0.txt)) |
 | Fonts | Ultra: Apache-2.0; Lexend: OFL-1.1. License files sit next to the fonts. |
-| Original design | CC BY 4.0, by Rachelle Willemsma. Used with her permission. |
+| Original design | By Rachelle Willemsma, used with permission granted by email. No CC license is claimed for her design. |
 | Paizo material | Paizo Community Use Policy. Not in the repository; see [paizo-assets.md](paizo-assets.md). |
 
 ## Third-party software
@@ -21,7 +21,7 @@ Dependencies retain their own licenses; see [NOTICE.md](../NOTICE.md):
 
 ## Generated images
 
-An infographic combines the project's CC BY content, the CC BY design, and (if selected) Paizo's art under the
+An infographic combines the project's CC BY content, the design used with permission, and (if selected) Paizo's art under the
 Community Use Policy. The software's Apache license does not replace those licenses.
 
 The fine print includes “This project has been posted with permission of Rachelle Willemsma.” It is enabled by

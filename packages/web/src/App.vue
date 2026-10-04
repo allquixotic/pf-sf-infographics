@@ -16,7 +16,21 @@ const engine = new EngineClient();
 const summary = shallowRef<ContentSummary>();
 const loadError = ref('');
 const gameId = ref(loadJson('pfsf:game', { id: 'pf2e' }).id);
-const optionsByGame = reactive<Record<string, UiOptions>>(loadJson('pfsf:options', {}));
+const savedOptions = loadJson<Record<string, Partial<UiOptions>>>('pfsf:options', {});
+const optionsByGame = reactive<Record<string, UiOptions>>(
+  Object.fromEntries(
+    Object.entries(savedOptions).map(([id, saved]) => [id, { ...defaultUiOptions(), ...saved }]),
+  ),
+);
+const siteTheme = ref(loadJson('pfsf:site-theme', { value: 'dark' }).value === 'light' ? 'light' : 'dark');
+watch(
+  siteTheme,
+  (value) => {
+    document.documentElement.dataset.theme = value;
+    saveJson('pfsf:site-theme', { value });
+  },
+  { immediate: true },
+);
 const source = ref<SourceSpec>(initialSource());
 
 const game = computed<GameSummary | undefined>(() => summary.value?.games.find((g) => g.id === gameId.value));
@@ -31,7 +45,8 @@ function initialSource(): SourceSpec {
   if (repo) return { kind: 'github', spec: repo };
   const url = q.get('content');
   if (url) return { kind: 'url', url };
-  return { kind: 'bundled' };
+  const saved = loadJson<SourceSpec>('pfsf:source', { kind: 'bundled' });
+  return saved.kind === 'github' || saved.kind === 'url' ? saved : { kind: 'bundled' };
 }
 
 // ---------------------------------------------------------------------------------------------------------------
@@ -43,6 +58,7 @@ async function loadSource(spec: SourceSpec): Promise<void> {
   try {
     summary.value = await engine.call({ type: 'load', source: spec });
     source.value = spec;
+    saveJson('pfsf:source', spec);
     if (!summary.value.games.some((g) => g.id === gameId.value))
       gameId.value = summary.value.games[0]?.id ?? 'pf2e';
     const url = new URL(location.href);
@@ -65,24 +81,47 @@ const artMessage = ref('');
 async function addArtFiles(files: File[], targetGame: string): Promise<void> {
   const messages: string[] = [];
   for (const file of files) {
-    const bytes = await file.arrayBuffer();
-    if (/\.zip$/i.test(file.name)) {
-      const { packs } = await engine.call({ type: 'addZip', name: file.name, bytes: bytes.slice(0) });
-      if (packs.length) {
-        messages.push(`${file.name}: recognised`);
-        await putArt({ key: `zip:${file.name}`, kind: 'zip', name: file.name, bytes });
-      } else messages.push(`${file.name}: not a known art pack`);
-    } else if (/\.(png|jpe?g|svg)$/i.test(file.name)) {
-      await engine.call({ type: 'addImage', game: targetGame, name: file.name, bytes: bytes.slice(0) });
-      await putArt({
-        key: `img:${targetGame}/${file.name}`,
-        kind: 'image',
-        game: targetGame,
-        name: file.name,
-        bytes,
-      });
-      messages.push(`${file.name}: added for ${targetGame}`);
-    } else messages.push(`${file.name}: unsupported file type`);
+    try {
+      const bytes = await file.arrayBuffer();
+      let stored = true;
+      if (/\.zip$/i.test(file.name)) {
+        const { packs, matched } = await engine.call({
+          type: 'addZip',
+          name: file.name,
+          game: targetGame,
+          bytes: bytes.slice(0),
+        });
+        if (packs.length || matched) {
+          messages.push(`${file.name}: ${packs.length ? 'recognised' : `${matched} class images added`}`);
+          stored = await putArt({
+            key: `zip:${targetGame}/${file.name}`,
+            kind: 'zip',
+            game: targetGame,
+            name: file.name,
+            bytes,
+          });
+        } else
+          messages.push(
+            `${file.name}: no matching class images. Name files like fighter.png or animist.svg.`,
+          );
+      } else if (/\.(png|jpe?g|svg|webp|gif)$/i.test(file.name)) {
+        await engine.call({ type: 'addImage', game: targetGame, name: file.name, bytes: bytes.slice(0) });
+        stored = await putArt({
+          key: `img:${targetGame}/${file.name}`,
+          kind: 'image',
+          game: targetGame,
+          name: file.name,
+          bytes,
+        });
+        messages.push(`${file.name}: added for ${targetGame}`);
+      } else messages.push(`${file.name}: unsupported file type`);
+      if (!stored)
+        messages.push(
+          'Browser storage is unavailable or full; this artwork is available for this session only.',
+        );
+    } catch (err) {
+      messages.push(`${file.name}: ${(err as Error).message}`);
+    }
   }
   artMessage.value = messages.join(' · ');
   await refreshSummary();
@@ -97,9 +136,20 @@ async function forgetArt(): Promise<void> {
 
 async function restoreArt(): Promise<void> {
   for (const item of await allArt()) {
-    if (item.kind === 'zip') await engine.call({ type: 'addZip', name: item.name, bytes: item.bytes });
-    else
-      await engine.call({ type: 'addImage', game: item.game ?? 'pf2e', name: item.name, bytes: item.bytes });
+    try {
+      if (item.kind === 'zip')
+        await engine.call({ type: 'addZip', game: item.game, name: item.name, bytes: item.bytes });
+      else
+        await engine.call({
+          type: 'addImage',
+          game: item.game ?? 'pf2e',
+          name: item.name,
+          bytes: item.bytes,
+        });
+    } catch {
+      artMessage.value =
+        'Some saved artwork could not be restored. Upload it again to replace the saved copy.';
+    }
   }
   if (LOCAL) {
     // The local launcher exposes ./local-assets (never part of a build).
@@ -109,7 +159,7 @@ async function restoreArt(): Promise<void> {
       };
       for (const f of index.files) {
         const zip = /^paizo\/[^/]+\.zip$/i.test(f);
-        const img = /^art\/([^/]+)\/([^/]+\.(png|jpe?g|svg))$/i.exec(f);
+        const img = /^art\/([^/]+)\/([^/]+\.(png|jpe?g|svg|webp|gif))$/i.exec(f);
         if (!zip && !img) continue;
         const bytes = await (await fetch(`${import.meta.env.BASE_URL}__local-assets/${f}`)).arrayBuffer();
         if (zip)
@@ -242,9 +292,15 @@ const theme = computed(() => ui.value.theme);
   <div class="app" :data-preview-theme="theme">
     <header class="top">
       <div class="brand">
-        <h1>Class Infographics</h1>
-        <p class="tagline">Pathfinder&nbsp;2e &amp; Starfinder&nbsp;2e class overviews, in the style of Rachelle Willemsma's chart.</p>
+        <div class="brand-title"><h1>Class Infographics</h1><a class="button repo-link" href="https://github.com/allquixotic/pf-sf-infographics" target="_blank" rel="noopener">GitHub Repository</a></div>
+        <p class="tagline">Pathfinder&nbsp;2e &amp; Starfinder&nbsp;2e class overviews for print or the screen!</p>
       </div>
+      <div class="header-controls">
+        <button type="button" class="theme-toggle" :aria-label="`Switch website to ${siteTheme === 'dark' ? 'light' : 'dark'} mode`" @click="siteTheme = siteTheme === 'dark' ? 'light' : 'dark'">
+          <svg v-if="siteTheme === 'dark'" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+          <svg v-else viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15A9 9 0 0 1 9 4a9 9 0 1 0 11 11Z"/></svg>
+          {{ siteTheme === 'dark' ? 'Light mode' : 'Dark mode' }}
+        </button>
       <nav class="tabs" role="tablist" aria-label="Game">
         <button
           v-for="g in summary?.games ?? []"
@@ -257,6 +313,7 @@ const theme = computed(() => ui.value.theme);
           {{ g.shortName }}
         </button>
       </nav>
+      </div>
     </header>
 
     <div v-if="LOCAL" class="local-banner">
@@ -319,7 +376,7 @@ const theme = computed(() => ui.value.theme);
       <p>
         Layout after the
         <a href="https://willemsma.design/pathfinder/" target="_blank" rel="noopener">Pathfinder 2E Classes Infographic</a>
-        by Rachelle Willemsma (CC BY 4.0). Posted with permission of Rachelle Willemsma. Software Apache-2.0; content CC BY 4.0.
+        by Rachelle Willemsma. Posted with permission of Rachelle Willemsma. Software Apache-2.0; content CC BY 4.0.
       </p>
       <p class="cup">
         This website uses trademarks and/or copyrights owned by Paizo Inc., used under Paizo's Community Use Policy

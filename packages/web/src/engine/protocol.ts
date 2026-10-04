@@ -45,7 +45,7 @@ export interface OutFile {
 
 export type Request =
   | { type: 'load'; source: SourceSpec }
-  | { type: 'addZip'; name: string; bytes: ArrayBuffer }
+  | { type: 'addZip'; name: string; game?: string; bytes: ArrayBuffer }
   | { type: 'addImage'; game: string; name: string; bytes: ArrayBuffer }
   | { type: 'clearArt' }
   | { type: 'summary' }
@@ -53,7 +53,7 @@ export type Request =
 
 export interface Responses {
   load: ContentSummary;
-  addZip: { packs: string[] };
+  addZip: { packs: string[]; matched: number };
   addImage: { ok: true };
   clearArt: { ok: true };
   summary: ContentSummary;

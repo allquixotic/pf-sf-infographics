@@ -54,6 +54,8 @@ What to draw:
 
 Look:
   --theme <t>            light | dark
+  --background-color <hex>  Output background, e.g. #ffffff
+  --font-color <hex>        Output text, e.g. #111111
   --transparent          Transparent background
   --palette <p>          classic | colorblind | grayscale
   --font-scale <n>       0.7 – 1.5
@@ -69,6 +71,7 @@ Output:
   --margin <pt>          Page margin in points
   --bleed <mm>           Print bleed in millimetres
   --no-page-numbers      Booklet without page numbers
+  --no-repeat-section-titles  Hide section titles on continuation pages
   --emit-typst           Also write the Typst source and data.json (for template debugging)
 
   -h, --help             Show this help
@@ -134,6 +137,9 @@ async function main(argv: string[]): Promise<void> {
       'as-of': { type: 'string' },
       theme: { type: 'string' },
       transparent: { type: 'boolean' },
+      'background-color': { type: 'string' },
+      'font-color': { type: 'string' },
+      'no-repeat-section-titles': { type: 'boolean' },
       palette: { type: 'string' },
       'font-scale': { type: 'string' },
       format: { type: 'string' },
@@ -211,6 +217,9 @@ async function main(argv: string[]): Promise<void> {
     asOf: v['as-of'],
     theme: v.theme as RenderOptionsInput['theme'],
     background: v.transparent ? false : undefined,
+    backgroundColor: v['background-color'],
+    fontColor: v['font-color'],
+    repeatSectionTitles: v['no-repeat-section-titles'] ? false : undefined,
     palette: v.palette as RenderOptionsInput['palette'],
     fontScale: num(v['font-scale']),
     intent: v.intent as RenderOptionsInput['intent'],
@@ -230,9 +239,15 @@ async function main(argv: string[]): Promise<void> {
 
   const art =
     options.art === 'paizo' ? await loadLocalArt(assets, content, (m) => console.log(m)) : undefined;
-  if (options.art === 'paizo' && art && art.packIds.length === 0 && art.localCount === 0) {
+  if (
+    options.art === 'paizo' &&
+    art &&
+    art.packIds.length === 0 &&
+    art.customPackCount === 0 &&
+    art.localCount === 0
+  ) {
     console.warn(
-      `warning: no Paizo art found in ${assets}. Run "pfsf fetch-art" (or ./pfsf.sh fetch-art) first; using generic emblems.`,
+      `warning: no supplied art found in ${assets}. Add custom images or run "pfsf fetch-art" (or ./pfsf.sh fetch-art); using generic emblems.`,
     );
   }
 

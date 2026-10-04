@@ -30,7 +30,7 @@ function apply(): void {
 <template>
   <section class="panel">
     <details>
-      <summary><h2>Content source</h2></summary>
+      <summary class="source-summary"><h2><svg class="disclosure" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" /></svg>Content source</h2></summary>
       <p class="hint">
         Render from any GitHub repository or branch that follows the content format, e.g. your fork:
         <code>you/pf-sf-infographics@my-branch</code>.

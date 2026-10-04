@@ -27,6 +27,7 @@ export interface StoredArt {
   game?: string;
   name: string;
   bytes: ArrayBuffer;
+  updatedAt?: number;
 }
 
 const DB = 'pfsf-art';
@@ -44,23 +45,32 @@ function open(): Promise<IDBDatabase> {
 async function tx<T>(mode: IDBTransactionMode, fn: (s: IDBObjectStore) => IDBRequest<T>): Promise<T> {
   const db = await open();
   return new Promise((resolve, reject) => {
-    const req = fn(db.transaction(STORE, mode).objectStore(STORE));
-    req.onsuccess = () => resolve(req.result);
-    req.onerror = () => reject(req.error);
+    const transaction = db.transaction(STORE, mode);
+    const req = fn(transaction.objectStore(STORE));
+    transaction.oncomplete = () => {
+      db.close();
+      resolve(req.result);
+    };
+    transaction.onabort = transaction.onerror = () => {
+      db.close();
+      reject(transaction.error ?? req.error);
+    };
   });
 }
 
-export async function putArt(item: StoredArt): Promise<void> {
+export async function putArt(item: StoredArt): Promise<boolean> {
   try {
-    await tx('readwrite', (s) => s.put(item));
+    await tx('readwrite', (s) => s.put({ ...item, updatedAt: Date.now() }));
+    return true;
   } catch {
-    // Not persisted; the art still works for this session.
+    return false;
   }
 }
 
 export async function allArt(): Promise<StoredArt[]> {
   try {
-    return await tx('readonly', (s) => s.getAll() as IDBRequest<StoredArt[]>);
+    const items = await tx('readonly', (s) => s.getAll() as IDBRequest<StoredArt[]>);
+    return items.sort((a, b) => (a.updatedAt ?? 0) - (b.updatedAt ?? 0));
   } catch {
     return [];
   }

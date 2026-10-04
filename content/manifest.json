@@ -106,8 +106,8 @@
     },
     {
       "path": "pf2e/classes/necromancer.json",
-      "size": 1039,
-      "sha256": "df76398c17dbe5c500cdd33f95829c4de01594fd8898fe522711c00043062618"
+      "size": 1075,
+      "sha256": "02151ba76d1ba5edd5a99570b78e45d00b4d702e04d6e364c16841958eb6b2a6"
     },
     {
       "path": "pf2e/classes/oracle.json",
@@ -326,8 +326,8 @@
     },
     {
       "path": "pf2e/game.json",
-      "size": 7606,
-      "sha256": "9df4bc81b7a5bde936b0e4d065dd4a5a3d9cb2253e7d77c67828e7e443eefd52"
+      "size": 7584,
+      "sha256": "c306b500759f0c194f8d8222d66f7efb8628224d6f6d19cf5c8a9b05eb0be9af"
     },
     {
       "path": "schema/class.schema.json",
@@ -391,8 +391,8 @@
     },
     {
       "path": "sf2e/classes/witchwarper.json",
-      "size": 1210,
-      "sha256": "510aa6dff274b63ac8e4fc25a9fcd815b4b032d02fb62d8d1ef3ef155e1efb7c"
+      "size": 1221,
+      "sha256": "b53fed6a0d39e014175b615c3b54478861b59b153c7ee45e5def7811708ca928"
     },
     {
       "path": "sf2e/emblems/envoy.svg",
@@ -441,8 +441,8 @@
     },
     {
       "path": "sf2e/game.json",
-      "size": 6612,
-      "sha256": "f302460163377908226d07860fbfebf0a651b7186b423b53703360d165e7cf5b"
+      "size": 6590,
+      "sha256": "45b442b72c3269f8b8c11d71a748974023437e642d304e076c56862077af6d45"
     },
     {
       "path": "shared/fonts/Lexend-Bold.ttf",

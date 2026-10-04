@@ -14,18 +14,16 @@
   line-height: 1.45;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #121115;
-    --panel: #1d1b22;
-    --ink: #f1ede4;
-    --muted: #aba497;
-    --line: #34313b;
-    --accent: #e0724f;
-    --accent-ink: #121115;
-    --focus: #7aa7ff;
-    color-scheme: dark;
-  }
+:root:not([data-theme="light"]) {
+  --bg: #121115;
+  --panel: #1d1b22;
+  --ink: #f1ede4;
+  --muted: #aba497;
+  --line: #34313b;
+  --accent: #e0724f;
+  --accent-ink: #121115;
+  --focus: #7aa7ff;
+  color-scheme: dark;
 }
 
 * {
@@ -171,7 +169,7 @@ input[type="number"] {
 .layout {
   flex: 1;
   display: grid;
-  grid-template-columns: minmax(280px, 340px) 1fr;
+  grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
   gap: 1rem;
   padding: 1rem 1.25rem;
   align-items: start;
@@ -406,5 +404,176 @@ input[type="number"] {
 
   .top {
     padding: 0.9rem 16px 0.7rem;
+  }
+}
+
+.brand-title,
+.header-controls,
+.field-label,
+.color-pickers {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+.button {
+  display: inline-block;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  padding: 0.4rem 0.7rem;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+.theme-toggle {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+.theme-toggle svg,
+.help-tip svg,
+.preview-expand svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.sidebar,
+.panel,
+.brand {
+  min-width: 0;
+}
+.hint,
+.warnings,
+.packs,
+.drop,
+.error {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.panel input,
+.panel select {
+  max-width: 100%;
+}
+.panel details > .source-summary h2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.source-summary::-webkit-details-marker {
+  display: none;
+}
+.disclosure {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  transition: transform 0.15s;
+}
+details[open] > .source-summary .disclosure {
+  transform: rotate(90deg);
+}
+.help-tip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.1rem;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+}
+.tooltip {
+  position: fixed;
+  z-index: 200;
+  width: max-content;
+  max-width: min(19rem, calc(100vw - 32px));
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  box-shadow: 0 3px 12px #0004;
+}
+input[type="color"] {
+  width: 5rem;
+  height: 2rem;
+  padding: 0.15rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  cursor: pointer;
+}
+.preview {
+  position: relative;
+  min-width: 0;
+}
+.preview-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-height: 2.4rem;
+}
+.preview-expand {
+  display: flex;
+  padding: 0.4rem;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.preview:hover .preview-expand,
+.preview:focus-within .preview-expand,
+.preview.expanded .preview-expand {
+  opacity: 1;
+}
+.preview.expanded {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  padding: 0.7rem 1rem 1rem;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.preview.expanded .pages {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+.preview.expanded > .warnings,
+.preview.expanded > .error {
+  max-height: 15dvh;
+  flex-shrink: 0;
+  overflow: auto;
+}
+.preview.expanded .preview-toolbar {
+  flex-shrink: 0;
+}
+.preview.expanded:not(.zoomed) .pages:not(.multi) img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  box-shadow: none;
+  background: none;
+}
+.preview.expanded:not(.zoomed) .pages.multi img {
+  width: auto;
+  max-width: 100%;
+  max-height: calc(100dvh - 5rem);
+  flex-shrink: 0;
+  object-fit: contain;
+}
+.preview.expanded.zoomed .pages img {
+  flex-shrink: 0;
+}
+@media (hover: none) {
+  .preview-expand {
+    opacity: 1;
   }
 }

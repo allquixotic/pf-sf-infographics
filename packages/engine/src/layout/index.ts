@@ -45,7 +45,7 @@ function pageSetup(o: ResolvedOptions): PageSetup {
 }
 
 export function computeLayout(model: DocModel, o: ResolvedOptions): Layout {
-  const card = cardGeometry(o.art);
+  const card = cardGeometry(o.art, o.fontScale);
   const page = pageSetup(o);
   const noticeLines = model.notices.length ? model.notices.length * 2 + 1 : 0;
   const footerHeight = noticeLines * POSTER.noticeSize * 1.35;

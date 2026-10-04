@@ -71,6 +71,7 @@ describe('ArtLibrary', () => {
       paizo: { pack: 'cup', file: 'x.png' },
     });
     expect(hit?.ext).toBe('jpg');
+    expect(hit?.officialPack).toBeUndefined();
     const other = lib.resolve({
       game: 'sf2e',
       classId: 'swashbuckler',
@@ -78,5 +79,54 @@ describe('ArtLibrary', () => {
       paizo: { pack: 'cup', file: 'x.png' },
     });
     expect(other?.ext).toBe('png');
+    expect(other?.officialPack).toBe('cup');
+  });
+});
+
+describe('custom artwork', () => {
+  const data = new Uint8Array([1, 2, 3]);
+  const pack = ArtPack.fromFiles(
+    'custom',
+    'Custom',
+    new Map([
+      ['__MACOSX/._Fighter.png', data],
+      ['nested/._Fighter.png', data],
+      ['nested/FIGHTER (Valeros).JPEG', data],
+      ['nested/animist_samo.WEBP', data],
+      ['more/Witchwarper--Zemir.GIF', data],
+      ['nested/witch.SVG', data],
+    ]),
+  );
+
+  test('V4: nested archives match class names without matching longer class names', () => {
+    expect(pack.findByClassName('fighter')).toBe('nested/FIGHTER (Valeros).JPEG');
+    expect(pack.findByClassName('Animist')).toBe('nested/animist_samo.WEBP');
+    expect(pack.findByClassName('Witch')).toBe('nested/witch.SVG');
+    expect(pack.findByClassName('Witchwarper')).toBe('more/Witchwarper--Zemir.GIF');
+    expect(pack.fileNames).toHaveLength(4);
+  });
+
+  test('custom packs are scoped to a game and loose images override them', () => {
+    const lib = new ArtLibrary();
+    lib.addCustomPack('pf2e', pack);
+    const req = { game: 'pf2e', classId: 'animist', className: 'Animist' };
+    expect(lib.resolve(req)?.ext).toBe('webp');
+    expect(lib.resolve({ ...req, game: 'sf2e' })).toBeUndefined();
+    lib.addLocal('pf2e', 'Animist - my art.PNG', data);
+    expect(lib.resolve(req)?.ext).toBe('png');
+  });
+
+  test('exact class filenames beat portrait suffixes and do not match substrings', () => {
+    const files = ArtPack.fromFiles(
+      'test',
+      'Test',
+      new Map([
+        ['Fighter - alternate.png', data],
+        ['Fighter.svg', data],
+        ['witchwarper.png', data],
+      ]),
+    );
+    expect(files.findByClassName('fighter')).toBe('Fighter.svg');
+    expect(files.findByClassName('witch')).toBeUndefined();
   });
 });

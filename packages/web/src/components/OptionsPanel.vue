@@ -3,6 +3,7 @@ import { defaultSizeFor, SIZE_PRESETS } from '@pfsf/engine/presets';
 import { computed, watch } from 'vue';
 import type { GameSummary } from '../engine/protocol';
 import type { UiOptions } from '../state/options';
+import HelpTip from './HelpTip.vue';
 
 const props = defineProps<{ game: GameSummary }>();
 const o = defineModel<UiOptions>({ required: true });
@@ -97,11 +98,12 @@ const shown = computed(
         <option value="portrait">Portrait</option>
       </select>
     </label>
-    <label v-if="o.intent === 'print'" class="field">
-      Bleed (mm)
-      <input v-model.number="o.bleed" type="number" min="0" max="18" step="0.5" />
-    </label>
+    <div v-if="o.intent === 'print'" class="field">
+      <div class="field-label"><label for="bleed">Bleed (mm)</label><HelpTip label="bleed" text="Adds extra background beyond each page's trim edge, so cutting won't leave white slivers. Use your printer's requested amount (often 3 mm); leave at 0 for home printing. No crop marks are added." /></div>
+      <input id="bleed" v-model.number="o.bleed" type="number" min="0" max="18" step="0.5" />
+    </div>
     <label v-if="o.layout === 'booklet'" class="check"><input v-model="o.pageNumbers" type="checkbox" /> Page numbers</label>
+    <label v-if="o.layout === 'booklet'" class="check"><input v-model="o.repeatSectionTitles" type="checkbox" /> Repeat section titles on each page</label>
   </section>
 
   <section class="panel">
@@ -111,14 +113,19 @@ const shown = computed(
       <label><input v-model="o.theme" type="radio" value="dark" /> Dark</label>
     </div>
     <label class="check"><input v-model="o.background" type="checkbox" /> Background (off = transparent)</label>
-    <label class="field">
-      Rating colors
-      <select v-model="o.palette">
+    <div class="color-pickers">
+      <label class="field">Background color<input type="color" :value="o.backgroundColor || (o.theme === 'dark' ? '#17161b' : '#ffffff')" :disabled="!o.background" @input="o.backgroundColor = ($event.target as HTMLInputElement).value" /></label>
+      <label class="field">Font color<input type="color" :value="o.fontColor || (o.theme === 'dark' ? '#f1ede4' : '#111111')" @input="o.fontColor = ($event.target as HTMLInputElement).value" /></label>
+    </div>
+    <button v-if="o.backgroundColor || o.fontColor" type="button" class="link" @click="o.backgroundColor = ''; o.fontColor = ''">Reset output colors</button>
+    <div class="field">
+      <div class="field-label"><label for="rating-colors">Rating colors</label><HelpTip label="rating colors" text="Changes the five rating-bar colors only. Classic uses the original palette; color-blind safe uses more distinct hues; grayscale suits monochrome printing. The scores stay the same." /></div>
+      <select id="rating-colors" v-model="o.palette">
         <option value="classic">Classic</option>
         <option value="colorblind">Color-blind safe</option>
         <option value="grayscale">Grayscale</option>
       </select>
-    </label>
+    </div>
     <label class="field">
       Text size
       <input v-model.number="o.fontScale" type="range" min="0.8" max="1.3" step="0.05" />
@@ -146,8 +153,7 @@ const shown = computed(
       <input v-model="o.attribution" type="checkbox" /> Credits and notices
     </label>
     <p v-if="!o.attribution" class="hint">
-      Please keep credits when you share an image: Rachelle Willemsma's license (CC BY) and Paizo's Community Use
-      Policy both require them.
+      Please keep credits when sharing: the design is used with permission from Rachelle Willemsma, and included content and artwork retain their own attribution requirements.
     </p>
     <label class="field">Title <input v-model="o.title" type="text" :placeholder="game.title" /></label>
     <label class="field">Accurate as of <input v-model="o.asOf" type="text" :placeholder="game.asOf" /></label>

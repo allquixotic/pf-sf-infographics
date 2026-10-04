@@ -23,10 +23,10 @@ export interface CardGeometry {
   stroke: number;
 }
 
-export function cardGeometry(art: 'paizo' | 'generic' | 'none'): CardGeometry {
+export function cardGeometry(art: 'paizo' | 'generic' | 'none', fontScale = 1): CardGeometry {
   const base = {
     width: 460,
-    height: 166,
+    height: 178 + Math.max(0, fontScale - 1) * 190,
     boxY: 24,
     labelW: 30,
     square: 12,

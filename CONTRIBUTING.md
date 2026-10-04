@@ -17,7 +17,7 @@ under CC BY 4.0, the same as the rest of the repository.
   text from rulebooks, Archives of Nethys or other fan charts.
 - **Ratings are opinions.** Keep them consistent across classes, explain big changes in the pull request, and link a
   discussion or a source if you can.
-- **Keep credits.** The design is Rachelle Willemsma's (CC BY 4.0); the attribution line stays in the defaults.
+- **Keep credits.** The design is Rachelle Willemsma's, used with permission; the attribution line stays in the defaults.
 
 ## Getting set up
 

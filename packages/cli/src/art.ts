@@ -36,7 +36,14 @@ export async function loadLocalArt(
     const looseDir = join(dir, 'art', bundle.game.id);
     if (await exists(looseDir)) {
       for (const name of await readdir(looseDir)) {
-        if (!/\.(png|jpe?g|svg)$/i.test(name)) continue;
+        if (/\.zip$/i.test(name)) {
+          lib.addCustomPack(
+            bundle.game.id,
+            ArtPack.fromZip(name, name, await Bun.file(join(looseDir, name)).bytes()),
+          );
+          continue;
+        }
+        if (!/\.(png|jpe?g|svg|webp|gif)$/i.test(name)) continue;
         lib.addLocal(
           bundle.game.id,
           name,

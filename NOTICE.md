@@ -8,8 +8,7 @@ This project has been posted with permission of Rachelle Willemsma.
 ## Original design
 
 The layout and visual style follow the **Pathfinder 2E Classes Infographic** by Rachelle Willemsma
-(<https://willemsma.design/pathfinder/>), used with her permission under the Creative Commons Attribution 4.0
-International license. The original chart that inspired it was made by Reddit user u/Rednidedi.
+(<https://willemsma.design/pathfinder/>), used with her permission, granted by email. No Creative Commons license is claimed for her design. The original chart that inspired it was made by Reddit user u/Rednidedi.
 
 Every infographic this software produces credits the design unless the user turns attribution off.
 

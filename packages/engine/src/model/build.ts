@@ -58,6 +58,7 @@ export interface DocModel {
     stats: boolean;
     attribution: boolean;
     pageNumbers: boolean;
+    repeatSectionTitles: boolean;
     fontScale: number;
   };
   fonts: { heading: string; body: string };
@@ -104,7 +105,17 @@ export function buildModel(bundle: GameBundle, o: ResolvedOptions, art: ArtLibra
   const { game, theme } = bundle;
   const warnings: string[] = [];
   const files: VirtualFile[] = [];
-  const palette = o.theme === 'dark' ? theme.dark : theme.light;
+  const palette = { ...(o.theme === 'dark' ? theme.dark : theme.light) };
+  if (o.backgroundColor) {
+    palette.background = o.backgroundColor;
+    palette.cardFill = o.backgroundColor;
+    palette.bannerInk = o.backgroundColor;
+  }
+  if (o.fontColor) {
+    palette.ink = o.fontColor;
+    palette.muted = o.fontColor;
+    palette.bannerFill = o.fontColor;
+  }
   const ink = palette.ink;
 
   const addIcon = (key: string, vpath: string): string => {
@@ -131,6 +142,7 @@ export function buildModel(bundle: GameBundle, o: ResolvedOptions, art: ArtLibra
   const labelOf = <T extends { id: string; label: string }>(list: T[], id: string) =>
     list.find((x) => x.id === id)?.label ?? id;
 
+  let usedPaizoArt = false;
   const cardFor = (c: LoadedClass): CardModel => {
     let artModel: CardModel['art'] = { kind: 'none', path: null };
     if (o.art === 'paizo') {
@@ -142,11 +154,12 @@ export function buildModel(bundle: GameBundle, o: ResolvedOptions, art: ArtLibra
         local: c.art.local,
       });
       if (img) {
+        if (img.officialPack) usedPaizoArt = true;
         const path = `/art/${c.id}.${img.ext}`;
         files.push({ path, bytes: img.bytes });
         artModel = { kind: 'image', path };
       } else {
-        warnings.push(`No official art available for ${c.name}; using the generic emblem.`);
+        warnings.push(`No supplied art available for ${c.name}; using the generic emblem.`);
       }
     }
     if (artModel.kind === 'none' && o.art !== 'none') {
@@ -193,7 +206,6 @@ export function buildModel(bundle: GameBundle, o: ResolvedOptions, art: ArtLibra
               .map(cardFor),
           }))
           .filter((s) => s.cards.length > 0);
-  const usedPaizoArt = sections.some((s) => s.cards.some((c) => c.art.kind === 'image'));
 
   const legend: LegendModel | null = o.legend
     ? {
@@ -259,6 +271,7 @@ export function buildModel(bundle: GameBundle, o: ResolvedOptions, art: ArtLibra
       stats: o.stats,
       attribution: o.attribution,
       pageNumbers: o.pageNumbers,
+      repeatSectionTitles: o.repeatSectionTitles,
       fontScale: o.fontScale,
     },
     fonts: { heading: theme.fonts.heading.family, body: theme.fonts.body.family },

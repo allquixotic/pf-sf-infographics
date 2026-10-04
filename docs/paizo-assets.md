@@ -49,6 +49,22 @@ mind that the Community Use Policy only covers art from the package, the Paizo b
 from other Paizo products (for example pregenerated character sheets) is fine on your own computer, but an image you
 **share** that contains it is outside the policy.
 
+## Custom artwork
+
+Choose **Official / custom art** in the web app, then drop in images or a ZIP. Name images after the class ID or
+name, for example `animist.png`, `Witchwarper.svg`, or `Fighter - Portrait.jpg`. PNG, JPG/JPEG, SVG, WebP and GIF
+are supported. Nested folders, capitalization, accents and common separators are tolerated; hidden files and
+macOS archive metadata are ignored. Animated formats are rendered as still images.
+
+Exact class filenames take priority over filenames with extra descriptive words. If multiple versions match,
+the format preference is PNG, SVG, WebP, JPEG, then GIF. Loose uploaded images override custom ZIPs; later custom
+ZIPs override earlier ones. Custom images apply to the selected game and override its official portraits.
+Missing artwork uses the bundled emblem. Select **Emblems** to return to the bundled symbols.
+
+Settings and uploaded archives remain in this browser when storage is available; they are never sent to a server.
+Use **Forget supplied art** to remove stored uploads. For the CLI, place images or ZIPs in
+`local-assets/art/pf2e/` or `local-assets/art/sf2e/` and use `--art paizo`.
+
 ## If you host a fork
 
 - Keep the Community Use notice and your contact information on the site.

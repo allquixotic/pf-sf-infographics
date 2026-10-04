@@ -14,6 +14,9 @@ Covered as of September 2026: all 29 printed Pathfinder 2e classes plus the dare
 six Starfinder 2e Player Core classes plus the mechanic, technomancer and luminary playtests. See
 [docs/classes.md](docs/classes.md).
 
+The [review of the 18 added classes](docs/class-content-review.md) covers their explanations and all five
+ratings, with rules sources and proposed improvements. Subjective recommendations have not been applied.
+
 ## Quick start
 
 You only need Git. The launch scripts download a private copy of the latest stable [Bun](https://bun.sh) into
@@ -49,11 +52,24 @@ If you already have Bun, `bun install` then `bun run cli -- …`, `bun start` an
 | Layout | poster (one sheet) or booklet (pages you can print on a home printer) |
 | Intent and size | print: Letter, Legal, Tabloid, 18×24, 24×36, 36×48 in, A5–A0; screen: Full HD, QHD, 4K, 8K, tablet, phone; fit to content; or any custom size |
 | Format | PDF (vector, selectable text), SVG (vector), PNG, JPG, WebP |
-| Artwork | official iconic art (from Paizo's Community Use Package, supplied by you), our generic SVG emblems, or none |
-| Look | light or dark, background or transparent, classic / color-blind-safe / grayscale rating colors, text size |
+| Artwork | official iconic art (from Paizo's Community Use Package, supplied by you), custom images or ZIPs, our generic SVG emblems, or none |
+| Look | light or dark, custom background and font colors, transparent output, classic / color-blind-safe / grayscale rating colors, text size |
 | Contents | include or exclude playtest classes or any individual class, group by magic ability or alphabetically, legend, hit points and sources, custom title and date |
-| Print | DPI for raster output, bleed, page numbers |
+| Print | DPI for raster output, bleed, page numbers, repeat booklet section headings on continuation pages |
 | Attribution | credits and notices can be switched off, but please keep them when you share an image |
+
+The website has its own light/dark toggle (dark by default), separate from output colors. Hover over the preview
+to expand it, or use the always-visible expand button on touch screens; click the image to zoom in either view.
+Escape or the close button returns to the normal preview. Settings are saved in localStorage and uploaded art in
+IndexedDB, when browser storage is available. Clearing site data removes them.
+
+For custom art, choose **Official / custom art** and upload images or a ZIP containing names such as
+`animist.png`, `Witchwarper.svg`, or `Fighter - Portrait.jpg`. PNG, JPEG, SVG, WebP and GIF are supported;
+nested folders, case differences and common separators work. Custom uploads apply to the selected game;
+unmatched classes fall back to emblems. See [artwork details](docs/paizo-assets.md#custom-artwork).
+
+CLI equivalents include `--background-color '#f0eddc'`, `--font-color '#203040'`, and
+`--no-repeat-section-titles` for booklets.
 
 ## How it works
 
@@ -81,7 +97,7 @@ Corrections to ratings and summaries, new classes, translations and better icons
 ## Credits and licenses
 
 - **Design:** based on the [Pathfinder 2E Classes Infographic](https://willemsma.design/pathfinder/) by
-  **Rachelle Willemsma**, used with her permission under CC BY 4.0. This project has been posted with permission of Rachelle Willemsma. The original chart concept was by u/Rednidedi.
+  **Rachelle Willemsma**, used with her permission. This project has been posted with permission of Rachelle Willemsma. The original chart concept was by u/Rednidedi.
 - **Code** (`packages/`, `tools/`, scripts): [Apache License 2.0](LICENSE).
 - **Content** (`content/`: class summaries, ratings, icons, emblems, data): [CC BY 4.0](LICENSES/CC-BY-4.0.txt),
   © pf-sf-infographics contributors. Fonts: Ultra (Apache-2.0) and Lexend (OFL-1.1), see `content/shared/fonts/`.
