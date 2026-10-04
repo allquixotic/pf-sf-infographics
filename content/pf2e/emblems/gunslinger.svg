@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<!-- Gunslinger: flintlock pistol. -->
+<g transform="translate(-2.5 -4) rotate(-12 50 50)" fill="currentColor">
+<path d="M42 30H87V27.5H94V40.5H87V38H42Z"/>
+<path d="M42 37H79L75 43.5H42Z"/>
+<path d="M49 29H34C30 29 28.5 31.5 27.5 34L13 64C6 69 6 83 16 85C23 86.5 28 80 25 73L36 53C38 49.5 41 48 45 48H49Z"/>
+<path d="M30.5 30C30 24.5 27 20.5 23 19L20.5 13.5H30L31 17.5C35 20.5 37.5 25 38 30Z"/>
+<path d="M40.5 30C40 26 40.5 23 42 20.5L45.5 21.5C44.5 24 44.5 27 45.5 30Z"/>
+<path d="M38.5 47.5C38.5 60 55 61 56 47.5" fill="none" stroke="currentColor" stroke-width="4.5"/>
+<path d="M44.5 47.5C44.5 52 45.5 55 49 57.5L50.5 55C49 53 48.5 51 48.5 47.5Z"/>
+</g>
+</svg>

@@ -1,0 +1,214 @@
+{
+  "$schema": "../schema/game.schema.json",
+  "id": "sf2e",
+  "title": "Starfinder 2e Classes",
+  "system": "Starfinder Second Edition",
+  "shortName": "SF2e",
+  "asOf": "September 2026",
+  "theme": "../shared/themes/classic.json",
+  "attributes": [
+    {
+      "id": "str",
+      "label": "strength",
+      "icon": "../shared/icons/attributes/str.svg"
+    },
+    {
+      "id": "dex",
+      "label": "dexterity",
+      "icon": "../shared/icons/attributes/dex.svg"
+    },
+    {
+      "id": "con",
+      "label": "constitution",
+      "icon": "../shared/icons/attributes/con.svg"
+    },
+    {
+      "id": "int",
+      "label": "intelligence",
+      "icon": "../shared/icons/attributes/int.svg"
+    },
+    {
+      "id": "wis",
+      "label": "wisdom",
+      "icon": "../shared/icons/attributes/wis.svg"
+    },
+    {
+      "id": "cha",
+      "label": "charisma",
+      "icon": "../shared/icons/attributes/cha.svg"
+    }
+  ],
+  "traditions": [
+    {
+      "id": "arcane",
+      "label": "arcane",
+      "icon": "../shared/icons/traditions/arcane.svg"
+    },
+    {
+      "id": "divine",
+      "label": "divine",
+      "icon": "../shared/icons/traditions/divine.svg"
+    },
+    {
+      "id": "occult",
+      "label": "occult",
+      "icon": "../shared/icons/traditions/occult.svg"
+    },
+    {
+      "id": "primal",
+      "label": "primal",
+      "icon": "../shared/icons/traditions/primal.svg"
+    }
+  ],
+  "ratings": [
+    {
+      "id": "offense",
+      "label": "offense",
+      "description": "How much damage you deal and how reliably you take enemies down.",
+      "color": "#c8553d",
+      "colorblind": "#d55e00"
+    },
+    {
+      "id": "defense",
+      "label": "defense",
+      "description": "How hard you are to take down, through hit points, armor, dodging or other means.",
+      "color": "#5c95ff",
+      "colorblind": "#0072b2"
+    },
+    {
+      "id": "support",
+      "label": "support",
+      "description": "How much you help allies succeed: healing, buffs, debuffs and battlefield control.",
+      "color": "#549391",
+      "colorblind": "#009e73"
+    },
+    {
+      "id": "utility",
+      "label": "utility",
+      "description": "How well you handle problems outside combat, when a fireball or an axe is not the answer.",
+      "color": "#a95ead",
+      "colorblind": "#cc79a7"
+    },
+    {
+      "id": "difficulty",
+      "label": "difficulty",
+      "description": "How much system knowledge you need to play the class well.",
+      "color": "#c78e3a",
+      "colorblind": "#e69f00"
+    }
+  ],
+  "groups": [
+    {
+      "id": "spellcasters",
+      "label": "Spellcasters",
+      "description": "Full spellcasters with spell slots of every rank."
+    },
+    {
+      "id": "supernatural",
+      "label": "Supernatural powers",
+      "description": "Magical class powers without spell slots."
+    },
+    {
+      "id": "tech",
+      "label": "Tech & tactics",
+      "description": "No magic: guns, gear, training and leadership."
+    }
+  ],
+  "castingTypes": [
+    {
+      "id": "prepared",
+      "label": "Prepared",
+      "description": "Choose which spell goes into each slot at the start of the day, then cast those spells."
+    },
+    {
+      "id": "spontaneous",
+      "label": "Spontaneous",
+      "description": "Know a smaller repertoire of spells and cast any of them with any open slot of the right rank."
+    },
+    {
+      "id": "focus",
+      "label": "Focus",
+      "description": "No spell slots; a few signature class spells fuelled by a small pool of focus points."
+    }
+  ],
+  "statuses": [
+    {
+      "id": "core",
+      "label": "Core",
+      "description": "From a core rulebook."
+    },
+    {
+      "id": "expansion",
+      "label": "Expansion",
+      "description": "Published in a later rulebook."
+    },
+    {
+      "id": "playtest",
+      "label": "Playtest",
+      "description": "Public playtest; rules may change before print."
+    },
+    {
+      "id": "legacy",
+      "label": "Legacy",
+      "description": "Superseded by a newer printing."
+    }
+  ],
+  "legend": {
+    "howToUseTitle": "How to use",
+    "howToUse": "A character's class sets many of their core abilities, but there is plenty of room to specialize. These ratings are rough, opinionated estimates of how an average member of each class performs; subclasses, feats and party makeup can change things a lot.",
+    "attributesTitle": "Key attributes",
+    "traditionsTitle": "Magic traditions",
+    "castingTitle": "Spellcasting",
+    "choiceTitle": "Hatched squares",
+    "choice": "Some classes make one fundamental choice, such as a cleric's doctrine or a sorcerer's bloodline, that swings their numbers a long way. Hatched squares show the range between the two extremes.",
+    "creditsTitle": "Credits"
+  },
+  "artPacks": [
+    {
+      "id": "cup-sf2e-iconics",
+      "label": "Starfinder Second Edition Iconic Heroes (Community Use Package)",
+      "kind": "zip",
+      "url": "https://downloads.paizo.com/Starfinder_Second_Edition_Iconic_Heroes_Portraits.zip",
+      "fileName": "Starfinder_Second_Edition_Iconic_Heroes_Portraits.zip",
+      "license": "Paizo Community Use Policy",
+      "credit": "Iconic art by Kent Hamilton, © Paizo Inc."
+    }
+  ],
+  "credits": [
+    {
+      "role": "Original design",
+      "names": [
+        "Rachelle Willemsma"
+      ]
+    },
+    {
+      "role": "Text, ratings & icons",
+      "names": [
+        "pf-sf-infographics contributors"
+      ]
+    },
+    {
+      "role": "Iconic art",
+      "names": [
+        "Kent Hamilton / Paizo Inc."
+      ],
+      "when": "paizo-art"
+    }
+  ],
+  "notices": {
+    "cup": "This infographic uses trademarks and/or copyrights owned by Paizo Inc., used under Paizo's Community Use Policy (paizo.com/licenses/communityuse). We are expressly prohibited from charging you to use or access this content. This infographic is not published, endorsed, or specifically approved by Paizo. For more information about Paizo Inc. and Paizo products, visit paizo.com.",
+    "design": "Layout adapted from the Pathfinder 2E Classes Infographic by Rachelle Willemsma (willemsma.design/pathfinder), used under CC BY 4.0. This project has been posted with permission of Rachelle Willemsma.",
+    "license": "Class summaries, ratings and icons by the pf-sf-infographics contributors, CC BY 4.0. Made with pf-sf-infographics (Apache-2.0)."
+  },
+  "classes": [
+    "classes/envoy.json",
+    "classes/luminary.json",
+    "classes/mechanic.json",
+    "classes/mystic.json",
+    "classes/operative.json",
+    "classes/solarian.json",
+    "classes/soldier.json",
+    "classes/technomancer.json",
+    "classes/witchwarper.json"
+  ]
+}

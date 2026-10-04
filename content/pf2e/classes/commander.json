@@ -1,0 +1,48 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "commander",
+  "name": "Commander",
+  "status": "expansion",
+  "source": {
+    "title": "Battlecry!",
+    "date": "2025-07"
+  },
+  "group": "no-magic",
+  "keyAttributes": [
+    "int"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 8,
+  "ratings": {
+    "offense": 2,
+    "defense": 3,
+    "support": 5,
+    "utility": 3,
+    "difficulty": 4
+  },
+  "features": [
+    {
+      "title": "Tactical leader",
+      "text": "Commanders win battles by directing others. Their banner steadies everyone nearby, and a folio of tactics moves the party like pieces on a board."
+    },
+    {
+      "title": "Tactics",
+      "text": "Prepared orders give allies extra movement, attacks or defenses, turning the commander's own actions into the whole party's advantage."
+    }
+  ],
+  "iconic": {
+    "name": "Ulka"
+  },
+  "art": {
+    "emblem": "../emblems/commander.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Commander - Ulka.png"
+    },
+    "local": "commander"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=66"
+  }
+}

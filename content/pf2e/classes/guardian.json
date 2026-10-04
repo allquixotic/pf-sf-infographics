@@ -1,0 +1,48 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "guardian",
+  "name": "Guardian",
+  "status": "expansion",
+  "source": {
+    "title": "Battlecry!",
+    "date": "2025-07"
+  },
+  "group": "no-magic",
+  "keyAttributes": [
+    "str"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 12,
+  "ratings": {
+    "offense": 2.5,
+    "defense": 5,
+    "support": 3.5,
+    "utility": 1.5,
+    "difficulty": 2
+  },
+  "features": [
+    {
+      "title": "Living shield",
+      "text": "Guardians are built to take hits so others don't. In heavy armor they resist physical damage that would fell anyone else."
+    },
+    {
+      "title": "Taunt and intercept",
+      "text": "Guardians draw enemy attention and step in to absorb blows meant for nearby allies, making them the purest defender in the game."
+    }
+  ],
+  "iconic": {
+    "name": "Grimmyr"
+  },
+  "art": {
+    "emblem": "../emblems/guardian.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Guardian - Grimmyr.png"
+    },
+    "local": "guardian"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=67"
+  }
+}

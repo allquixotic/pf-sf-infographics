@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<!-- Barbarian: double-bit greataxe. -->
+<path fill="currentColor" d="M46 21L50 9L54 21V88A4 4 0 0 1 46 88Z"/>
+<rect x="41" y="21" width="18" height="24" rx="3" fill="currentColor"/>
+<path fill="currentColor" d="M42 25C34 23 26 17 19 9Q3 33 19 57C26 49 34 43 42 41Z"/>
+<path fill="currentColor" d="M58 25C66 23 74 17 81 9Q97 33 81 57C74 49 66 43 58 41Z"/>
+<rect x="43" y="82" width="14" height="6" rx="2" fill="currentColor"/>
+</svg>

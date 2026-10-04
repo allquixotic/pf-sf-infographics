@@ -1,0 +1,52 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "magus",
+  "name": "Magus",
+  "status": "expansion",
+  "source": {
+    "title": "Impossible Magic",
+    "date": "2026-07"
+  },
+  "group": "moderate-magic",
+  "keyAttributes": [
+    "str",
+    "dex"
+  ],
+  "traditions": [
+    "arcane"
+  ],
+  "casting": "prepared",
+  "hp": 8,
+  "ratings": {
+    "offense": 5,
+    "defense": 3,
+    "support": 2,
+    "utility": 2.5,
+    "difficulty": 3.5
+  },
+  "features": [
+    {
+      "title": "Spellblade",
+      "text": "Magi blend swordplay with arcane study, trading breadth of magic for devastating combinations."
+    },
+    {
+      "title": "Spellstrike",
+      "text": "A magus channels a spell through a weapon strike for huge burst damage, then recharges; Arcane Cascade keeps magic flowing into every hit."
+    }
+  ],
+  "iconic": {
+    "name": "Seltyiel",
+    "ancestry": "half-elf"
+  },
+  "art": {
+    "emblem": "../emblems/magus.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Magus - Seltyiel.png"
+    },
+    "local": "magus"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=74"
+  }
+}

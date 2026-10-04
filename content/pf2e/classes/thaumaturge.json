@@ -1,0 +1,48 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "thaumaturge",
+  "name": "Thaumaturge",
+  "status": "expansion",
+  "source": {
+    "title": "Dark Archive (Remastered)",
+    "date": "2026-02"
+  },
+  "group": "no-magic",
+  "keyAttributes": [
+    "cha"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 8,
+  "ratings": {
+    "offense": 4.5,
+    "defense": 2.5,
+    "support": 3,
+    "utility": 4,
+    "difficulty": 3.5
+  },
+  "features": [
+    {
+      "title": "Folk-magic scholar",
+      "text": "Thaumaturges carry charms, talismans and implements, and know the hidden weakness of every creature."
+    },
+    {
+      "title": "Exploit Vulnerability",
+      "text": "Finding a creature's weakness lets every strike hit where it hurts; implements such as a lantern or a mirror add unique tricks."
+    }
+  ],
+  "iconic": {
+    "name": "Mios"
+  },
+  "art": {
+    "emblem": "../emblems/thaumaturge.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Thaumaturge - Mios.png"
+    },
+    "local": "thaumaturge"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=69"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "cleric",
+  "name": "Cleric",
+  "status": "core",
+  "source": {
+    "title": "Player Core",
+    "date": "2023-11"
+  },
+  "group": "high-magic",
+  "keyAttributes": [
+    "wis"
+  ],
+  "traditions": [
+    "divine"
+  ],
+  "casting": "prepared",
+  "hp": 8,
+  "ratings": {
+    "offense": [
+      2,
+      3
+    ],
+    "defense": [
+      1,
+      3
+    ],
+    "support": [
+      4,
+      5
+    ],
+    "utility": 5,
+    "difficulty": 3
+  },
+  "features": [
+    {
+      "title": "Voice of a deity",
+      "text": "Clerics wield magic granted by their god. A cloistered cleric is a devoted healer and caster; a warpriest trades some magic for armor and weapons."
+    },
+    {
+      "title": "Divine font",
+      "text": "Extra daily spell slots reserved for *heal* or *harm* let a cleric restore a whole party or scour the undead, depending on their deity."
+    }
+  ],
+  "iconic": {
+    "name": "Kyra",
+    "ancestry": "human"
+  },
+  "art": {
+    "emblem": "../emblems/cleric.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Cleric - Kyra.png"
+    },
+    "local": "cleric"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=33"
+  }
+}

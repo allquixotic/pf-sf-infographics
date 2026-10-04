@@ -1,0 +1,25 @@
+{
+  "name": "@pfsf/cli",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Command-line interface for the pf-sf-infographics engine (runs on Bun).",
+  "license": "Apache-2.0",
+  "type": "module",
+  "bin": {
+    "pfsf": "./src/main.ts"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p ."
+  },
+  "dependencies": {
+    "@jsquash/jpeg": "^1.6.0",
+    "@jsquash/webp": "^1.5.0",
+    "@myriaddreamin/typst-ts-renderer": "0.7.0",
+    "@myriaddreamin/typst-ts-web-compiler": "0.7.0",
+    "@pfsf/engine": "workspace:*",
+    "@resvg/resvg-wasm": "^2.6.2"
+  }
+}

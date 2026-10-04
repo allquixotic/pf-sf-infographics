@@ -1,0 +1,49 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "investigator",
+  "name": "Investigator",
+  "status": "core",
+  "source": {
+    "title": "Player Core 2",
+    "date": "2024-08"
+  },
+  "group": "no-magic",
+  "keyAttributes": [
+    "int"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 8,
+  "ratings": {
+    "offense": 3,
+    "defense": 2.5,
+    "support": 3,
+    "utility": 5,
+    "difficulty": 4
+  },
+  "features": [
+    {
+      "title": "Detective",
+      "text": "Investigators solve problems with deduction and a very long list of skills, following leads to the heart of a mystery."
+    },
+    {
+      "title": "Devise a Stratagem",
+      "text": "They roll an attack before making it and then decide whether to use it, turning knowledge into precise, well-timed strikes."
+    }
+  ],
+  "iconic": {
+    "name": "Quinn",
+    "ancestry": "human"
+  },
+  "art": {
+    "emblem": "../emblems/investigator.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Investigator - Quinn.png"
+    },
+    "local": "investigator"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=59"
+  }
+}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<!-- Druid: lobed oak leaf with an acorn. -->
+<defs><mask id="druid-cut"><rect width="100" height="100" fill="#fff"/><path transform="translate(43 45) rotate(38) scale(0.95)" d="M0 30V-26" stroke="#000" stroke-width="4" stroke-linecap="round"/><g transform="translate(76 72) rotate(-20)"><path d="M-13 -1C-13 -10 -7 -15 0 -15C7 -15 13 -10 13 -1ZM-10.5 2.5C-10.5 13 -5 19 0 22C5 19 10.5 13 10.5 2.5ZM-2 -14V-21H3V-14Z" stroke="#000" stroke-width="9" stroke-linejoin="round"/></g></mask></defs>
+<g fill="currentColor" mask="url(#druid-cut)"><g transform="translate(43 45) rotate(38) scale(0.95)"><path d="M3 36A13 7.6 0 1 0 4.5 22A13 8.6 0 1 0 5 6A13 8.6 0 1 0 5 -10A13 7.6 0 1 0 4 -24A10.5 5.1 0 1 0 2.5 -33A6.5 8 0 1 0 -2.5 -31A10.5 5.6 0 1 0 -4 -21A13 8.1 0 1 0 -5 -6A13 8.6 0 1 0 -5 10A13 8.1 0 1 0 -4.5 25A10.5 6.1 0 1 0 -3 36Z"/><rect x="-2.5" y="30" width="5" height="16" rx="2.5"/></g></g>
+<g transform="translate(76 72) rotate(-20)" fill="currentColor"><path d="M-13 -1C-13 -10 -7 -15 0 -15C7 -15 13 -10 13 -1Z"/><path d="M-10.5 2.5C-10.5 13 -5 19 0 22C5 19 10.5 13 10.5 2.5Z"/><path d="M-2 -14V-21H3V-14Z"/></g>
+</svg>

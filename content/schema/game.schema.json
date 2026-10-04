@@ -1,0 +1,372 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$",
+      "description": "Stable identifier (lowercase, digits, hyphens)."
+    },
+    "title": {
+      "type": "string",
+      "description": "Poster title, e.g. \"Pathfinder 2e Classes\"."
+    },
+    "system": {
+      "type": "string",
+      "description": "Full game system name."
+    },
+    "shortName": {
+      "type": "string"
+    },
+    "asOf": {
+      "type": "string",
+      "description": "Shown as \"Accurate as of …\"."
+    },
+    "theme": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Path relative to the file that references it."
+    },
+    "attributes": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
+            "description": "Stable identifier (lowercase, digits, hyphens)."
+          },
+          "label": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Path relative to the file that references it."
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "icon"
+        ]
+      }
+    },
+    "traditions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
+            "description": "Stable identifier (lowercase, digits, hyphens)."
+          },
+          "label": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Path relative to the file that references it."
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "icon"
+        ]
+      }
+    },
+    "ratings": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
+            "description": "Stable identifier (lowercase, digits, hyphens)."
+          },
+          "label": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string",
+            "description": "Plain text; **bold** and *italic* markers are supported."
+          },
+          "color": {
+            "type": "string",
+            "pattern": "^#[0-9a-fA-F]{6}$"
+          },
+          "colorblind": {
+            "type": "string",
+            "pattern": "^#[0-9a-fA-F]{6}$",
+            "description": "Replacement color used by the color-blind-safe palette option."
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "description",
+          "color",
+          "colorblind"
+        ]
+      }
+    },
+    "groups": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
+            "description": "Stable identifier (lowercase, digits, hyphens)."
+          },
+          "label": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string",
+            "description": "Plain text; **bold** and *italic* markers are supported."
+          }
+        },
+        "required": [
+          "id",
+          "label"
+        ]
+      }
+    },
+    "castingTypes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
+            "description": "Stable identifier (lowercase, digits, hyphens)."
+          },
+          "label": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string",
+            "description": "Plain text; **bold** and *italic* markers are supported."
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "description"
+        ]
+      }
+    },
+    "statuses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "enum": [
+              "core",
+              "expansion",
+              "playtest",
+              "legacy"
+            ]
+          },
+          "label": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "description"
+        ]
+      }
+    },
+    "legend": {
+      "type": "object",
+      "properties": {
+        "howToUseTitle": {
+          "type": "string"
+        },
+        "howToUse": {
+          "type": "string",
+          "description": "Plain text; **bold** and *italic* markers are supported."
+        },
+        "attributesTitle": {
+          "type": "string"
+        },
+        "traditionsTitle": {
+          "type": "string"
+        },
+        "castingTitle": {
+          "type": "string"
+        },
+        "choiceTitle": {
+          "type": "string"
+        },
+        "choice": {
+          "type": "string",
+          "description": "Plain text; **bold** and *italic* markers are supported."
+        },
+        "creditsTitle": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "howToUseTitle",
+        "howToUse",
+        "attributesTitle",
+        "traditionsTitle",
+        "castingTitle",
+        "choiceTitle",
+        "choice",
+        "creditsTitle"
+      ]
+    },
+    "artPacks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
+            "description": "Stable identifier (lowercase, digits, hyphens)."
+          },
+          "label": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "zip",
+              "directory"
+            ],
+            "description": "zip: a downloadable archive; directory: loose image files."
+          },
+          "url": {
+            "description": "Where users can download the pack. Never hotlinked by the engine.",
+            "type": "string",
+            "format": "uri"
+          },
+          "fileName": {
+            "description": "Expected archive file name, used to recognise the pack.",
+            "type": "string"
+          },
+          "license": {
+            "type": "string",
+            "description": "Short description of the terms the art is used under."
+          },
+          "credit": {
+            "description": "Artist credit line.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "kind",
+          "license"
+        ]
+      }
+    },
+    "credits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string"
+          },
+          "names": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "when": {
+            "default": "always",
+            "description": "Show this credit only for a particular art choice.",
+            "type": "string",
+            "enum": [
+              "always",
+              "paizo-art",
+              "generic-art"
+            ]
+          }
+        },
+        "required": [
+          "role",
+          "names"
+        ]
+      }
+    },
+    "notices": {
+      "type": "object",
+      "properties": {
+        "cup": {
+          "type": "string",
+          "description": "Paizo Community Use Policy notice (required when Paizo material is shown)."
+        },
+        "design": {
+          "type": "string",
+          "description": "Credit for the original infographic design."
+        },
+        "license": {
+          "type": "string",
+          "description": "License of this content."
+        }
+      },
+      "required": [
+        "cup",
+        "design",
+        "license"
+      ]
+    },
+    "classes": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Path relative to the file that references it."
+      }
+    }
+  },
+  "required": [
+    "id",
+    "title",
+    "system",
+    "shortName",
+    "asOf",
+    "theme",
+    "attributes",
+    "traditions",
+    "ratings",
+    "groups",
+    "castingTypes",
+    "statuses",
+    "legend",
+    "artPacks",
+    "credits",
+    "notices",
+    "classes"
+  ]
+}

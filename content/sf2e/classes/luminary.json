@@ -1,0 +1,43 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "luminary",
+  "name": "Luminary",
+  "status": "playtest",
+  "source": {
+    "title": "Luminary Class Playtest",
+    "date": "2026-05"
+  },
+  "group": "supernatural",
+  "keyAttributes": [
+    "cha"
+  ],
+  "traditions": [
+    "occult"
+  ],
+  "casting": "focus",
+  "hp": 8,
+  "ratings": {
+    "offense": 2,
+    "defense": 2.5,
+    "support": 5,
+    "utility": 3.5,
+    "difficulty": 3.5
+  },
+  "features": [
+    {
+      "title": "Star of the show",
+      "text": "Luminaries are performers and influencers whose fame is literally magical."
+    },
+    {
+      "title": "Spotlight",
+      "text": "A holographic spotlight casts a friend or foe in a genre role, such as action hero or tragic figure, granting boons or drawbacks; it can jump between creatures."
+    }
+  ],
+  "iconic": {
+    "name": "Prisma"
+  },
+  "art": {
+    "emblem": "../emblems/luminary.svg",
+    "local": "luminary"
+  }
+}

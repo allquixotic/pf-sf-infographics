@@ -1,0 +1,95 @@
+import type { OutputFormat, RenderOptionsInput } from '@pfsf/engine';
+import { defaultSizeFor } from '@pfsf/engine/presets';
+
+/** Everything the options panel edits, per game tab. Kept flat and JSON-friendly for localStorage. */
+export interface UiOptions {
+  layout: 'poster' | 'booklet';
+  intent: 'print' | 'screen';
+  size: string;
+  customW: number;
+  customH: number;
+  customUnit: 'in' | 'mm' | 'px';
+  orientation: 'auto' | 'portrait' | 'landscape';
+  theme: 'light' | 'dark';
+  background: boolean;
+  art: 'paizo' | 'generic' | 'none';
+  attribution: boolean;
+  includePlaytest: boolean;
+  includeLegacy: boolean;
+  exclude: string[];
+  grouping: 'groups' | 'alphabetical';
+  palette: 'classic' | 'colorblind' | 'grayscale';
+  legend: boolean;
+  stats: boolean;
+  title: string;
+  asOf: string;
+  fontScale: number;
+  format: OutputFormat;
+  dpi: number;
+  scale: number;
+  quality: number;
+  bleed: number;
+  pageNumbers: boolean;
+}
+
+export function defaultUiOptions(): UiOptions {
+  return {
+    layout: 'poster',
+    intent: 'print',
+    size: defaultSizeFor('poster', 'print'),
+    customW: 24,
+    customH: 36,
+    customUnit: 'in',
+    orientation: 'auto',
+    theme: 'light',
+    background: true,
+    art: 'generic',
+    attribution: true,
+    includePlaytest: false,
+    includeLegacy: false,
+    exclude: [],
+    grouping: 'groups',
+    palette: 'classic',
+    legend: true,
+    stats: true,
+    title: '',
+    asOf: '',
+    fontScale: 1,
+    format: 'pdf',
+    dpi: 200,
+    scale: 1,
+    quality: 90,
+    bleed: 0,
+    pageNumbers: true,
+  };
+}
+
+export function toRenderOptions(game: string, ui: UiOptions, format: OutputFormat): RenderOptionsInput {
+  return {
+    game,
+    layout: ui.layout,
+    format,
+    intent: ui.intent,
+    size: ui.size === 'custom' ? { width: ui.customW, height: ui.customH, unit: ui.customUnit } : ui.size,
+    orientation: ui.orientation,
+    theme: ui.theme,
+    background: ui.background,
+    art: ui.art,
+    attribution: ui.attribution,
+    includePlaytest: ui.includePlaytest,
+    includeLegacy: ui.includeLegacy,
+    exclude: ui.exclude,
+    grouping: ui.grouping,
+    palette: ui.palette,
+    legend: ui.legend,
+    stats: ui.stats,
+    title: ui.title.trim() || undefined,
+    asOf: ui.asOf.trim() || undefined,
+    fontScale: ui.fontScale,
+    dpi: ui.dpi,
+    scale: ui.scale,
+    quality: ui.quality,
+    bleed: ui.bleed,
+    pageNumbers: ui.pageNumbers,
+  };
+}

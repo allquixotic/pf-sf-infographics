@@ -1,0 +1,49 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "exemplar",
+  "name": "Exemplar",
+  "status": "expansion",
+  "source": {
+    "title": "War of Immortals",
+    "date": "2024-10"
+  },
+  "group": "no-magic",
+  "keyAttributes": [
+    "str",
+    "dex"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 10,
+  "ratings": {
+    "offense": 5,
+    "defense": 3,
+    "support": 2,
+    "utility": 2,
+    "difficulty": 3
+  },
+  "features": [
+    {
+      "title": "Touched by divinity",
+      "text": "Exemplars are mortals on the road to legend. A divine spark lives in their ikons: three signature weapons, items or body parts."
+    },
+    {
+      "title": "Divine spark",
+      "text": "Moving the spark between ikons empowers each in turn, and releasing it unleashes a dramatic transcendent effect before it settles elsewhere."
+    }
+  ],
+  "iconic": {
+    "name": "Nahoa"
+  },
+  "art": {
+    "emblem": "../emblems/exemplar.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Exemplar - Nahoa.png"
+    },
+    "local": "exemplar"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=65"
+  }
+}

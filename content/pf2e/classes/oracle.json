@@ -1,0 +1,51 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "oracle",
+  "name": "Oracle",
+  "status": "core",
+  "source": {
+    "title": "Player Core 2",
+    "date": "2024-08"
+  },
+  "group": "high-magic",
+  "keyAttributes": [
+    "cha"
+  ],
+  "traditions": [
+    "divine"
+  ],
+  "casting": "spontaneous",
+  "hp": 8,
+  "ratings": {
+    "offense": 2.5,
+    "defense": 2,
+    "support": 5,
+    "utility": 4,
+    "difficulty": 4
+  },
+  "features": [
+    {
+      "title": "Touched by mystery",
+      "text": "Oracles draw divine power from a cosmic mystery rather than a single god, and pay for it with a curse."
+    },
+    {
+      "title": "Cursebound",
+      "text": "Casting revelation spells tightens the curse, bringing both drawbacks and power. Managing it is the key to playing an oracle."
+    }
+  ],
+  "iconic": {
+    "name": "Korakai",
+    "ancestry": "tengu"
+  },
+  "art": {
+    "emblem": "../emblems/oracle.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Oracle - Korakai.png"
+    },
+    "local": "oracle"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=61"
+  }
+}

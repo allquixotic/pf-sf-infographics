@@ -1,0 +1,51 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "psychic",
+  "name": "Psychic",
+  "status": "expansion",
+  "source": {
+    "title": "Dark Archive (Remastered)",
+    "date": "2026-02"
+  },
+  "group": "high-magic",
+  "keyAttributes": [
+    "int",
+    "cha"
+  ],
+  "traditions": [
+    "occult"
+  ],
+  "casting": "spontaneous",
+  "hp": 6,
+  "ratings": {
+    "offense": 4,
+    "defense": 1,
+    "support": 4,
+    "utility": 3,
+    "difficulty": 3.5
+  },
+  "features": [
+    {
+      "title": "Mind over matter",
+      "text": "Psychics cast occult magic from the power of their own minds. They know fewer spells than other casters but hit hard with them."
+    },
+    {
+      "title": "Amps and psyche",
+      "text": "Amps make special cantrips far stronger, and unleashing the psyche boosts spell damage for a while before leaving the psychic drained."
+    }
+  ],
+  "iconic": {
+    "name": "Thaleon"
+  },
+  "art": {
+    "emblem": "../emblems/psychic.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Psychic - Thaleon.png"
+    },
+    "local": "psychic"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=68"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "mystic",
+  "name": "Mystic",
+  "status": "core",
+  "source": {
+    "title": "Starfinder Player Core",
+    "date": "2025-07"
+  },
+  "group": "spellcasters",
+  "keyAttributes": [
+    "wis"
+  ],
+  "traditions": [
+    "divine",
+    "occult",
+    "primal"
+  ],
+  "traditionsChosen": true,
+  "casting": "spontaneous",
+  "hp": 6,
+  "ratings": {
+    "offense": [
+      2,
+      3
+    ],
+    "defense": 2,
+    "support": 5,
+    "utility": 4,
+    "difficulty": 3
+  },
+  "features": [
+    {
+      "title": "Spiritual healer",
+      "text": "Mystics tap a connection to something greater, such as the elements, a cosmic rhythm or the shadows, and cast divine, occult or primal spells."
+    },
+    {
+      "title": "Bond and vitality",
+      "text": "A mystic links with up to ten allies, senses how they are doing and pours healing into them from a self-refilling vitality network."
+    }
+  ],
+  "iconic": {
+    "name": "Chk Chk",
+    "ancestry": "shirren"
+  },
+  "art": {
+    "emblem": "../emblems/mystic.svg",
+    "paizo": {
+      "pack": "cup-sf2e-iconics",
+      "file": "PNG/Mystic - Chk Chk.png"
+    },
+    "local": "mystic"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonsrd.com/classes/2-mystic"
+  }
+}

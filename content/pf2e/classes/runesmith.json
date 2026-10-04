@@ -1,0 +1,44 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "runesmith",
+  "name": "Runesmith",
+  "status": "expansion",
+  "source": {
+    "title": "Impossible Magic",
+    "date": "2026-07"
+  },
+  "group": "moderate-magic",
+  "keyAttributes": [
+    "int"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 8,
+  "ratings": {
+    "offense": 3.5,
+    "defense": 2.5,
+    "support": 4,
+    "utility": 3,
+    "difficulty": 4.5
+  },
+  "features": [
+    {
+      "title": "Carver of runes",
+      "text": "Runesmiths wield ancient runes of power instead of spells, etching them onto weapons, armor, allies and even enemies."
+    },
+    {
+      "title": "Invoke Rune",
+      "text": "Runes grant ongoing benefits and can be invoked to release a stronger burst of power all at once, then traced anew."
+    }
+  ],
+  "iconic": {
+    "name": "Pallemi"
+  },
+  "art": {
+    "emblem": "../emblems/runesmith.svg",
+    "local": "runesmith"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=76"
+  }
+}

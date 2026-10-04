@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <!-- A comet: a hollow burning core trailing three streaks. -->
+  <path fill="currentColor" fill-rule="evenodd" d="M9 9.6a5.4 5.4 0 1 1 0 10.8 5.4 5.4 0 0 1 0-10.8zm0 3.3a2.1 2.1 0 1 0 0 4.2 2.1 2.1 0 0 0 0-4.2z"/>
+  <g fill="none" stroke="currentColor" stroke-linecap="round">
+    <path stroke-width="3.4" d="M11.8 12.2 19.6 4.4"/>
+    <path stroke-width="2.3" d="M7.3 11.2 13.2 3.2"/>
+    <path stroke-width="2.3" d="M12.8 16.6 20.8 10.8"/>
+  </g>
+</svg>

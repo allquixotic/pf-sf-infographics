@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<!-- Bard: lute with a pair of beamed music notes. -->
+<defs><mask id="bard-cut"><rect width="100" height="100" fill="#fff"/><g transform="translate(9.5 3.5) rotate(40 50 50) scale(0.92) translate(4 4)"><circle cx="50" cy="63" r="6.5" fill="#000"/><rect x="40" y="79" width="20" height="4.5" rx="1" fill="#000"/></g></mask></defs>
+<g fill="currentColor" mask="url(#bard-cut)"><g transform="translate(9.5 3.5) rotate(40 50 50) scale(0.92) translate(4 4)">
+<path d="M45 41C40 47 28 52 28 69C28 83 38 92 50 92C62 92 72 83 72 69C72 52 60 47 55 41Z"/>
+<path d="M45 44V15H55V44Z"/>
+<path d="M45 17L39 6L46.5 2.5L55 17Z"/>
+</g></g>
+<g fill="currentColor" transform="translate(6.5 4.5)">
+<ellipse cx="14" cy="38" rx="6.5" ry="4.8" transform="rotate(-20 14 38)"/>
+<ellipse cx="33" cy="32.5" rx="6.5" ry="4.8" transform="rotate(-20 33 32.5)"/>
+<path d="M16.5 37V14L39.5 8V32H35.5V15.5L20.5 19.4V37Z"/>
+</g>
+</svg>

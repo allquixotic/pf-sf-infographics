@@ -1,0 +1,39 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "daredevil",
+  "name": "Daredevil",
+  "status": "playtest",
+  "source": {
+    "title": "Risks & Rewards Playtest",
+    "date": "2026-02"
+  },
+  "group": "no-magic",
+  "keyAttributes": [
+    "str",
+    "dex"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 8,
+  "ratings": {
+    "offense": 4,
+    "defense": 3,
+    "support": 2,
+    "utility": 3,
+    "difficulty": 3.5
+  },
+  "features": [
+    {
+      "title": "Living on the edge",
+      "text": "Daredevils chase danger for the thrill of it, betting on skill and luck. The riskier the move, the stronger they get."
+    },
+    {
+      "title": "Adrenaline",
+      "text": "Bold, risky actions build adrenaline that fuels powerful feats until their next turn. Misjudge the risk and it can backfire."
+    }
+  ],
+  "art": {
+    "emblem": "../emblems/daredevil.svg",
+    "local": "daredevil"
+  }
+}

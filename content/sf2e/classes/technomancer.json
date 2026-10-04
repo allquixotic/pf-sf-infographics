@@ -1,0 +1,44 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "technomancer",
+  "name": "Technomancer",
+  "status": "playtest",
+  "source": {
+    "title": "Tech Class Playtest (Tech Core, Oct 2026)",
+    "date": "2025-04"
+  },
+  "group": "spellcasters",
+  "keyAttributes": [
+    "int"
+  ],
+  "traditions": [
+    "arcane"
+  ],
+  "casting": "prepared",
+  "hp": 6,
+  "ratings": {
+    "offense": 3.5,
+    "defense": 1.5,
+    "support": 3.5,
+    "utility": 5,
+    "difficulty": 4.5
+  },
+  "features": [
+    {
+      "title": "Code and sorcery",
+      "text": "Technomancers treat magic as software, casting arcane spells and hacking them like programs."
+    },
+    {
+      "title": "Overclock",
+      "text": "Leftover magic from a spell can overclock the technomancer's gear, and jailbreaks rewrite spells with extra effects."
+    }
+  ],
+  "iconic": {
+    "name": "Raia",
+    "ancestry": "lashunta"
+  },
+  "art": {
+    "emblem": "../emblems/technomancer.svg",
+    "local": "technomancer"
+  }
+}

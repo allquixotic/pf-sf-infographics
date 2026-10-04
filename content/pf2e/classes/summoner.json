@@ -1,0 +1,54 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "summoner",
+  "name": "Summoner",
+  "status": "expansion",
+  "source": {
+    "title": "Impossible Magic",
+    "date": "2026-07"
+  },
+  "group": "moderate-magic",
+  "keyAttributes": [
+    "cha"
+  ],
+  "traditions": [
+    "arcane",
+    "divine",
+    "occult",
+    "primal"
+  ],
+  "traditionsChosen": true,
+  "casting": "spontaneous",
+  "hp": 10,
+  "ratings": {
+    "offense": 4,
+    "defense": 3,
+    "support": 3.5,
+    "utility": 3,
+    "difficulty": 4.5
+  },
+  "features": [
+    {
+      "title": "Two souls, one life",
+      "text": "Summoners share their life force with an eidolon, a powerful spirit companion such as a dragon, angel or fey."
+    },
+    {
+      "title": "Act Together",
+      "text": "Summoner and eidolon share hit points and actions but each can act, so the pair effectively gets four actions a turn."
+    }
+  ],
+  "iconic": {
+    "name": "Ija"
+  },
+  "art": {
+    "emblem": "../emblems/summoner.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Summoner - Ija.png"
+    },
+    "local": "summoner"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=77"
+  }
+}

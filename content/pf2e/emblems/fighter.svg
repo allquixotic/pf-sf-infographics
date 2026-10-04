@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<!-- Fighter: longsword held point-up with a broad crossguard. -->
+<path fill="currentColor" fill-rule="evenodd" d="M50 7L60 20V61H40V20ZM47.75 25V57H52.25V25Z"/>
+<path fill="currentColor" d="M16 60.5C16 57 19.5 57 22 59.5H78C80.5 57 84 57 84 60.5V67.5C84 71 80.5 71 78 68.5H22C19.5 71 16 71 16 67.5Z"/>
+<rect x="44" y="68" width="12" height="15" fill="currentColor"/>
+<circle cx="50" cy="86.5" r="6.5" fill="currentColor"/>
+</svg>

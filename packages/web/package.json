@@ -1,0 +1,30 @@
+{
+  "name": "@pfsf/web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Browser UI for the pf-sf-infographics engine (Vue 3 + Vite), deployed to GitHub Pages.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc -p . --noEmit"
+  },
+  "dependencies": {
+    "@jsquash/jpeg": "^1.6.0",
+    "@jsquash/webp": "^1.5.0",
+    "@myriaddreamin/typst-ts-renderer": "0.7.0",
+    "@myriaddreamin/typst-ts-web-compiler": "0.7.0",
+    "@pfsf/engine": "workspace:*",
+    "@resvg/resvg-wasm": "^2.6.2",
+    "fflate": "^0.8.3",
+    "vue": "^3.5.43"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.9",
+    "@vue/tsconfig": "^0.9.1",
+    "vite": "^8.3.1",
+    "vue-tsc": "^3.3.11"
+  }
+}

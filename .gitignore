@@ -1,0 +1,40 @@
+# Dependencies and build output
+node_modules/
+dist/
+*.tsbuildinfo
+coverage/
+
+# Local Bun runtime downloaded by start.sh / start.bat / pfsf.sh / pfsf.bat
+.runtime/
+
+# Paizo Community Use Package downloads and any other locally supplied artwork.
+# These files are never committed; see docs/paizo-assets.md.
+local-assets/*
+!local-assets/README.md
+
+# CLI render output
+out/
+
+# Generated at build time
+packages/web/public/content/
+packages/web/src/generated/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.log
+
+# Local assistant instructions and configuration
+AGENTS.md
+CLAUDE.md
+.claude/
+.codex/
+
+# Local secrets
+.env
+.env.*
+!.env.example

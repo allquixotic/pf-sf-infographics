@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+  <!-- A radiant sun: a solid disc inside a ring of eight rays. -->
+  <circle cx="12" cy="12" r="3.9"/>
+  <path d="M17.10 11.01L21.60 12.00L17.10 12.99ZM16.31 14.91L18.79 18.79L14.91 16.31ZM12.99 17.10L12.00 21.60L11.01 17.10ZM9.09 16.31L5.21 18.79L7.69 14.91ZM6.90 12.99L2.40 12.00L6.90 11.01ZM7.69 9.09L5.21 5.21L9.09 7.69ZM11.01 6.90L12.00 2.40L12.99 6.90ZM14.91 7.69L18.79 5.21L16.31 9.09Z"/>
+</svg>

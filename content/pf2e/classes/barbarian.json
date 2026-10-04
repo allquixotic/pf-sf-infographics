@@ -1,0 +1,49 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "barbarian",
+  "name": "Barbarian",
+  "status": "core",
+  "source": {
+    "title": "Player Core 2",
+    "date": "2024-08"
+  },
+  "group": "no-magic",
+  "keyAttributes": [
+    "str"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 12,
+  "ratings": {
+    "offense": 5,
+    "defense": 3.5,
+    "support": 2,
+    "utility": 2,
+    "difficulty": 1
+  },
+  "features": [
+    {
+      "title": "Unstoppable fury",
+      "text": "Barbarians win fights by hitting harder than anyone else. Huge hit points and simple, decisive choices make them a great first class."
+    },
+    {
+      "title": "Rage",
+      "text": "Rage adds damage and temporary hit points at the cost of some defense and concentration. The instinct decides where the fury comes from and what extra power it brings."
+    }
+  ],
+  "iconic": {
+    "name": "Amiri",
+    "ancestry": "human"
+  },
+  "art": {
+    "emblem": "../emblems/barbarian.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Barbarian - Amiri.png"
+    },
+    "local": "barbarian"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=57"
+  }
+}

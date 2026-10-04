@@ -1,0 +1,27 @@
+{
+  "$schema": "../../schema/theme.schema.json",
+  "id": "classic",
+  "label": "Classic (after Rachelle Willemsma's design)",
+  "fonts": {
+    "heading": { "family": "Ultra", "files": ["../fonts/Ultra-Regular.ttf"] },
+    "body": { "family": "Lexend", "files": ["../fonts/Lexend-Regular.ttf", "../fonts/Lexend-Bold.ttf"] }
+  },
+  "light": {
+    "background": "#ffffff",
+    "ink": "#111111",
+    "muted": "#5a5752",
+    "cardFill": "#ffffff",
+    "bannerFill": "#111111",
+    "bannerInk": "#ffffff",
+    "accent": "#b8452f"
+  },
+  "dark": {
+    "background": "#17161b",
+    "ink": "#f1ede4",
+    "muted": "#b2ab9e",
+    "cardFill": "#201e25",
+    "bannerFill": "#f1ede4",
+    "bannerInk": "#17161b",
+    "accent": "#e0724f"
+  }
+}

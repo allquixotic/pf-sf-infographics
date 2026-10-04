@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Lint, typecheck, test, build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - run: bun install --frozen-lockfile
+      - name: Content is valid and manifest.json is current
+        run: bun run content:check
+      - run: bun run lint
+      - run: bun run typecheck
+      - run: bun test
+      - name: Build the web app
+        run: bun run --cwd packages/web build
+      - name: Render sample outputs with the CLI
+        run: |
+          bun run cli --game pf2e --format pdf,png --intent screen --size fhd --out out
+          bun run cli --game sf2e --layout booklet --format pdf --playtest --out out
+      - uses: actions/upload-artifact@v7
+        with:
+          name: sample-renders
+          path: out/
+          retention-days: 7
+
+  launchers:
+    name: Launcher scripts (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: pfsf.sh downloads Bun and runs the CLI
+        if: runner.os != 'Windows'
+        run: ./pfsf.sh list
+      - name: pfsf.bat downloads Bun and runs the CLI
+        if: runner.os == 'Windows'
+        shell: cmd
+        run: pfsf.bat list

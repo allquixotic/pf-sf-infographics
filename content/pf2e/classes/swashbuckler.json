@@ -1,0 +1,49 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "swashbuckler",
+  "name": "Swashbuckler",
+  "status": "core",
+  "source": {
+    "title": "Player Core 2",
+    "date": "2024-08"
+  },
+  "group": "no-magic",
+  "keyAttributes": [
+    "dex"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 10,
+  "ratings": {
+    "offense": 4,
+    "defense": 3.5,
+    "support": 3,
+    "utility": 2.5,
+    "difficulty": 3
+  },
+  "features": [
+    {
+      "title": "Daring duelist",
+      "text": "Swashbucklers make combat a performance, tumbling, taunting and feinting their way around the battlefield."
+    },
+    {
+      "title": "Panache",
+      "text": "Stylish skill actions earn panache, which boosts speed and damage and powers dramatic finishing blows."
+    }
+  ],
+  "iconic": {
+    "name": "Jirelle",
+    "ancestry": "human"
+  },
+  "art": {
+    "emblem": "../emblems/swashbuckler.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Swashbuckler - Jirrelle.png"
+    },
+    "local": "swashbuckler"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=63"
+  }
+}

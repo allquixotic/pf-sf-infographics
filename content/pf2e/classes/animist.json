@@ -1,0 +1,50 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "animist",
+  "name": "Animist",
+  "status": "expansion",
+  "source": {
+    "title": "War of Immortals",
+    "date": "2024-10"
+  },
+  "group": "high-magic",
+  "keyAttributes": [
+    "wis"
+  ],
+  "traditions": [
+    "divine"
+  ],
+  "casting": "hybrid",
+  "hp": 8,
+  "ratings": {
+    "offense": 2.5,
+    "defense": 2,
+    "support": 4.5,
+    "utility": 4.5,
+    "difficulty": 4
+  },
+  "features": [
+    {
+      "title": "Speaker for spirits",
+      "text": "Animists form daily pacts with apparitions, the spirits of places and ideas, and channel them as divine magic. New apparitions can reshape the character each morning."
+    },
+    {
+      "title": "Apparitions",
+      "text": "Each attuned spirit adds spells and skills. The primary apparition also grants vessel spells, focus magic that changes along with it."
+    }
+  ],
+  "iconic": {
+    "name": "Samo"
+  },
+  "art": {
+    "emblem": "../emblems/animist.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Animist - Samo.png"
+    },
+    "local": "animist"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=64"
+  }
+}

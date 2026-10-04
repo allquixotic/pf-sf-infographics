@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<!-- Inventor: cog wheel crossed by a wrench. -->
+<defs><mask id="inventor-cut"><rect width="100" height="100" fill="#fff"/><path transform="translate(50 50) rotate(-45)" d="M-27.5 -5.5H24.2A13 13 0 0 1 48 -5H31A5 5 0 0 0 31 5H48A13 13 0 0 1 24.2 5.5H-27.5A11 11 0 1 1 -27.5 -5.5Z" stroke="#000" stroke-width="10" stroke-linejoin="round"/></mask></defs>
+<path fill="currentColor" fill-rule="evenodd" mask="url(#inventor-cut)" d="M40.9 20.4L42.4 10.7A40 40 0 0 1 57.6 10.7L59.1 20.4A31 31 0 0 1 64.6 22.6L72.4 16.8A40 40 0 0 1 83.2 27.6L77.4 35.4A31 31 0 0 1 79.6 40.9L89.3 42.4A40 40 0 0 1 89.3 57.6L79.6 59.1A31 31 0 0 1 77.4 64.6L83.2 72.4A40 40 0 0 1 72.4 83.2L64.6 77.4A31 31 0 0 1 59.1 79.6L57.6 89.3A40 40 0 0 1 42.4 89.3L40.9 79.6A31 31 0 0 1 35.4 77.4L27.6 83.2A40 40 0 0 1 16.8 72.4L22.6 64.6A31 31 0 0 1 20.4 59.1L10.7 57.6A40 40 0 0 1 10.7 42.4L20.4 40.9A31 31 0 0 1 22.6 35.4L16.8 27.6A40 40 0 0 1 27.6 16.8L35.4 22.6A31 31 0 0 1 40.9 20.4ZM50 38A12 12 0 1 0 50 62A12 12 0 1 0 50 38Z"/>
+<path transform="translate(50 50) rotate(-45)" fill="currentColor" fill-rule="evenodd" d="M-27.5 -5.5H24.2A13 13 0 0 1 48 -5H31A5 5 0 0 0 31 5H48A13 13 0 0 1 24.2 5.5H-27.5A11 11 0 1 1 -27.5 -5.5ZM-37 -5.5L-32.2 -2.8V2.8L-37 5.5L-41.8 2.8V-2.8Z"/>
+</svg>

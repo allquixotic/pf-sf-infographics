@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<!-- Mystic: an open third eye at the center of a ring of orbiting motes: spiritual sight and connection. -->
+<path fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round" d="M20 50Q50 14 80 50Q50 86 20 50Z"/>
+<path fill="currentColor" fill-rule="evenodd" d="M50 39A11 11 0 1 1 50 61A11 11 0 1 1 50 39Z M46 42A3.5 3.5 0 1 0 46 49A3.5 3.5 0 1 0 46 42Z"/>
+<g fill="currentColor">
+<circle cx="86.9" cy="65.3" r="5"/><circle cx="65.3" cy="86.9" r="5"/>
+<circle cx="34.7" cy="86.9" r="5"/><circle cx="13.1" cy="65.3" r="5"/>
+<circle cx="13.1" cy="34.7" r="5"/><circle cx="34.7" cy="13.1" r="5"/>
+<circle cx="65.3" cy="13.1" r="5"/><circle cx="86.9" cy="34.7" r="5"/>
+</g>
+</svg>

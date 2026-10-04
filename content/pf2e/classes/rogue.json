@@ -1,0 +1,49 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "rogue",
+  "name": "Rogue",
+  "status": "core",
+  "source": {
+    "title": "Player Core",
+    "date": "2023-11"
+  },
+  "group": "no-magic",
+  "keyAttributes": [
+    "dex"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 8,
+  "ratings": {
+    "offense": 4,
+    "defense": 3,
+    "support": 3,
+    "utility": 4.5,
+    "difficulty": 2
+  },
+  "features": [
+    {
+      "title": "Jack of all trades",
+      "text": "Rogues get more skills and skill feats than anyone else and can be the scout, the infiltrator, the face or the thief."
+    },
+    {
+      "title": "Sneak Attack",
+      "text": "Hitting an off-guard enemy adds precision damage. The racket, such as ruffian or scoundrel, decides how the rogue sets that up."
+    }
+  ],
+  "iconic": {
+    "name": "Merisiel",
+    "ancestry": "elf"
+  },
+  "art": {
+    "emblem": "../emblems/rogue.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Rogue - Merisiel.png"
+    },
+    "local": "rogue"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=37"
+  }
+}

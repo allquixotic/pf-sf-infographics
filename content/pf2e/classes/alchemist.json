@@ -1,0 +1,49 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "alchemist",
+  "name": "Alchemist",
+  "status": "core",
+  "source": {
+    "title": "Player Core 2",
+    "date": "2024-08"
+  },
+  "group": "no-magic",
+  "keyAttributes": [
+    "int"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 8,
+  "ratings": {
+    "offense": 3,
+    "defense": 2.5,
+    "support": 4,
+    "utility": 5,
+    "difficulty": 4.5
+  },
+  "features": [
+    {
+      "title": "Chemistry over magic",
+      "text": "Alchemists solve problems with bombs, elixirs, poisons and mutagens instead of spells. Their strength is breadth and preparation rather than raw damage."
+    },
+    {
+      "title": "Quick Alchemy",
+      "text": "Versatile vials let an alchemist brew exactly the item a fight calls for, on top of a free batch made during daily preparations."
+    }
+  ],
+  "iconic": {
+    "name": "Fumbus",
+    "ancestry": "goblin"
+  },
+  "art": {
+    "emblem": "../emblems/alchemist.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Alchemist - Fumbus.png"
+    },
+    "local": "alchemist"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=56"
+  }
+}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<!-- Wizard: an open spellbook with a star shining above it. -->
+<defs>
+<mask id="wizard-cover" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/>
+<path fill="#000" stroke="#000" stroke-width="7" stroke-linejoin="round" d="M47 50 C38 44 26 42 14 46 V80 C26 76 38 78 47 84 Z M53 50 C62 44 74 42 86 46 V80 C74 76 62 78 53 84 Z"/>
+</mask>
+<mask id="wizard-lines" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/>
+<path fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" d="M19 56 C27 53 35 54 42 58 M19 64 C27 61 35 62 42 66 M19 72 C27 69 35 70 42 74 M81 56 C73 53 65 54 58 58 M81 64 C73 61 65 62 58 66 M81 72 C73 69 65 70 58 74"/>
+</mask>
+</defs>
+<g fill="currentColor">
+<path mask="url(#wizard-cover)" d="M6 50 V88 C24 83 38 85 50 91 C62 85 76 83 94 88 V50 Z"/>
+<path mask="url(#wizard-lines)" d="M47 50 C38 44 26 42 14 46 V80 C26 76 38 78 47 84 Z M53 50 C62 44 74 42 86 46 V80 C74 76 62 78 53 84 Z"/>
+<path d="M50 7 L54.3 19 L67.1 19.4 L57 27.3 L60.6 39.6 L50 32.4 L39.4 39.6 L43 27.3 L32.9 19.4 L45.7 19 Z"/>
+</g>
+</svg>

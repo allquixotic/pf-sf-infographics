@@ -1,0 +1,48 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "gunslinger",
+  "name": "Gunslinger",
+  "status": "expansion",
+  "source": {
+    "title": "Guns & Gears (Remastered)",
+    "date": "2025-02"
+  },
+  "group": "no-magic",
+  "keyAttributes": [
+    "dex"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 8,
+  "ratings": {
+    "offense": 4,
+    "defense": 3,
+    "support": 3,
+    "utility": 2,
+    "difficulty": 2.5
+  },
+  "features": [
+    {
+      "title": "Sharpshooter",
+      "text": "Gunslingers master firearms and crossbows and become the most accurate shooters of any class."
+    },
+    {
+      "title": "Ways and deeds",
+      "text": "A way such as the sniper, the pistolero or the vanguard grants signature deeds and reloads that combine shooting with movement or tricks."
+    }
+  ],
+  "iconic": {
+    "name": "Nhalmika"
+  },
+  "art": {
+    "emblem": "../emblems/gunslinger.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Gunslinger - Nhalmika.png"
+    },
+    "local": "gunslinger"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=20"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "operative",
+  "name": "Operative",
+  "status": "core",
+  "source": {
+    "title": "Starfinder Player Core",
+    "date": "2025-07"
+  },
+  "group": "tech",
+  "keyAttributes": [
+    "dex"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 8,
+  "ratings": {
+    "offense": 5,
+    "defense": 2.5,
+    "support": 2,
+    "utility": 3.5,
+    "difficulty": 2.5
+  },
+  "features": [
+    {
+      "title": "Precision specialist",
+      "text": "Operatives are spies, scouts and snipers who make every shot count."
+    },
+    {
+      "title": "Aim",
+      "text": "Taking aim at a target adds growing precision damage to ranged hits; a specialization such as ghost or sniper adds a signature trick."
+    }
+  ],
+  "iconic": {
+    "name": "Iseph",
+    "ancestry": "android"
+  },
+  "art": {
+    "emblem": "../emblems/operative.svg",
+    "paizo": {
+      "pack": "cup-sf2e-iconics",
+      "file": "PNG/Operative - Iseph.png"
+    },
+    "local": "operative"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonsrd.com/classes/3-operative"
+  }
+}

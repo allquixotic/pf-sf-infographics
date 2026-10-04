@@ -1,0 +1,61 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "sorcerer",
+  "name": "Sorcerer",
+  "status": "core",
+  "source": {
+    "title": "Player Core 2",
+    "date": "2024-08"
+  },
+  "group": "high-magic",
+  "keyAttributes": [
+    "cha"
+  ],
+  "traditions": [
+    "arcane",
+    "divine",
+    "occult",
+    "primal"
+  ],
+  "traditionsChosen": true,
+  "casting": "spontaneous",
+  "hp": 6,
+  "ratings": {
+    "offense": [
+      2,
+      3.5
+    ],
+    "defense": 1,
+    "support": [
+      3,
+      5
+    ],
+    "utility": 4,
+    "difficulty": 2.5
+  },
+  "features": [
+    {
+      "title": "Born with magic",
+      "text": "Sorcerers carry power in their blood. The bloodline decides their tradition and much of their spell list."
+    },
+    {
+      "title": "Blood magic",
+      "text": "Sorcerers get more spell slots than other casters, and bloodline spells trigger an extra themed effect."
+    }
+  ],
+  "iconic": {
+    "name": "Seoni",
+    "ancestry": "human"
+  },
+  "art": {
+    "emblem": "../emblems/sorcerer.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Sorcerer - Seoni.png"
+    },
+    "local": "sorcerer"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=62"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "slayer",
+  "name": "Slayer",
+  "status": "playtest",
+  "source": {
+    "title": "Risks & Rewards Playtest",
+    "date": "2026-02"
+  },
+  "group": "no-magic",
+  "keyAttributes": [
+    "str",
+    "dex"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 10,
+  "ratings": {
+    "offense": 4.5,
+    "defense": 3.5,
+    "support": 2,
+    "utility": 3,
+    "difficulty": 3
+  },
+  "features": [
+    {
+      "title": "Monster hunter",
+      "text": "Slayers study their prey and turn knowledge of monsters into a decisive edge."
+    },
+    {
+      "title": "Quarry and trophies",
+      "text": "A slayer marks one powerful foe as quarry, then takes trophies from kills to upgrade their signature hunting tool."
+    }
+  ],
+  "art": {
+    "emblem": "../emblems/slayer.svg",
+    "local": "slayer"
+  }
+}

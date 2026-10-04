@@ -1,0 +1,49 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "envoy",
+  "name": "Envoy",
+  "status": "core",
+  "source": {
+    "title": "Starfinder Player Core",
+    "date": "2025-07"
+  },
+  "group": "tech",
+  "keyAttributes": [
+    "cha"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 8,
+  "ratings": {
+    "offense": 2.5,
+    "defense": 2.5,
+    "support": 5,
+    "utility": 4.5,
+    "difficulty": 3
+  },
+  "features": [
+    {
+      "title": "Born leader",
+      "text": "Envoys talk, inspire and improvise. They are the party's face and its field commander, with a skill for nearly every situation."
+    },
+    {
+      "title": "Directives",
+      "text": "Once a round an envoy calls out a directive such as Get 'Em!, rewarding allies who act on it, and can lead by example for a stronger effect."
+    }
+  ],
+  "iconic": {
+    "name": "Navasi",
+    "ancestry": "human"
+  },
+  "art": {
+    "emblem": "../emblems/envoy.svg",
+    "paizo": {
+      "pack": "cup-sf2e-iconics",
+      "file": "PNG/Envoy - Navasi.png"
+    },
+    "local": "envoy"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonsrd.com/classes/1-envoy"
+  }
+}

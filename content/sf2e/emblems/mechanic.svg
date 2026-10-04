@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<!-- Mechanic: a toothed gear crossed by an open-jaw wrench, separated by a clean gap: the builder and fixer. -->
+<defs>
+<mask id="mechanic-gap"><rect width="100" height="100" fill="#fff"/><g transform="rotate(-45 50 50)" fill="#000" stroke="#000" stroke-width="12" stroke-linejoin="round"><circle cx="76" cy="50" r="17"/><rect x="20" y="44.5" width="54" height="11"/><circle cx="22" cy="50" r="10"/></g></mask>
+<mask id="mechanic-wrench"><g transform="rotate(-45 50 50)"><g fill="#fff"><circle cx="76" cy="50" r="15"/><rect x="20" y="44.5" width="54" height="11"/><circle cx="22" cy="50" r="10"/></g><g fill="#000"><path d="M80 45H96V55H80A5 5 0 0 1 80 45Z"/><circle cx="22" cy="50" r="4.5"/></g></g></mask>
+</defs>
+<path mask="url(#mechanic-gap)" fill="currentColor" d="M79.6 55L87.9 59.1L83.3 70.4L74.4 67.4A30 30 0 0 1 67.4 74.4L70.4 83.3L59.1 87.9L55 79.6A30 30 0 0 1 45 79.6L40.9 87.9L29.6 83.3L32.6 74.4A30 30 0 0 1 25.6 67.4L16.7 70.4L12.1 59.1L20.4 55A30 30 0 0 1 20.4 45L12.1 40.9L16.7 29.6L25.6 32.6A30 30 0 0 1 32.6 25.6L29.6 16.7L40.9 12.1L45 20.4A30 30 0 0 1 55 20.4L59.1 12.1L70.4 16.7L67.4 25.6A30 30 0 0 1 74.4 32.6L83.3 29.6L87.9 40.9L79.6 45A30 30 0 0 1 79.6 55Z"/>
+<rect mask="url(#mechanic-wrench)" width="100" height="100" fill="currentColor"/>
+</svg>

@@ -1,0 +1,49 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "soldier",
+  "name": "Soldier",
+  "status": "core",
+  "source": {
+    "title": "Starfinder Player Core",
+    "date": "2025-07"
+  },
+  "group": "tech",
+  "keyAttributes": [
+    "con"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 10,
+  "ratings": {
+    "offense": 4,
+    "defense": 5,
+    "support": 3,
+    "utility": 1.5,
+    "difficulty": 2
+  },
+  "features": [
+    {
+      "title": "Heavy hitter",
+      "text": "Soldiers are tough, well armored and carry the biggest guns, built to hold the line."
+    },
+    {
+      "title": "Suppressing Fire",
+      "text": "Area and automatic weapons leave enemies suppressed, less accurate and slower, while a primary target shot focuses the blast on one foe."
+    }
+  ],
+  "iconic": {
+    "name": "Obozaya",
+    "ancestry": "vesk"
+  },
+  "art": {
+    "emblem": "../emblems/soldier.svg",
+    "paizo": {
+      "pack": "cup-sf2e-iconics",
+      "file": "PNG/Soldier - Obozaya.png"
+    },
+    "local": "soldier"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonsrd.com/classes/5-soldier"
+  }
+}

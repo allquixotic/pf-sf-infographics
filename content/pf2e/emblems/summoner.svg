@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<!-- Summoner: a horned eidolon breaking through a summoning circle. -->
+<defs>
+<mask id="summoner-eyes" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/>
+<path fill="#000" d="M38 51 L48 55.5 L47 60 L39 57.5 Z M62 51 L52 55.5 L53 60 L61 57.5 Z"/>
+</mask>
+<mask id="summoner-ring" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/>
+<path fill="#000" stroke="#000" stroke-width="7" stroke-linejoin="round" d="M38 43 C27 41 20 32 22 14 C26 26 34 31 46 35 Z M62 43 C73 41 80 32 78 14 C74 26 66 31 54 35 Z"/>
+</mask>
+</defs>
+<circle mask="url(#summoner-ring)" cx="50" cy="52" r="39" fill="none" stroke="currentColor" stroke-width="5.5"/>
+<g fill="currentColor">
+<path mask="url(#summoner-eyes)" d="M50 82 L36 66 C33 61 32 55 33 49 C34 40 41 35 50 35 C59 35 66 40 67 49 C68 55 67 61 64 66 Z"/>
+<path d="M38 43 C27 41 20 32 22 14 C26 26 34 31 46 35 Z M62 43 C73 41 80 32 78 14 C74 26 66 31 54 35 Z"/>
+</g>
+</svg>

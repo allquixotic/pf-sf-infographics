@@ -1,0 +1,35 @@
+{
+  "name": "pf-sf-infographics",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Generate Pathfinder 2e and Starfinder 2e class infographics (poster or booklet) as SVG, PNG, JPG, WebP or PDF.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "packageManager": "bun@1.4.2",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "bun tools/launch.ts",
+    "dev": "bun run --cwd packages/web dev",
+    "build": "bun run content:check && bun run --cwd packages/web build",
+    "preview": "bun run --cwd packages/web preview",
+    "cli": "bun packages/cli/src/main.ts",
+    "test": "bun test",
+    "typecheck": "tsc -p packages/engine && tsc -p packages/engine/test && tsc -p packages/cli && tsc -p packages/cli/test && tsc -p tools && bun run --cwd packages/web typecheck",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "content:manifest": "bun tools/build-manifest.ts",
+    "content:check": "bun tools/build-manifest.ts --check",
+    "content:schema": "bun tools/build-schema.ts",
+    "paizo:fetch": "bun tools/fetch-paizo-assets.ts"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.14",
+    "@pfsf/cli": "workspace:*",
+    "@pfsf/engine": "workspace:*",
+    "@types/bun": "^1.4.2",
+    "typescript": "^6.0.3",
+    "zod": "^4.6.5"
+  }
+}

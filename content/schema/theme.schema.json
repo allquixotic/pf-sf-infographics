@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$",
+      "description": "Stable identifier (lowercase, digits, hyphens)."
+    },
+    "label": {
+      "type": "string"
+    },
+    "fonts": {
+      "type": "object",
+      "properties": {
+        "heading": {
+          "type": "object",
+          "properties": {
+            "family": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Family name exactly as stored in the font files."
+            },
+            "files": {
+              "minItems": 1,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Path relative to the file that references it."
+              }
+            }
+          },
+          "required": [
+            "family",
+            "files"
+          ]
+        },
+        "body": {
+          "type": "object",
+          "properties": {
+            "family": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Family name exactly as stored in the font files."
+            },
+            "files": {
+              "minItems": 1,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Path relative to the file that references it."
+              }
+            }
+          },
+          "required": [
+            "family",
+            "files"
+          ]
+        }
+      },
+      "required": [
+        "heading",
+        "body"
+      ]
+    },
+    "light": {
+      "type": "object",
+      "properties": {
+        "background": {
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "description": "Poster background."
+        },
+        "ink": {
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "description": "Main text and line color."
+        },
+        "muted": {
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "description": "Secondary text color."
+        },
+        "cardFill": {
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "description": "Fill behind class cards (ignored when the background is transparent)."
+        },
+        "bannerFill": {
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "description": "Fill of section banners."
+        },
+        "bannerInk": {
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "description": "Text color on section banners."
+        },
+        "accent": {
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "description": "Highlight color (playtest badges and similar)."
+        }
+      },
+      "required": [
+        "background",
+        "ink",
+        "muted",
+        "cardFill",
+        "bannerFill",
+        "bannerInk",
+        "accent"
+      ]
+    },
+    "dark": {
+      "type": "object",
+      "properties": {
+        "background": {
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "description": "Poster background."
+        },
+        "ink": {
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "description": "Main text and line color."
+        },
+        "muted": {
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "description": "Secondary text color."
+        },
+        "cardFill": {
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "description": "Fill behind class cards (ignored when the background is transparent)."
+        },
+        "bannerFill": {
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "description": "Fill of section banners."
+        },
+        "bannerInk": {
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "description": "Text color on section banners."
+        },
+        "accent": {
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "description": "Highlight color (playtest badges and similar)."
+        }
+      },
+      "required": [
+        "background",
+        "ink",
+        "muted",
+        "cardFill",
+        "bannerFill",
+        "bannerInk",
+        "accent"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "label",
+    "fonts",
+    "light",
+    "dark"
+  ]
+}

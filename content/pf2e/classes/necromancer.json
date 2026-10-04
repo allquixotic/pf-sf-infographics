@@ -1,0 +1,46 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "necromancer",
+  "name": "Necromancer",
+  "status": "expansion",
+  "source": {
+    "title": "Impossible Magic",
+    "date": "2026-07"
+  },
+  "group": "high-magic",
+  "keyAttributes": [
+    "int"
+  ],
+  "traditions": [
+    "occult"
+  ],
+  "casting": "prepared",
+  "hp": 8,
+  "ratings": {
+    "offense": 3.5,
+    "defense": 2,
+    "support": 3,
+    "utility": 3.5,
+    "difficulty": 4.5
+  },
+  "features": [
+    {
+      "title": "Master of the dead",
+      "text": "Necromancers wield occult magic over life and death, raising fragile undead thralls in the middle of a fight."
+    },
+    {
+      "title": "Thralls",
+      "text": "Thralls are expendable minions that block, flank and fuel spells; spending them at the right moment is the heart of the class."
+    }
+  ],
+  "iconic": {
+    "name": "Usharak"
+  },
+  "art": {
+    "emblem": "../emblems/necromancer.svg",
+    "local": "necromancer"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=75"
+  }
+}

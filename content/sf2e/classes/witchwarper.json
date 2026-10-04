@@ -1,0 +1,54 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "witchwarper",
+  "name": "Witchwarper",
+  "status": "core",
+  "source": {
+    "title": "Starfinder Player Core",
+    "date": "2025-07"
+  },
+  "group": "spellcasters",
+  "keyAttributes": [
+    "cha",
+    "int"
+  ],
+  "traditions": [
+    "arcane",
+    "occult"
+  ],
+  "traditionsChosen": true,
+  "casting": "spontaneous",
+  "hp": 8,
+  "ratings": {
+    "offense": 3,
+    "defense": 1.5,
+    "support": 4,
+    "utility": 4,
+    "difficulty": 4
+  },
+  "features": [
+    {
+      "title": "Reality bender",
+      "text": "Witchwarpers pull power from alternate realities, bending space, time and probability around them."
+    },
+    {
+      "title": "Quantum field",
+      "text": "A zone of warped reality hinders foes or shields allies, and warp spells work only inside it; the paradox decides its effect."
+    }
+  ],
+  "iconic": {
+    "name": "Zemir",
+    "ancestry": "human"
+  },
+  "art": {
+    "emblem": "../emblems/witchwarper.svg",
+    "paizo": {
+      "pack": "cup-sf2e-iconics",
+      "file": "PNG/Witchwarper - Zemir.png"
+    },
+    "local": "witchwarper"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonsrd.com/classes/6-witchwarper"
+  }
+}

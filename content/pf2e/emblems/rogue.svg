@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<!-- Rogue: dagger pointing down, with a fullered blade and curved crossguard. -->
+<defs>
+<mask id="rogue-wrap" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/>
+<path stroke="#000" stroke-width="3.5" d="M40 25.5 L60 22.5 M40 32.5 L60 29.5"/>
+</mask>
+</defs>
+<g fill="currentColor">
+<circle cx="50" cy="12.5" r="7"/>
+<rect mask="url(#rogue-wrap)" x="43.5" y="18" width="13" height="19" rx="2"/>
+<path d="M16 40 Q50 24 84 40 Q87 45 82 48 Q50 35 18 48 Q13 45 16 40 Z"/>
+<path fill-rule="evenodd" d="M35 39 H65 C65 62 57 79 50 94 C43 79 35 62 35 39 Z M47.25 45 H52.75 L51 76 H49 Z"/>
+</g>
+</svg>

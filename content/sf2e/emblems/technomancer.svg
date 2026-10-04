@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<!-- Technomancer: a hexagonal sigil whose six vertices sprout pinwheeling circuit traces ending in solder pads, with a four-pointed magic spark at its core. -->
+<path fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round" d="M50 25L71.7 37.5V62.5L50 75L28.3 62.5V37.5Z M50 25V16L58.7 11 M71.7 37.5L79.4 33L88.1 38 M71.7 62.5L79.4 67V77 M50 75V84L41.3 89 M28.3 62.5L20.6 67L11.9 62 M28.3 37.5L20.6 33V23"/>
+<g fill="currentColor">
+<circle cx="58.7" cy="11" r="5"/><circle cx="88.1" cy="38" r="5"/><circle cx="79.4" cy="77" r="5"/>
+<circle cx="41.3" cy="89" r="5"/><circle cx="11.9" cy="62" r="5"/><circle cx="20.6" cy="23" r="5"/>
+<path d="M50 33Q52 48 67 50Q52 52 50 67Q48 52 33 50Q48 48 50 33Z"/>
+</g>
+</svg>

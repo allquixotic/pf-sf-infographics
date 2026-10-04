@@ -1,0 +1,51 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "druid",
+  "name": "Druid",
+  "status": "core",
+  "source": {
+    "title": "Player Core",
+    "date": "2023-11"
+  },
+  "group": "high-magic",
+  "keyAttributes": [
+    "wis"
+  ],
+  "traditions": [
+    "primal"
+  ],
+  "casting": "prepared",
+  "hp": 8,
+  "ratings": {
+    "offense": 3,
+    "defense": 2.5,
+    "support": 4,
+    "utility": 5,
+    "difficulty": 3.5
+  },
+  "features": [
+    {
+      "title": "Guardian of the wild",
+      "text": "Druids channel the primal magic of nature, calling storms, commanding plants, befriending beasts or changing shape."
+    },
+    {
+      "title": "Druidic order",
+      "text": "The order sets the druid's signature focus spell and style, from a loyal animal companion to turning into a monster mid-fight."
+    }
+  ],
+  "iconic": {
+    "name": "Lini",
+    "ancestry": "gnome"
+  },
+  "art": {
+    "emblem": "../emblems/druid.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Druid - Lini.png"
+    },
+    "local": "druid"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=34"
+  }
+}

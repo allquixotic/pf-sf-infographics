@@ -1,0 +1,48 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - id: pages
+        uses: actions/configure-pages@v6
+      - run: bun install --frozen-lockfile
+      - run: bun run content:check
+      - name: Build
+        run: bun run --cwd packages/web build
+        env:
+          # Served from https://<owner>.github.io/<repo>/ (or a custom domain).
+          PFSF_BASE: ${{ steps.pages.outputs.base_path }}/
+          PFSF_REPO: ${{ github.repository }}
+          PFSF_REF: ${{ github.ref_name }}
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: packages/web/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

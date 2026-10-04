@@ -1,0 +1,45 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "mechanic",
+  "name": "Mechanic",
+  "status": "playtest",
+  "source": {
+    "title": "Tech Class Playtest (Tech Core, Oct 2026)",
+    "date": "2025-04"
+  },
+  "group": "tech",
+  "keyAttributes": [
+    "int"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 8,
+  "ratings": {
+    "offense": [
+      3,
+      4
+    ],
+    "defense": 3,
+    "support": 3,
+    "utility": 4.5,
+    "difficulty": 4
+  },
+  "features": [
+    {
+      "title": "Gadgeteer",
+      "text": "Mechanics build, hack and modify technology, improving gear on the fly."
+    },
+    {
+      "title": "Exocortex",
+      "text": "A neural implant runs the mechanic's pet project: a combat drone, a remote turret or a network of mines."
+    }
+  ],
+  "iconic": {
+    "name": "Quig",
+    "ancestry": "ysoki"
+  },
+  "art": {
+    "emblem": "../emblems/mechanic.svg",
+    "local": "mechanic"
+  }
+}

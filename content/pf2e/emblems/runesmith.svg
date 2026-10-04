@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<!-- Runesmith: an angular rune forged above an anvil. -->
+<g fill="currentColor">
+<path d="M7 57 H92 V70 H71 C66 70 64 73 64 78 V81 H73 C75 81 77 83 77 85 V93 H23 V85 C23 83 25 81 27 81 H36 V78 C36 73 34 70 29 70 C21 70 11 66 7 57 Z"/>
+<path fill="none" stroke="currentColor" stroke-width="6.5" stroke-linejoin="miter" d="M50 9 V50 M37 22 L50 9 L63 22 M50 26 L60 36 L50 46 L40 36 Z"/>
+</g>
+</svg>

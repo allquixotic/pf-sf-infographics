@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<!-- Sorcerer: a flame burning inside a drop of blood. -->
+<g fill="currentColor">
+<path fill-rule="evenodd" d="M50 6 C42 20 18 42 18 62 A32 32 0 0 0 82 62 C82 42 58 20 50 6 Z M50 86 C40 86 34 79 34 70 C34 60 42 54 44 44 C48 50 50 54 49 60 C54 56 58 48 56 38 C64 46 68 58 66 70 C66 79 60 86 50 86 Z"/>
+<path d="M50 81 C45 81 42 78 42 73 C42 68 45 66 46 61 C49 64 50 66 50 69 C53 67 55 64 55 61 C58 65 58 70 58 73 C58 78 55 81 50 81 Z"/>
+</g>
+</svg>

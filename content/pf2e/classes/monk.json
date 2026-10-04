@@ -1,0 +1,54 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "monk",
+  "name": "Monk",
+  "status": "core",
+  "source": {
+    "title": "Player Core 2",
+    "date": "2024-08"
+  },
+  "group": "low-magic",
+  "keyAttributes": [
+    "str",
+    "dex"
+  ],
+  "traditions": [
+    "divine",
+    "occult"
+  ],
+  "traditionsChosen": true,
+  "casting": null,
+  "hp": 10,
+  "ratings": {
+    "offense": 3.5,
+    "defense": 4.5,
+    "support": 3,
+    "utility": 2,
+    "difficulty": 2
+  },
+  "features": [
+    {
+      "title": "Perfected body",
+      "text": "Monks train body and spirit into a weapon. They move fast, strike with bare hands and shrug off almost any effect."
+    },
+    {
+      "title": "Flurry of Blows",
+      "text": "Two strikes for a single action make monks relentless; stances and optional qi spells add supernatural techniques."
+    }
+  ],
+  "iconic": {
+    "name": "Sajan",
+    "ancestry": "human"
+  },
+  "art": {
+    "emblem": "../emblems/monk.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Monk - Sajan.png"
+    },
+    "local": "monk"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=60"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "solarian",
+  "name": "Solarian",
+  "status": "core",
+  "source": {
+    "title": "Starfinder Player Core",
+    "date": "2025-07"
+  },
+  "group": "supernatural",
+  "keyAttributes": [
+    "str"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 10,
+  "ratings": {
+    "offense": 4.5,
+    "defense": 3.5,
+    "support": 2,
+    "utility": 2,
+    "difficulty": 3.5
+  },
+  "features": [
+    {
+      "title": "Warrior of the stars",
+      "text": "Solarians draw power from the cycle of stars and black holes and fight with a weapon of stellar energy."
+    },
+    {
+      "title": "Photon and graviton",
+      "text": "Actions shift the solarian between photon (fiery damage and light) and graviton (pulling and hindering foes); balancing the two is the class's rhythm."
+    }
+  ],
+  "iconic": {
+    "name": "Dae",
+    "ancestry": "pahtra"
+  },
+  "art": {
+    "emblem": "../emblems/solarian.svg",
+    "paizo": {
+      "pack": "cup-sf2e-iconics",
+      "file": "PNG/Solarian - Dae.png"
+    },
+    "local": "solarian"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonsrd.com/classes/4-solarian"
+  }
+}

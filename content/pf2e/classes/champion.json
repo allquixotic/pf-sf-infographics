@@ -1,0 +1,52 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "champion",
+  "name": "Champion",
+  "status": "core",
+  "source": {
+    "title": "Player Core 2",
+    "date": "2024-08"
+  },
+  "group": "low-magic",
+  "keyAttributes": [
+    "str",
+    "dex"
+  ],
+  "traditions": [
+    "divine"
+  ],
+  "casting": null,
+  "hp": 10,
+  "ratings": {
+    "offense": 3,
+    "defense": 5,
+    "support": 3,
+    "utility": 1.5,
+    "difficulty": 2
+  },
+  "features": [
+    {
+      "title": "Sworn protector",
+      "text": "Champions pledge themselves to a cause and a deity and wear heavy armor to stand between their friends and harm."
+    },
+    {
+      "title": "Champion's reaction",
+      "text": "When an ally is attacked, the champion answers at once: blunting the damage, punishing the attacker or both. Devotion spells such as lay on hands add healing."
+    }
+  ],
+  "iconic": {
+    "name": "Seelah",
+    "ancestry": "human"
+  },
+  "art": {
+    "emblem": "../emblems/champion.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Champion - Seelah.png"
+    },
+    "local": "champion"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=58"
+  }
+}

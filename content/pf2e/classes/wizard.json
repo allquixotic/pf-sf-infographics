@@ -1,0 +1,51 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "wizard",
+  "name": "Wizard",
+  "status": "core",
+  "source": {
+    "title": "Player Core",
+    "date": "2023-11"
+  },
+  "group": "high-magic",
+  "keyAttributes": [
+    "int"
+  ],
+  "traditions": [
+    "arcane"
+  ],
+  "casting": "prepared",
+  "hp": 6,
+  "ratings": {
+    "offense": 3,
+    "defense": 1,
+    "support": 4.5,
+    "utility": 5,
+    "difficulty": 3.5
+  },
+  "features": [
+    {
+      "title": "Arcane scholar",
+      "text": "Wizards study magic like a science and command the broadest spell list of all, at the cost of fragile bodies."
+    },
+    {
+      "title": "School and bond",
+      "text": "A school curriculum adds spells and a focus spell, and a bonded item lets the wizard recast a spell already used that day."
+    }
+  ],
+  "iconic": {
+    "name": "Ezren",
+    "ancestry": "human"
+  },
+  "art": {
+    "emblem": "../emblems/wizard.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Wizard - Ezren.png"
+    },
+    "local": "wizard"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=39"
+  }
+}

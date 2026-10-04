@@ -1,0 +1,61 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "witch",
+  "name": "Witch",
+  "status": "core",
+  "source": {
+    "title": "Player Core",
+    "date": "2023-11"
+  },
+  "group": "high-magic",
+  "keyAttributes": [
+    "int"
+  ],
+  "traditions": [
+    "arcane",
+    "divine",
+    "occult",
+    "primal"
+  ],
+  "traditionsChosen": true,
+  "casting": "prepared",
+  "hp": 6,
+  "ratings": {
+    "offense": [
+      2,
+      3.5
+    ],
+    "defense": 1,
+    "support": [
+      3,
+      5
+    ],
+    "utility": 5,
+    "difficulty": 4
+  },
+  "features": [
+    {
+      "title": "Patron's chosen",
+      "text": "Witches draw magic from a mysterious patron whose nature sets their tradition and themes."
+    },
+    {
+      "title": "Familiar and hexes",
+      "text": "A familiar keeps the witch's spells, and hexes let the witch cast quick, flexible magic every turn."
+    }
+  ],
+  "iconic": {
+    "name": "Feiya",
+    "ancestry": "human"
+  },
+  "art": {
+    "emblem": "../emblems/witch.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Witch - Feiya.png"
+    },
+    "local": "witch"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=38"
+  }
+}

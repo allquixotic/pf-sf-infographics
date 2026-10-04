@@ -1,0 +1,48 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "inventor",
+  "name": "Inventor",
+  "status": "expansion",
+  "source": {
+    "title": "Guns & Gears (Remastered)",
+    "date": "2025-02"
+  },
+  "group": "no-magic",
+  "keyAttributes": [
+    "int"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 8,
+  "ratings": {
+    "offense": 4,
+    "defense": 3.5,
+    "support": 3,
+    "utility": 3,
+    "difficulty": 3
+  },
+  "features": [
+    {
+      "title": "Brilliant tinkerer",
+      "text": "Inventors fight with a signature innovation: custom armor, a construct companion or a one-of-a-kind weapon that they keep improving."
+    },
+    {
+      "title": "Overdrive",
+      "text": "They supercharge their gear with Crafting and take risky unstable actions such as Explode, which can jam the innovation until it is repaired."
+    }
+  ],
+  "iconic": {
+    "name": "Droven"
+  },
+  "art": {
+    "emblem": "../emblems/inventor.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Inventor - Droven.png"
+    },
+    "local": "inventor"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=19"
+  }
+}

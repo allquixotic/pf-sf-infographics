@@ -1,0 +1,52 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "ranger",
+  "name": "Ranger",
+  "status": "core",
+  "source": {
+    "title": "Player Core",
+    "date": "2023-11"
+  },
+  "group": "low-magic",
+  "keyAttributes": [
+    "str",
+    "dex"
+  ],
+  "traditions": [
+    "primal"
+  ],
+  "casting": null,
+  "hp": 10,
+  "ratings": {
+    "offense": 4.5,
+    "defense": 3.5,
+    "support": 2,
+    "utility": 3,
+    "difficulty": 2.5
+  },
+  "features": [
+    {
+      "title": "Hunter",
+      "text": "Rangers are trackers and survivalists at home in the wild, fighting with a bow or twin blades, often beside an animal companion."
+    },
+    {
+      "title": "Hunt Prey",
+      "text": "Marking a target focuses every attack and check on it; the hunter's edge decides whether that means more damage, faster attacks or deeper knowledge."
+    }
+  ],
+  "iconic": {
+    "name": "Harsk",
+    "ancestry": "dwarf"
+  },
+  "art": {
+    "emblem": "../emblems/ranger.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Ranger - Harsk.png"
+    },
+    "local": "ranger"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=36"
+  }
+}

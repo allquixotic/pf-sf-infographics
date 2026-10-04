@@ -1,0 +1,5 @@
+{
+  "editor.defaultFormatter": "biomejs.biome",
+  "[vue]": { "editor.defaultFormatter": "biomejs.biome" },
+  "files.associations": { "*.typ": "typst" }
+}

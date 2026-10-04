@@ -1,0 +1,50 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "kineticist",
+  "name": "Kineticist",
+  "status": "expansion",
+  "source": {
+    "title": "Rage of Elements",
+    "date": "2023-08"
+  },
+  "group": "moderate-magic",
+  "keyAttributes": [
+    "con"
+  ],
+  "traditions": [
+    "primal"
+  ],
+  "casting": null,
+  "hp": 8,
+  "ratings": {
+    "offense": 4,
+    "defense": 3,
+    "support": 3,
+    "utility": 3.5,
+    "difficulty": 2.5
+  },
+  "features": [
+    {
+      "title": "Elemental conduit",
+      "text": "Kineticists are a living gateway to air, earth, fire, metal, water or wood. They have no spell slots, just endless elemental power."
+    },
+    {
+      "title": "Impulses",
+      "text": "An elemental aura powers impulses that blast foes, reshape terrain or protect allies, and the kinetic gate opens to more elements over time."
+    }
+  ],
+  "iconic": {
+    "name": "Yoon"
+  },
+  "art": {
+    "emblem": "../emblems/kineticist.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Kineticist - Yoon.png"
+    },
+    "local": "kineticist"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=23"
+  }
+}

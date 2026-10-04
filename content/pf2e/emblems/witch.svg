@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<!-- Witch: a bubbling cauldron on stubby legs. -->
+<g fill="currentColor">
+<path d="M22 54 H78 C86 60 90 68 86 77 C80 87 66 90 50 90 C34 90 20 87 14 77 C10 68 14 60 22 54 Z"/>
+<rect x="12" y="42" width="76" height="9" rx="4.5"/>
+<path d="M25 84 L21 93 H31 L34 87 Z M75 84 L79 93 H69 L66 87 Z"/>
+<path d="M20 39 C22 33 28 31 33 34 C36 28 45 27 49 32 C53 27 63 27 66 33 C70 30 78 32 80 39 Z"/>
+<circle cx="40" cy="20" r="5.5"/>
+<circle cx="57" cy="13" r="5.5" fill="none" stroke="currentColor" stroke-width="4"/>
+<circle cx="67" cy="24" r="3.5"/>
+</g>
+</svg>

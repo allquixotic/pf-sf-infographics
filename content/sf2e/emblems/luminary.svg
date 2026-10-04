@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<!-- Luminary: a stage spotlight hung from its rig bar, throwing a cone of light with a star cut out at its heart: the performer in the limelight. -->
+<path fill="currentColor" fill-rule="evenodd" d="M19.4 17.1L36.3 31.3L27.2 42L10.4 27.9Z M38.5 28.6L42.6 32L29 48.1L25 44.7Z M45.4 35.5L89.2 50.4Q78.9 76.3 55.2 90.8L32.9 50.3Z M60.1 44.4L64.2 55.8L76.2 56.2L66.7 63.6L70 75.2L60.1 68.4L50.1 75.2L53.4 63.6L43.9 56.2L55.9 55.8Z"/>
+<path fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" d="M25 31V10M13 10H37"/>
+</svg>

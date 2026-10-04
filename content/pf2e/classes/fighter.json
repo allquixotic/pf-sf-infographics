@@ -1,0 +1,50 @@
+{
+  "$schema": "../../schema/class.schema.json",
+  "id": "fighter",
+  "name": "Fighter",
+  "status": "core",
+  "source": {
+    "title": "Player Core",
+    "date": "2023-11"
+  },
+  "group": "no-magic",
+  "keyAttributes": [
+    "str",
+    "dex"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 10,
+  "ratings": {
+    "offense": 5,
+    "defense": 4,
+    "support": 2,
+    "utility": 1,
+    "difficulty": 1.5
+  },
+  "features": [
+    {
+      "title": "Weapon master",
+      "text": "No class is more accurate with weapons. Fighters learn every trick of armed combat and make simple attacks deadly."
+    },
+    {
+      "title": "Reactive Strike",
+      "text": "An enemy that drops its guard next to a fighter gets hit for free, so fighters control the space around them."
+    }
+  ],
+  "iconic": {
+    "name": "Valeros",
+    "ancestry": "human"
+  },
+  "art": {
+    "emblem": "../emblems/fighter.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Fighter - Valeros.png"
+    },
+    "local": "fighter"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=35"
+  }
+}
