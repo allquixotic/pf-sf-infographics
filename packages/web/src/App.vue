@@ -20,6 +20,7 @@ import {
 import { allArt, clearArt, loadJson, putArt, saveJson } from './state/persist';
 
 const LOCAL = __PFSF_LOCAL__;
+const privacyUrl = `${import.meta.env.BASE_URL}privacy/`;
 const engine = new EngineClient();
 
 const summary = shallowRef<ContentSummary>();
@@ -460,6 +461,7 @@ const theme = computed(() => ui.value.theme);
     </main>
 
     <footer class="foot">
+      <p><a :href="privacyUrl">Privacy policy</a></p>
       <p>
         Layout after the
         <a href="https://willemsma.design/pathfinder/" target="_blank" rel="noopener">Pathfinder 2E Classes Infographic</a>

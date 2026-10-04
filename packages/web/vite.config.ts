@@ -130,5 +130,14 @@ export default defineConfig(({ command }) => ({
     ],
   },
   server: { host: '127.0.0.1', port: Number(process.env.PFSF_PORT ?? 5173), strictPort: false },
-  build: { target: 'es2023', chunkSizeWarningLimit: 4000 },
+  build: {
+    target: 'es2023',
+    chunkSizeWarningLimit: 4000,
+    rolldownOptions: {
+      input: {
+        app: resolve(import.meta.dirname, 'index.html'),
+        privacy: resolve(import.meta.dirname, 'privacy/index.html'),
+      },
+    },
+  },
 }));
