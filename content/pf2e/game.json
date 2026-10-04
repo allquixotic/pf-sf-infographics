@@ -20,7 +20,7 @@
     {
       "id": "con",
       "label": "constitution",
-      "icon": "../shared/icons/attributes/con.svg"
+      "icon": "../shared/icons/attributes/constitution.svg"
     },
     {
       "id": "int",

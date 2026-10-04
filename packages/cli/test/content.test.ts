@@ -6,6 +6,14 @@ import { FsContentSource } from '../src/fs-source';
 const content = await loadContent(new FsContentSource(join(import.meta.dir, '../../../content')));
 
 describe('bundled content', () => {
+  test('V1: content paths avoid reserved Windows device names', () => {
+    const reserved = /^(con|prn|aux|nul|com[1-9¹²³]|lpt[1-9¹²³])(?:\.|$)/i;
+    const invalid = content.manifest.files
+      .map((file) => file.path)
+      .filter((path) => path.split('/').some((part) => reserved.test(part)));
+    expect(invalid).toEqual([]);
+  });
+
   test('has no warnings (every icon and emblem exists)', () => {
     expect(content.warnings).toEqual([]);
   });

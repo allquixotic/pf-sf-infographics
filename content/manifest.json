@@ -326,8 +326,8 @@
     },
     {
       "path": "pf2e/game.json",
-      "size": 7597,
-      "sha256": "139b8bedc2b90b060634f07e60a81469af0446c5966801826269d2aa1b5f9576"
+      "size": 7606,
+      "sha256": "9df4bc81b7a5bde936b0e4d065dd4a5a3d9cb2253e7d77c67828e7e443eefd52"
     },
     {
       "path": "schema/class.schema.json",
@@ -441,8 +441,8 @@
     },
     {
       "path": "sf2e/game.json",
-      "size": 6603,
-      "sha256": "d34001c09ddef14630bb5e7107d254f0268cefb00a046ed0477add459d9adbd7"
+      "size": 6612,
+      "sha256": "f302460163377908226d07860fbfebf0a651b7186b423b53703360d165e7cf5b"
     },
     {
       "path": "shared/fonts/Lexend-Bold.ttf",
@@ -475,7 +475,7 @@
       "sha256": "50230c07d65ef31a0e268b6304d75ce6cd13d85e47eada55752b1ae3b0d773b3"
     },
     {
-      "path": "shared/icons/attributes/con.svg",
+      "path": "shared/icons/attributes/constitution.svg",
       "size": 594,
       "sha256": "31153b5b0e91dcb55400a77293ccba8523ee3e3184da1ceb6ace044a8134da32"
     },
