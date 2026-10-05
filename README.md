@@ -14,9 +14,6 @@ Covered as of September 2026: all 29 printed Pathfinder 2e classes plus the dare
 six Starfinder 2e Player Core classes plus the mechanic, technomancer and luminary playtests. See
 [docs/classes.md](docs/classes.md).
 
-The [review of the 18 added classes](docs/class-content-review.md) covers their explanations and all five
-ratings, with rules sources and proposed improvements. Subjective recommendations have not been applied.
-
 ## Quick start
 
 You only need Git. The launch scripts download a private copy of the latest stable [Bun](https://bun.sh) into
@@ -80,7 +77,7 @@ content/ (JSON, SVG, fonts) ──► @pfsf/engine ──► Typst (WebAssembly)
 ```
 
 The layout is drawn by [Typst](https://typst.app) compiled to WebAssembly, so the browser and the CLI produce
-identical output, PDFs have real text, and booklets paginate properly. Details: [docs/architecture.md](docs/architecture.md).
+identical output, PDFs have real text, and booklets paginate properly.
 
 ## Content from any repository
 
@@ -124,5 +121,4 @@ Run it again after changing layout, paper or content.
 **Print**, next to Download, opens the browser print dialog with fresh vector pages at the selected dimensions.
 Choose the matching printer paper and 100% scale; browser/printer overrides still apply. No file is downloaded.
 
-For the custom address, follow [the Namecheap and GitHub Pages setup guide](docs/custom-domain.md).
 For Necromancer and Runesmith portraits, see [the Paizo source and permission notes](docs/paizo-assets.md#necromancer-and-runesmith-portraits).
