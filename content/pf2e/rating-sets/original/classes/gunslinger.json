@@ -1,0 +1,64 @@
+{
+  "$schema": "../../../../schema/class.schema.json",
+  "id": "gunslinger",
+  "name": "Gunslinger",
+  "status": "expansion",
+  "source": {
+    "title": "Guns & Gears (Remastered)",
+    "date": "2025-02",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=20"
+  },
+  "group": "martial",
+  "keyAttributes": [
+    "dex"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 8,
+  "ratings": {
+    "offense": 4,
+    "defense": 3,
+    "support": 3,
+    "utility": 2,
+    "difficulty": 2.5
+  },
+  "features": [
+    {
+      "title": "Sharpshooter",
+      "text": "High firearm and crossbow accuracy rewards carefully set-up shots. Reloading is part of your combat rhythm, and some builds focus on helping allies land their attacks."
+    },
+    {
+      "title": "Ways and deeds",
+      "text": "Your way combines reloads with movement, skill actions or other tricks. Choose equipment and feats that work with that routine."
+    }
+  ],
+  "iconic": {
+    "name": "Nhalmika"
+  },
+  "art": {
+    "emblem": "../../../emblems/gunslinger.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Gunslinger - Nhalmika.png"
+    },
+    "local": "gunslinger"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=20"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Guns & Gears (Remastered)",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=20"
+    ],
+    "notes": "Original September 2026 numbers retained for comparison; corrected summaries and class families. These scores predate the revised rubric.",
+    "ratings": {
+      "offense": "Historical score: 4. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "defense": "Historical score: 3. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "support": "Historical score: 3. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "utility": "Historical score: 2. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "difficulty": "Historical score: 2.5. Preserved from the original project dataset; consult the revised set for a current rationale."
+    }
+  }
+}

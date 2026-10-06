@@ -5,9 +5,10 @@
   "status": "expansion",
   "source": {
     "title": "Impossible Magic",
-    "date": "2026-07"
+    "date": "2026-07",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=77"
   },
-  "group": "moderate-magic",
+  "group": "specialist",
   "keyAttributes": [
     "cha"
   ],
@@ -21,20 +22,32 @@
   "casting": "spontaneous",
   "hp": 10,
   "ratings": {
-    "offense": 4,
-    "defense": 3,
-    "support": 3.5,
-    "utility": 3,
+    "offense": [
+      3.5,
+      4.5
+    ],
+    "defense": [
+      2.5,
+      4
+    ],
+    "support": [
+      2.5,
+      4
+    ],
+    "utility": [
+      3,
+      4
+    ],
     "difficulty": 4.5
   },
   "features": [
     {
-      "title": "Two souls, one life",
-      "text": "Summoners share their life force with an eidolon, a powerful spirit companion such as a dragon, angel or fey."
+      "title": "Two bodies, one team",
+      "text": "Share a life force with an eidolon while combining its martial abilities with your spellcasting. Eidolon choice determines your tradition and many of your options."
     },
     {
       "title": "Act Together",
-      "text": "Summoner and eidolon share hit points and actions but each can act, so the pair effectively gets four actions a turn."
+      "text": "Coordinate both bodies to gain an additional single action once per round. You share hit points and attack penalties, so protecting both positions and planning actions are essential."
     }
   ],
   "iconic": {
@@ -50,5 +63,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=77"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Impossible Magic",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=77"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "4 → 3.5–4.5. Eidolon attacks plus spells combine offense; eidolon and spell choices shift emphasis.",
+      "defense": "3 → 2.5–4. Eidolon defenses vary, while the shared HP pool makes protecting both bodies important.",
+      "support": "3.5 → 2.5–4. Eidolon abilities, positioning and spell choices can emphasize party assistance.",
+      "utility": "3 → 3–4. Two bodies and an eidolon-dependent tradition provide varied exploration options.",
+      "difficulty": "4.5 → 4.5. Coordinate two positions, shared HP, attack penalties and Act Together."
+    }
   }
 }

@@ -5,9 +5,10 @@
   "status": "core",
   "source": {
     "title": "Player Core 2",
-    "date": "2024-08"
+    "date": "2024-08",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=56"
   },
-  "group": "no-magic",
+  "group": "specialist",
   "keyAttributes": [
     "int"
   ],
@@ -15,20 +16,29 @@
   "casting": null,
   "hp": 8,
   "ratings": {
-    "offense": 3,
-    "defense": 2.5,
-    "support": 4,
+    "offense": [
+      2.5,
+      4
+    ],
+    "defense": [
+      2.5,
+      4
+    ],
+    "support": [
+      3,
+      5
+    ],
     "utility": 5,
     "difficulty": 4.5
   },
   "features": [
     {
-      "title": "Chemistry over magic",
-      "text": "Alchemists solve problems with bombs, elixirs, poisons and mutagens instead of spells. Their strength is breadth and preparation rather than raw damage."
+      "title": "Alchemy, not spellcasting",
+      "text": "Prepare bombs, elixirs, poisons and mutagens, then make temporary items during an adventure. Your research field helps shape your specialty."
     },
     {
-      "title": "Quick Alchemy",
-      "text": "Versatile vials let an alchemist brew exactly the item a fight calls for, on top of a free batch made during daily preparations."
+      "title": "Choose your toolkit",
+      "text": "You can damage foes, heal companions or solve practical problems. Learning formulas and choosing who receives each item are central decisions."
     }
   ],
   "iconic": {
@@ -45,5 +55,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=56"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Player Core 2",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=56"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "3 → 2.5–4. Bombs, mutagens and poisons produce different damage specialists; weaknesses and splash matter.",
+      "defense": "2.5 → 2.5–4. Mutagen and defensive item choices can substantially improve personal resilience.",
+      "support": "4 → 3–5. Chirurgeon healing and shared elixirs favor support; a selfish damage loadout contributes less.",
+      "utility": "5 → 5. A broad formula collection solves many exploration problems, within item and action limits.",
+      "difficulty": "4.5 → 4.5. Formula knowledge, daily preparation and selecting the right consumable require substantial study."
+    }
   }
 }

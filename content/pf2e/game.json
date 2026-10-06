@@ -4,7 +4,7 @@
   "title": "Pathfinder 2e Classes",
   "system": "Pathfinder Second Edition (Remaster)",
   "shortName": "PF2e",
-  "asOf": "September 2026",
+  "asOf": "October 5, 2026",
   "theme": "../shared/themes/classic.json",
   "attributes": [
     {
@@ -64,59 +64,54 @@
     {
       "id": "offense",
       "label": "offense",
-      "description": "How much damage you deal and how reliably you take enemies down.",
+      "description": "Direct damage: single-target or area, burst and sustained. Either specialization can excel.",
       "color": "#c8553d",
       "colorblind": "#d55e00"
     },
     {
       "id": "defense",
       "label": "defense",
-      "description": "How hard you are to take down, through hit points, armor, dodging or other means.",
+      "description": "Personal resilience: armor, saves, hit points and mitigation.",
       "color": "#5c95ff",
       "colorblind": "#0072b2"
     },
     {
       "id": "support",
       "label": "support",
-      "description": "How much you help allies succeed: healing, buffs, debuffs and battlefield control.",
+      "description": "Helping allies: protection, healing, buffs, debuffs, control and granted actions.",
       "color": "#549391",
       "colorblind": "#009e73"
     },
     {
       "id": "utility",
       "label": "utility",
-      "description": "How well you handle problems outside combat, when a fireball or an axe is not the answer.",
+      "description": "Solving noncombat problems through skills, spells and other tools.",
       "color": "#a95ead",
       "colorblind": "#cc79a7"
     },
     {
       "id": "difficulty",
-      "label": "difficulty",
-      "description": "How much system knowledge you need to play the class well.",
+      "label": "complexity",
+      "description": "Preparation, resource tracking, tactical decisions and rules knowledge. Higher means more to manage.",
       "color": "#c78e3a",
       "colorblind": "#e69f00"
     }
   ],
   "groups": [
     {
-      "id": "high-magic",
-      "label": "High magic ability",
-      "description": "Full spellcasters with spell slots of every rank."
+      "id": "martial",
+      "label": "Martial classes",
+      "description": "Weapon and unarmed combat, tactics and skills; some also use magic."
     },
     {
-      "id": "moderate-magic",
-      "label": "Moderate magic ability",
-      "description": "Magic is central but narrower: fewer slots, or magical class powers instead of spells."
+      "id": "spellcasters",
+      "label": "Spellcasters",
+      "description": "Spellcasting is the main class framework."
     },
     {
-      "id": "low-magic",
-      "label": "Low magic ability",
-      "description": "Martial classes with a touch of magic, mostly optional focus spells."
-    },
-    {
-      "id": "no-magic",
-      "label": "No magic ability",
-      "description": "Classes that rely on weapons, skills, gear and alchemy."
+      "id": "specialist",
+      "label": "Hybrid & specialist classes",
+      "description": "Alchemy, impulses, runes, or a combination of spellcasting and martial abilities."
     }
   ],
   "castingTypes": [
@@ -160,12 +155,12 @@
   ],
   "legend": {
     "howToUseTitle": "How to use",
-    "howToUse": "A character's class sets many of their core abilities, but there is plenty of room to specialize. These ratings are rough, opinionated estimates of how an average member of each class performs; subclasses, feats and party makeup can change things a lot.",
+    "howToUse": "Choose a playstyle, then explore its options. These editorial ratings describe role strengths, not overall class quality. 1 = limited, 3 = capable, 5 = exceptional. Compare within this game; build, level, resources and party matter. Playtest estimates are provisional.",
     "attributesTitle": "Key attributes",
     "traditionsTitle": "Magic traditions",
     "castingTitle": "Spellcasting",
-    "choiceTitle": "Hatched squares",
-    "choice": "Some classes make one fundamental choice, such as a cleric's doctrine or a sorcerer's bloodline, that swings their numbers a long way. Hatched squares show the range between the two extremes.",
+    "choiceTitle": "Build-dependent ranges",
+    "choice": "Solid squares reach the lower end; hatching extends to the upper end across different viable builds. The choices behind each range are explained on the website. A single build may not reach every upper endpoint.",
     "creditsTitle": "Credits"
   },
   "artPacks": [
@@ -189,7 +184,7 @@
     {
       "role": "Original chart concept",
       "names": [
-        "u/Rednidedi"
+        "u/Rednidedni"
       ]
     },
     {
@@ -243,5 +238,19 @@
     "classes/thaumaturge.json",
     "classes/witch.json",
     "classes/wizard.json"
+  ],
+  "methodology": "These are editorial role estimates informed by rules and community feedback, not a poll, measured probabilities or community consensus. A low score is not a judgment of class quality.\nCompare competent, ordinary builds within this game, using standard rules and appropriate gear; do not assume Free Archetype, multiclass patches or exceptional optimization. Consider early (1–4), middle (5–12) and later (13–20) play; a late feature alone does not set the score. Encounter mix, resources and party composition still matter.\nRole anchors: 0 = no meaningful class-specific contribution; 1 = limited; 2 = secondary; 3 = capable; 4 = strong; 5 = defining or exceptional. Half steps distinguish nearby estimates, not measured precision. Complexity anchors: 0 = almost no class-specific decisions; 1 = straightforward routine; 2 = a small toolkit; 3 = recurring tactical or resource choices; 4 = substantial sequencing, preparation or coordination; 5 = several interacting systems with high planning demands.\nOffense includes single-target, area, burst and sustained damage. Exceptional area damage can earn 5 just as exceptional single-target damage can. Ally-enabled damage, protection, healing and control count primarily as Support. Defense means personal resilience; Utility means noncombat tools. Complexity measures preparation, tracking and tactical decisions.\nHatching spans different viable build choices, not random outcomes or uncertainty. Range endpoints require the choices explained below; one build cannot necessarily reach every upper endpoint. Playtest estimates are provisional.",
+  "ratingSets": [
+    {
+      "id": "revised",
+      "name": "Revised role estimates",
+      "description": "Rules-informed editorial estimates with build-dependent ranges and per-class reasoning. Incorporates community feedback; not a community vote or consensus."
+    },
+    {
+      "id": "original",
+      "name": "Original ratings (September 2026)",
+      "description": "The project's original numerical scores, preserved for comparison. Class summaries and families use corrected rules; these historical scores were not produced with the revised rubric.",
+      "path": "rating-sets/original/game.json"
+    }
   ]
 }

@@ -1,5 +1,5 @@
 import type { ArtLibrary } from '../art/library';
-import type { ContentBundle } from '../content/load';
+import { type ContentBundle, getGameBundle } from '../content/load';
 import { computeLayout, type Layout } from '../layout';
 import { buildModel, type DocModel, type VirtualFile } from '../model/build';
 import {
@@ -45,7 +45,7 @@ export interface RenderRequest {
   content: ContentBundle;
   options?: RenderOptionsInput;
   art?: ArtLibrary;
-  /** Base file name without extension; defaults to "<game>-<layout>". */
+  /** Base file name without extension; defaults to "<game>-<rating-set>-<layout>". */
   baseName?: string;
   /** Called with progress messages for long renders. */
   onProgress?: (message: string) => void;
@@ -56,10 +56,8 @@ const enc = new TextEncoder();
 /** Builds the Typst inputs without compiling anything. Useful for debugging templates (`--emit-typst`). */
 export function prepareDocument(req: Omit<RenderRequest, 'baseName' | 'onProgress'>): PreparedDocument {
   const options = resolveOptions(req.options);
-  const bundle = req.content.games.get(options.game);
-  if (!bundle) {
-    throw new Error(`Unknown game "${options.game}". Available: ${[...req.content.games.keys()].join(', ')}`);
-  }
+  const bundle = getGameBundle(req.content, options.game, options.ratingSet);
+  options.ratingSet = bundle.ratingSet?.id;
   if (options.layout === 'booklet' && options.fit) {
     // A booklet needs real pages; fall back to Letter.
     Object.assign(options, {
@@ -134,7 +132,7 @@ export class Engine {
     const doc = prepareDocument(req);
     const o = doc.options;
     const warnings = [...doc.warnings];
-    const base = req.baseName ?? `${o.game}-${o.layout}`;
+    const base = req.baseName ?? `${o.game}-${o.ratingSet ?? 'default'}-${o.layout}`;
     progress('Starting Typst');
     const session = await this.sessionFor(doc.fonts);
 

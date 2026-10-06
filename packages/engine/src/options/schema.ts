@@ -24,6 +24,18 @@ const customSize = z.object({
  */
 export const renderOptionsSchema = z.object({
   game: z.string().default('pf2e').describe('Game id from the content manifest (pf2e, sf2e, …).'),
+  ratingSet: z
+    .string()
+    .min(1)
+    .optional()
+    .describe('Rating set id; omitted selects the content source default.'),
+  maxComplexity: z
+    .number()
+    .min(0)
+    .max(5)
+    .multipleOf(0.5)
+    .optional()
+    .describe('Exclude classes whose complexity upper endpoint exceeds this value.'),
   layout: z.enum(['poster', 'booklet']).default('poster'),
   format: z.enum(OUTPUT_FORMATS).default('pdf'),
   intent: z

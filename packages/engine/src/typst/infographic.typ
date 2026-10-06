@@ -8,6 +8,7 @@
 #let C = data.colors
 #let O = data.options
 #let fs = O.fontScale
+#let measure-only = sys.inputs.at("measure-only", default: "false") == "true"
 #let u(x) = x * 1pt
 
 #let ink = rgb(C.ink)
@@ -100,6 +101,14 @@
   text(font: heading-font, size: size, fill: banner-ink, upper(label)),
 )
 
+// Rating labels and squares have fixed sizes, so changing an enclosing text size cannot shrink them.
+// Measure this grid once and scale it to its box instead of nesting fit-width inside fit-text.
+#let fit-box(body, width, height) = context {
+  let m = measure(body)
+  let s = calc.min(1, width / m.width, height / m.height)
+  scale(s * 100%, origin: left + top, reflow: true, body)
+}
+
 // ---------------------------------------------------------------------------------------------------------------
 // Class card
 // ---------------------------------------------------------------------------------------------------------------
@@ -187,21 +196,25 @@
   let footer-h = if O.stats { 15pt * fs } else { 0pt }
   let body-bottom = H - 8pt - footer-h
   box(width: W, height: H, {
-    place(dx: bx, dy: by, rect(width: W - bx, height: H - by, stroke: u(g.stroke) + ink, fill: card-fill))
-    art-area(c, g)
-    place(dx: u(g.contentX), dy: top, fit-width(header-row(c, g), W - u(g.contentX) - u(g.textPadRight)))
-    place(dx: u(g.contentX), dy: body-top, fit-text(
-      fit-width(ratings-block(c, g), u(g.textX - g.contentX - 8)), u(g.textX - g.contentX - 8), body-bottom - body-top, u(g.smallSize) * fs,
-    ))
-    if O.stats {
-      place(
-        dx: u(g.contentX),
-        dy: body-bottom + 5pt,
-        fit-text(
-          text(fill: muted, [#c.hp HP/level · #c.source]),
-          W - u(g.contentX) - u(g.textPadRight), footer-h - 3pt, u(g.smallSize) * 0.95 * fs,
-        ),
-      )
+    // Fixed-position decoration cannot affect card bounds or fitted feature text.
+    // Omit it when querying text metrics so eleven Auto candidates do not cache it.
+    if not measure-only {
+      place(dx: bx, dy: by, rect(width: W - bx, height: H - by, stroke: u(g.stroke) + ink, fill: card-fill))
+      art-area(c, g)
+      place(dx: u(g.contentX), dy: top, fit-width(header-row(c, g), W - u(g.contentX) - u(g.textPadRight)))
+      place(dx: u(g.contentX), dy: body-top, fit-box(
+        ratings-block(c, g), u(g.textX - g.contentX - 8), body-bottom - body-top,
+      ))
+      if O.stats {
+        place(
+          dx: u(g.contentX),
+          dy: body-bottom + 5pt,
+          fit-text(
+            text(fill: muted, [#c.hp HP/level · #c.source]),
+            W - u(g.contentX) - u(g.textPadRight), footer-h - 3pt, u(g.smallSize) * 0.95 * fs,
+          ),
+        )
+      }
     }
     place(dx: u(g.textX), dy: body-top - 1pt, fit-text(
       features(c),
@@ -356,7 +369,7 @@
     block(width: u(A.width), {
       set align(left + top)
       let title = box(text(font: heading-font, size: u(L.poster.titleSize) * fs, upper(data.meta.title)))
-      let date = box(text(font: heading-font, size: u(L.poster.asOfSize) * fs, [Accurate as of #data.meta.asOf]))
+      let date = box(text(font: heading-font, size: u(L.poster.asOfSize) * fs, [Content updated #data.meta.asOf]))
       if measure(title).width + measure(date).width + 20pt <= u(A.width) {
         grid(columns: (1fr, auto), column-gutter: 20pt, align: (left + bottom, right + bottom), title, date)
       } else {
@@ -407,7 +420,7 @@
   let g = L.card
   fit-width(text(font: heading-font, size: 26pt * fs, upper(data.meta.title)), content-w)
   v(2pt)
-  align(right, text(font: heading-font, size: 9pt * fs, [Accurate as of #data.meta.asOf]))
+  align(right, text(font: heading-font, size: 9pt * fs, [Content updated #data.meta.asOf]))
   v(10pt)
   if data.legend != none {
     legend-block(content-w, L.legendCols)

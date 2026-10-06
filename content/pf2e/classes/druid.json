@@ -5,9 +5,10 @@
   "status": "core",
   "source": {
     "title": "Player Core",
-    "date": "2023-11"
+    "date": "2023-11",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=34"
   },
-  "group": "high-magic",
+  "group": "spellcasters",
   "keyAttributes": [
     "wis"
   ],
@@ -17,10 +18,22 @@
   "casting": "prepared",
   "hp": 8,
   "ratings": {
-    "offense": 3,
-    "defense": 2.5,
-    "support": 4,
-    "utility": 5,
+    "offense": [
+      3,
+      4.5
+    ],
+    "defense": [
+      2.5,
+      4
+    ],
+    "support": [
+      3.5,
+      5
+    ],
+    "utility": [
+      4,
+      5
+    ],
     "difficulty": 3.5
   },
   "features": [
@@ -47,5 +60,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=34"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Player Core",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=34"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "3 → 3–4.5. Primal area spells and offensive orders support high damage; healing-focused selections contribute less.",
+      "defense": "2.5 → 2.5–4. Order, shields and form choices can change personal resilience substantially.",
+      "support": "4 → 3.5–5. Healing, control and companion choices offer several strong support approaches.",
+      "utility": "5 → 4–5. Primal exploration spells and nature tools are broad; preparation decides the day's answers.",
+      "difficulty": "3.5 → 3.5. Daily preparation plus an order's extra mechanics require moderate planning."
+    }
   }
 }

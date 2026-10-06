@@ -1,0 +1,67 @@
+{
+  "$schema": "../../../../schema/class.schema.json",
+  "id": "oracle",
+  "name": "Oracle",
+  "status": "core",
+  "source": {
+    "title": "Player Core 2",
+    "date": "2024-08",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=61"
+  },
+  "group": "spellcasters",
+  "keyAttributes": [
+    "cha"
+  ],
+  "traditions": [
+    "divine"
+  ],
+  "casting": "spontaneous",
+  "hp": 8,
+  "ratings": {
+    "offense": 2.5,
+    "defense": 2,
+    "support": 5,
+    "utility": 4,
+    "difficulty": 4
+  },
+  "features": [
+    {
+      "title": "Power through mystery",
+      "text": "Your mystery shapes divine spellcasting and grants revelation focus spells. You also gain cursebound abilities that draw power at a personal cost."
+    },
+    {
+      "title": "Choose when to push",
+      "text": "Cursebound abilities advance your curse; revelation spells do not do so merely for being focus spells. Refocusing eases the curse. Weigh each extra benefit against its drawbacks."
+    }
+  ],
+  "iconic": {
+    "name": "Korakai",
+    "ancestry": "tengu"
+  },
+  "art": {
+    "emblem": "../../../emblems/oracle.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Oracle - Korakai.png"
+    },
+    "local": "oracle"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=61"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Player Core 2",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=61"
+    ],
+    "notes": "Original September 2026 numbers retained for comparison; corrected summaries and class families. These scores predate the revised rubric.",
+    "ratings": {
+      "offense": "Historical score: 2.5. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "defense": "Historical score: 2. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "support": "Historical score: 5. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "utility": "Historical score: 4. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "difficulty": "Historical score: 4. Preserved from the original project dataset; consult the revised set for a current rationale."
+    }
+  }
+}

@@ -5,9 +5,10 @@
   "status": "expansion",
   "source": {
     "title": "Battlecry!",
-    "date": "2025-07"
+    "date": "2025-07",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=66"
   },
-  "group": "no-magic",
+  "group": "martial",
   "keyAttributes": [
     "int"
   ],
@@ -15,8 +16,11 @@
   "casting": null,
   "hp": 8,
   "ratings": {
-    "offense": 2.5,
-    "defense": 3.5,
+    "offense": [
+      2,
+      3
+    ],
+    "defense": 4,
     "support": 5,
     "utility": 3.5,
     "difficulty": 4
@@ -44,5 +48,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=66"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Battlecry!",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=66"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "2.5 → 2–3. Personal weapon damage is modest; allied attacks granted by tactics are credited to support.",
+      "defense": "3.5 → 4. Heavy armor access provides a sturdy baseline without the strongest defensive class progression.",
+      "support": "5 → 5. Tactics grant allies attacks, movement and defensive opportunities; coordination is the central strength.",
+      "utility": "3.5 → 3.5. Intelligence, skills and knowledge support useful exploration and planning.",
+      "difficulty": "4 → 4. Tactics require knowledge of squad abilities, positioning and reaction availability."
+    }
   }
 }

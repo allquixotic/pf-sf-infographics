@@ -5,7 +5,8 @@
   "status": "playtest",
   "source": {
     "title": "Luminary Class Playtest",
-    "date": "2026-05"
+    "date": "2026-05",
+    "url": "https://downloads.paizo.com/PZO22010_LuminaryClassPlaytest.pdf"
   },
   "group": "supernatural",
   "keyAttributes": [
@@ -45,5 +46,20 @@
   "art": {
     "emblem": "../emblems/luminary.svg",
     "local": "luminary"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Luminary Class Playtest",
+    "sources": [
+      "https://downloads.paizo.com/PZO22010_LuminaryClassPlaytest.pdf"
+    ],
+    "notes": "Provisional assessment of the named playtest, not the final class. The public playtest period has ended; the published rules may differ.",
+    "ratings": {
+      "offense": "2.5–3.5 → 2.5–3.5. Provisional playtest estimate: weapons and occult focus choices provide moderate direct offense.",
+      "defense": "3 → 3. Eight HP and martial defenses offer a reasonable baseline.",
+      "support": "4–5 → 4–5. Roles and spotlight effects emphasize enabling allies and hindering enemies.",
+      "utility": "3.5 → 3.5. Charisma and occult performance tools support social play.",
+      "difficulty": "4 → 4. Manage roles, spotlight transfers and focus resources; the playtest remains provisional."
+    }
   }
 }

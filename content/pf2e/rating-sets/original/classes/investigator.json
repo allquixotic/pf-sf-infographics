@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schema/class.schema.json",
+  "id": "investigator",
+  "name": "Investigator",
+  "status": "core",
+  "source": {
+    "title": "Player Core 2",
+    "date": "2024-08",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=59"
+  },
+  "group": "martial",
+  "keyAttributes": [
+    "int"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 8,
+  "ratings": {
+    "offense": 3,
+    "defense": 2.5,
+    "support": 3,
+    "utility": 5,
+    "difficulty": 4
+  },
+  "features": [
+    {
+      "title": "Detective",
+      "text": "Investigators solve problems with deduction and a very long list of skills, following leads to the heart of a mystery."
+    },
+    {
+      "title": "Devise a Stratagem",
+      "text": "They roll an attack before making it and then decide whether to use it, turning knowledge into precise, well-timed strikes."
+    }
+  ],
+  "iconic": {
+    "name": "Quinn",
+    "ancestry": "human"
+  },
+  "art": {
+    "emblem": "../../../emblems/investigator.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Investigator - Quinn.png"
+    },
+    "local": "investigator"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=59"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Player Core 2",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=59"
+    ],
+    "notes": "Original September 2026 numbers retained for comparison; corrected summaries and class families. These scores predate the revised rubric.",
+    "ratings": {
+      "offense": "Historical score: 3. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "defense": "Historical score: 2.5. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "support": "Historical score: 3. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "utility": "Historical score: 5. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "difficulty": "Historical score: 4. Preserved from the original project dataset; consult the revised set for a current rationale."
+    }
+  }
+}

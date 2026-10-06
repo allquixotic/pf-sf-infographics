@@ -103,6 +103,15 @@ export const ratingDefSchema = z.object({
 
 export const groupDefSchema = z.object({ id, label: z.string(), description: richText.optional() });
 
+export const ratingSetSchema = z.object({
+  id,
+  name: z.string().min(1),
+  description: z.string().min(1),
+  path: relPath
+    .optional()
+    .describe('Alternate game.json, relative to this game file. Omit for the default set.'),
+});
+
 export const castingTypeSchema = z.object({ id, label: z.string(), description: richText });
 
 export const statusDefSchema = z.object({
@@ -162,6 +171,12 @@ export const gameSchema = z.object({
     license: richText.describe('License of this content.'),
   }),
   classes: z.array(relPath).min(1),
+  ratingSets: z
+    .array(ratingSetSchema)
+    .min(1)
+    .optional()
+    .describe('First entry uses this game; later entries point to complete alternate game files.'),
+  methodology: z.string().optional(),
 });
 
 // ---------------------------------------------------------------------------------------------------------------
@@ -215,6 +230,15 @@ export const classSchema = z.object({
     local: z.string().optional().describe('File name looked up in a locally supplied art folder.'),
   }),
   links: z.record(z.string(), z.url()).optional(),
+  review: z
+    .object({
+      reviewedOn: z.iso.date(),
+      rulesVersion: z.string().min(1),
+      sources: z.array(z.url({ protocol: /^https?$/ })).min(1),
+      notes: z.string().min(1),
+      ratings: z.record(id, z.string().min(1)),
+    })
+    .optional(),
 });
 
 export type Manifest = z.infer<typeof manifestSchema>;

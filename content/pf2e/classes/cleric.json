@@ -5,9 +5,10 @@
   "status": "core",
   "source": {
     "title": "Player Core",
-    "date": "2023-11"
+    "date": "2023-11",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=33"
   },
-  "group": "high-magic",
+  "group": "spellcasters",
   "keyAttributes": [
     "wis"
   ],
@@ -19,27 +20,30 @@
   "ratings": {
     "offense": [
       2,
-      3
+      4
     ],
     "defense": [
-      1,
-      3
+      2,
+      4.5
     ],
     "support": [
       4,
       5
     ],
-    "utility": 5,
+    "utility": [
+      3,
+      4
+    ],
     "difficulty": 3
   },
   "features": [
     {
-      "title": "Voice of a deity",
-      "text": "Clerics wield magic granted by their god. A cloistered cleric is a devoted healer and caster; a warpriest trades some magic for armor and weapons."
+      "title": "Divine spellcaster",
+      "text": "Your deity grants divine magic and additional spell choices. Doctrine shapes your approach: focused casting as a cloistered cleric or armored combat as a warpriest."
     },
     {
       "title": "Divine font",
-      "text": "Extra daily spell slots reserved for *heal* or *harm* let a cleric restore a whole party or scour the undead, depending on their deity."
+      "text": "Extra slots for heal or harm support your chosen role. Preparation can emphasize healing, protection or offensive magic; not every cleric plays as a healer."
     }
   ],
   "iconic": {
@@ -56,5 +60,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=33"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Player Core",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=33"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "2–3 → 2–4. Doctrine, deity spells, harm and offensive spell choices enable markedly different damage builds.",
+      "defense": "1–3 → 2–4.5. Cloistered clerics and armored warpriests differ substantially in personal defenses.",
+      "support": "4–5 → 4–5. Font healing and divine protections are exceptional; harm-focused choices shift the emphasis.",
+      "utility": "5 → 3–4. The divine list is useful but less broadly suited to exploration than arcane casting.",
+      "difficulty": "3 → 3. Prepare spells and manage font and focus resources; the core support loop is approachable."
+    }
   }
 }

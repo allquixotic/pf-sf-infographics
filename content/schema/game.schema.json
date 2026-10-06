@@ -348,6 +348,42 @@
         "minLength": 1,
         "description": "Path relative to the file that references it."
       }
+    },
+    "ratingSets": {
+      "description": "First entry uses this game; later entries point to complete alternate game files.",
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
+            "description": "Stable identifier (lowercase, digits, hyphens)."
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "description": "Alternate game.json, relative to this game file. Omit for the default set.",
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "description"
+        ]
+      }
+    },
+    "methodology": {
+      "type": "string"
     }
   },
   "required": [

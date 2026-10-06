@@ -5,9 +5,10 @@
   "status": "core",
   "source": {
     "title": "Player Core 2",
-    "date": "2024-08"
+    "date": "2024-08",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=59"
   },
-  "group": "no-magic",
+  "group": "martial",
   "keyAttributes": [
     "int"
   ],
@@ -17,7 +18,10 @@
   "ratings": {
     "offense": 3,
     "defense": 2.5,
-    "support": 3,
+    "support": [
+      2.5,
+      4
+    ],
     "utility": 5,
     "difficulty": 4
   },
@@ -45,5 +49,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=59"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Player Core 2",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=59"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "3 → 3. Devise a Stratagem improves attack decisions; setup and alternative actions matter when the roll is poor.",
+      "defense": "2.5 → 2.5. Light armor and eight HP make avoiding unnecessary exposure valuable.",
+      "support": "3 → 2.5–4. Methodology and skill choices can emphasize medicine, knowledge or assisting allies.",
+      "utility": "5 → 5. Extra skills, leads and investigative abilities make information gathering a defining strength.",
+      "difficulty": "4 → 4. Follow leads and plan useful alternatives when the predicted attack is unfavorable."
+    }
   }
 }

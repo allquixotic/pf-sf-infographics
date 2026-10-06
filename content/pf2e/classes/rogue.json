@@ -5,30 +5,40 @@
   "status": "core",
   "source": {
     "title": "Player Core",
-    "date": "2023-11"
+    "date": "2023-11",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=37"
   },
-  "group": "no-magic",
+  "group": "martial",
   "keyAttributes": [
-    "dex"
+    "dex",
+    "str",
+    "int",
+    "cha"
   ],
   "traditions": [],
   "casting": null,
   "hp": 8,
   "ratings": {
-    "offense": 4,
+    "offense": [
+      3.5,
+      4.5
+    ],
     "defense": 3,
-    "support": 3,
-    "utility": 4.5,
-    "difficulty": 2
+    "support": [
+      2.5,
+      4
+    ],
+    "utility": 5,
+    "difficulty": 2.5
   },
   "features": [
     {
-      "title": "Jack of all trades",
-      "text": "Rogues get more skills and skill feats than anyone else and can be the scout, the infiltrator, the face or the thief."
+      "title": "Skills and precision",
+      "text": "Frequent skill increases and skill feats let you cover many jobs outside combat. Your racket shapes your tactics and can offer Strength, Intelligence or Charisma as your key attribute instead of Dexterity."
     },
     {
       "title": "Sneak Attack",
-      "text": "Hitting an off-guard enemy adds precision damage. The racket, such as ruffian or scoundrel, decides how the rogue sets that up."
+      "text": "Deal extra precision damage against off-guard foes. Find ways to create that opening through allies, positioning or skills, then choose attacks and tricks that exploit it."
     }
   ],
   "iconic": {
@@ -45,5 +55,21 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=37"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Player Core",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=37",
+      "https://2e.aonprd.com/Rackets.aspx"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "4 → 3.5–4.5. Sneak Attack rewards reliable off-guard setup; racket and weapon choices alter delivery.",
+      "defense": "3 → 3. Light armor, mobility and defensive feats provide solid but not tank-level resilience.",
+      "support": "3 → 2.5–4. Debilitations, maneuvers and skill feats can strongly support allies.",
+      "utility": "4.5 → 5. Frequent skill increases and skill feats make broad noncombat expertise a defining strength.",
+      "difficulty": "2 → 2.5. Plan off-guard setup and select useful skill actions; complexity varies with racket."
+    }
   }
 }

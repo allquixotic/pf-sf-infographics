@@ -5,9 +5,10 @@
   "status": "core",
   "source": {
     "title": "Player Core 2",
-    "date": "2024-08"
+    "date": "2024-08",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=60"
   },
-  "group": "low-magic",
+  "group": "martial",
   "keyAttributes": [
     "str",
     "dex"
@@ -20,20 +21,32 @@
   "casting": null,
   "hp": 10,
   "ratings": {
-    "offense": 3.5,
-    "defense": 4.5,
-    "support": 3,
-    "utility": 2,
-    "difficulty": 2
+    "offense": [
+      3,
+      4
+    ],
+    "defense": [
+      4,
+      5
+    ],
+    "support": [
+      2.5,
+      4
+    ],
+    "utility": [
+      2,
+      3
+    ],
+    "difficulty": 2.5
   },
   "features": [
     {
-      "title": "Perfected body",
-      "text": "Monks train body and spirit into a weapon. They move fast, strike with bare hands and shrug off almost any effect."
+      "title": "Body and spirit",
+      "text": "Fast movement, strong defenses and unarmed techniques support agile combat. Stances and optional qi spells let you emphasize striking, protection or control."
     },
     {
       "title": "Flurry of Blows",
-      "text": "Two strikes for a single action make monks relentless; stances and optional qi spells add supernatural techniques."
+      "text": "Make two strikes with one action, leaving time to move, defend or attempt a maneuver. Positioning and technique matter as much as the number of attacks."
     }
   ],
   "iconic": {
@@ -50,5 +63,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=60"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Player Core 2",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=60"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "3.5 → 3–4. Stance and feat choices change damage; Flurry frees actions for other contributions.",
+      "defense": "4.5 → 4–5. Excellent saves and unarmored defense support exceptional resilience.",
+      "support": "3 → 2.5–4. Grappling, trips and mobility enable control builds; qi choices can add further help.",
+      "utility": "2 → 2–3. Mobility and physical skills help exploration; optional qi expands selected capabilities.",
+      "difficulty": "2 → 2.5. Flurry is simple, while stance requirements and maneuver choices add tactical depth."
+    }
   }
 }

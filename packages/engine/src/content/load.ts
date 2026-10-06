@@ -20,6 +20,7 @@ export interface LoadedClass extends ClassDef {
 
 export interface GameBundle {
   game: Game;
+  ratingSet?: { id: string; name: string; description: string };
   path: string;
   theme: Theme;
   /** Raw font files for the theme, in declaration order (heading first). */
@@ -36,6 +37,7 @@ export interface ContentBundle {
   sourceLabel: string;
   manifest: Manifest;
   games: Map<string, GameBundle>;
+  ratingSets: Map<string, Map<string, GameBundle>>;
   /** Non-fatal problems (for example a manifest checksum mismatch). */
   warnings: string[];
 }
@@ -105,6 +107,12 @@ function crossCheck(game: Game, gamePath: string, classes: LoadedClass[], proble
       if (!(r.id in c.ratings)) problems.push(`${where}: missing rating "${r.id}"`);
     for (const r of Object.keys(c.ratings))
       if (!has(game.ratings, r)) problems.push(`${where}: unknown rating "${r}" (defined in ${gamePath})`);
+    if (c.review) {
+      for (const r of game.ratings)
+        if (!c.review.ratings[r.id]) problems.push(`${where}: missing review rationale for "${r.id}"`);
+      for (const r of Object.keys(c.review.ratings))
+        if (!has(game.ratings, r)) problems.push(`${where}: unknown review rating "${r}"`);
+    }
     if (c.art.paizo && !has(game.artPacks, c.art.paizo.pack))
       problems.push(`${where}: unknown art pack "${c.art.paizo.pack}"`);
   }
@@ -172,6 +180,22 @@ export async function loadContent(
   source: ContentSource,
   opts: { games?: string[] } = {},
 ): Promise<ContentBundle> {
+  // Perspectives commonly share fonts, icons and unchanged classes. Fetch each path once
+  // per load, while allowing a subsequent reload to see edits to the content source.
+  const original = source;
+  const texts = new Map<string, Promise<string>>();
+  const bytes = new Map<string, Promise<Uint8Array>>();
+  source = {
+    label: original.label,
+    readText(path) {
+      if (!texts.has(path)) texts.set(path, original.readText(path));
+      return texts.get(path)!;
+    },
+    readBytes(path) {
+      if (!bytes.has(path)) bytes.set(path, original.readBytes(path));
+      return bytes.get(path)!;
+    },
+  };
   const problems: string[] = [];
   const warnings: string[] = [];
   const manifest = await readJson(source, 'manifest.json', manifestSchema, problems);
@@ -179,14 +203,59 @@ export async function loadContent(
 
   const wanted = manifest.games.filter((g) => !opts.games || opts.games.includes(g.id));
   const games = new Map<string, GameBundle>();
+  const ratingSets = new Map<string, Map<string, GameBundle>>();
   for (const entry of wanted) {
+    if (games.has(entry.id)) problems.push(`manifest.json: duplicate game id "${entry.id}"`);
     const bundle = await loadGame(source, entry.path, problems, warnings);
     if (bundle) {
       if (bundle.game.id !== entry.id)
         problems.push(`${entry.path}: game id "${bundle.game.id}" does not match manifest id "${entry.id}"`);
       games.set(entry.id, bundle);
+      const sets = new Map<string, GameBundle>();
+      const defs = bundle.game.ratingSets ?? [
+        {
+          id: 'default',
+          name: 'Default',
+          description: 'The ratings and class descriptions supplied by this content source.',
+        },
+      ];
+      for (const [i, def] of defs.entries()) {
+        if (sets.has(def.id)) problems.push(`${entry.path}: duplicate rating set "${def.id}"`);
+        if ((i === 0 && def.path) || (i > 0 && !def.path)) {
+          problems.push(`${entry.path}: first rating set must omit path; subsequent sets require a path`);
+          continue;
+        }
+        const variant = def.path
+          ? await loadGame(source, resolvePath(entry.path, def.path), problems, warnings)
+          : bundle;
+        if (!variant) continue;
+        if (variant.game.id !== entry.id)
+          problems.push(`${variant.path}: rating set must use game id "${entry.id}"`);
+        if (def.path && variant.game.ratingSets)
+          problems.push(`${variant.path}: nested ratingSets are not supported`);
+        variant.ratingSet = { id: def.id, name: def.name, description: def.description };
+        sets.set(def.id, variant);
+      }
+      ratingSets.set(entry.id, sets);
     }
   }
   if (problems.length) throw new ContentValidationError(problems);
-  return { sourceLabel: source.label, manifest, games, warnings };
+  return { sourceLabel: source.label, manifest, games, ratingSets, warnings };
+}
+
+/** Select a complete perspective; explicit unknown ids are errors, never silent score substitutions. */
+export function getGameBundle(content: ContentBundle, game: string, ratingSet?: string): GameBundle {
+  const bundle = content.games.get(game);
+  if (!bundle) throw new Error(`Unknown game "${game}". Available: ${[...content.games.keys()].join(', ')}`);
+  if (!ratingSet) return bundle;
+  const selected = content.ratingSets.get(game)?.get(ratingSet);
+  if (!selected)
+    throw new Error(
+      `Unknown rating set "${ratingSet}" for ${game}. Available: ${[...(content.ratingSets.get(game)?.keys() ?? [])].join(', ')}`,
+    );
+  return selected;
+}
+
+export function allGameBundles(content: ContentBundle): GameBundle[] {
+  return [...content.ratingSets.values()].flatMap((sets) => [...sets.values()]);
 }

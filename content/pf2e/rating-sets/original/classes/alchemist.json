@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schema/class.schema.json",
+  "id": "alchemist",
+  "name": "Alchemist",
+  "status": "core",
+  "source": {
+    "title": "Player Core 2",
+    "date": "2024-08",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=56"
+  },
+  "group": "specialist",
+  "keyAttributes": [
+    "int"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 8,
+  "ratings": {
+    "offense": 3,
+    "defense": 2.5,
+    "support": 4,
+    "utility": 5,
+    "difficulty": 4.5
+  },
+  "features": [
+    {
+      "title": "Alchemy, not spellcasting",
+      "text": "Prepare bombs, elixirs, poisons and mutagens, then make temporary items during an adventure. Your research field helps shape your specialty."
+    },
+    {
+      "title": "Choose your toolkit",
+      "text": "You can damage foes, heal companions or solve practical problems. Learning formulas and choosing who receives each item are central decisions."
+    }
+  ],
+  "iconic": {
+    "name": "Fumbus",
+    "ancestry": "goblin"
+  },
+  "art": {
+    "emblem": "../../../emblems/alchemist.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Alchemist - Fumbus.png"
+    },
+    "local": "alchemist"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=56"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Player Core 2",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=56"
+    ],
+    "notes": "Original September 2026 numbers retained for comparison; corrected summaries and class families. These scores predate the revised rubric.",
+    "ratings": {
+      "offense": "Historical score: 3. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "defense": "Historical score: 2.5. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "support": "Historical score: 4. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "utility": "Historical score: 5. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "difficulty": "Historical score: 4.5. Preserved from the original project dataset; consult the revised set for a current rationale."
+    }
+  }
+}

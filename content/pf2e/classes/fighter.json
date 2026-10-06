@@ -5,9 +5,10 @@
   "status": "core",
   "source": {
     "title": "Player Core",
-    "date": "2023-11"
+    "date": "2023-11",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=35"
   },
-  "group": "no-magic",
+  "group": "martial",
   "keyAttributes": [
     "str",
     "dex"
@@ -17,19 +18,28 @@
   "hp": 10,
   "ratings": {
     "offense": 5,
-    "defense": 4,
-    "support": 2,
-    "utility": 1,
-    "difficulty": 1.5
+    "defense": [
+      3.5,
+      4.5
+    ],
+    "support": [
+      2,
+      4
+    ],
+    "utility": [
+      1,
+      2
+    ],
+    "difficulty": 2
   },
   "features": [
     {
       "title": "Weapon master",
-      "text": "No class is more accurate with weapons. Fighters learn every trick of armed combat and make simple attacks deadly."
+      "text": "Exceptional weapon accuracy makes ordinary attacks threatening. Your weapon and feats shape a style built around damage, shields, maneuvers or battlefield control."
     },
     {
       "title": "Reactive Strike",
-      "text": "An enemy that drops its guard next to a fighter gets hit for free, so fighters control the space around them."
+      "text": "You can spend your reaction to punish nearby foes for certain movements and actions. Position and reach help you create those opportunities."
     }
   ],
   "iconic": {
@@ -46,5 +56,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=35"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Player Core",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=35"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "5 → 5. Weapon accuracy and combat feats support exceptional single-target pressure.",
+      "defense": "4 → 3.5–4.5. Heavy armor and shield builds can emphasize durability over aggressive weapon choices.",
+      "support": "2 → 2–4. Reach, reactions and Athletics builds provide control; other builds emphasize damage.",
+      "utility": "1 → 1–2. Most class features support combat; selected skills still matter outside it.",
+      "difficulty": "1.5 → 2. Basic attacks are approachable; reactions, maneuvers and specialized feats add decisions."
+    }
   }
 }

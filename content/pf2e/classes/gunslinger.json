@@ -5,9 +5,10 @@
   "status": "expansion",
   "source": {
     "title": "Guns & Gears (Remastered)",
-    "date": "2025-02"
+    "date": "2025-02",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=20"
   },
-  "group": "no-magic",
+  "group": "martial",
   "keyAttributes": [
     "dex"
   ],
@@ -15,20 +16,26 @@
   "casting": null,
   "hp": 8,
   "ratings": {
-    "offense": 4,
+    "offense": [
+      3.5,
+      4.5
+    ],
     "defense": 3,
-    "support": 3,
+    "support": [
+      2,
+      4
+    ],
     "utility": 2,
-    "difficulty": 2.5
+    "difficulty": 3
   },
   "features": [
     {
       "title": "Sharpshooter",
-      "text": "Gunslingers master firearms and crossbows and become the most accurate shooters of any class."
+      "text": "High firearm and crossbow accuracy rewards carefully set-up shots. Reloading is part of your combat rhythm, and some builds focus on helping allies land their attacks."
     },
     {
       "title": "Ways and deeds",
-      "text": "A way such as the sniper, the pistolero or the vanguard grants signature deeds and reloads that combine shooting with movement or tricks."
+      "text": "Your way combines reloads with movement, skill actions or other tricks. Choose equipment and feats that work with that routine."
     }
   ],
   "iconic": {
@@ -44,5 +51,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=20"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Guns & Gears (Remastered)",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=20"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "4 → 3.5–4.5. Accurate shots and critical hits are strong, but reload costs and weapon choices affect sustained damage.",
+      "defense": "3 → 3. Medium armor and defensive progression give solid martial resilience.",
+      "support": "3 → 2–4. Reload tricks, Aid options and way choices can favor team support over personal attacks.",
+      "utility": "2 → 2. Perception and selected skills help scouting; few broad noncombat class features.",
+      "difficulty": "2.5 → 3. Coordinate reload actions, positioning and shot selection."
+    }
   }
 }

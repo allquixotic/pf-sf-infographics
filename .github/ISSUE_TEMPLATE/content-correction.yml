@@ -1,0 +1,49 @@
+name: Class text or rating correction
+description: Improve a class summary, rating, source, or rating set.
+title: '[Content] '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve the guide. Rules corrections and differing rating perspectives are both welcome. Scores are editorial judgments; a concrete build or encounter example helps us understand yours.
+  - type: input
+    id: context
+    attributes:
+      label: Game, rating set, and class
+      placeholder: PF2e / Revised role estimates / Oracle
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Rules version and content source
+      description: Book or playtest version, plus the repository if using custom content.
+      placeholder: Player Core 2, current errata; bundled content
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: What should change?
+      description: Identify the current wording, score, range or category.
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Proposed correction and reasoning
+      description: Explain what a new player should understand instead. For a rating, say which part of the rubric applies.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sources or concrete examples
+      description: Link current rules or supply page references. For ratings, describe levels, builds, encounters and any optional rules. No copied book pages needed.
+    validations:
+      required: true
+  - type: textarea
+    id: perspective
+    attributes:
+      label: Perspective or limitations (optional)
+      description: Tell us about tradeoffs or a different play style this change should represent. A separate rating set may be useful when assumptions differ.

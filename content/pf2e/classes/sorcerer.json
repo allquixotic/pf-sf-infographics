@@ -5,9 +5,10 @@
   "status": "core",
   "source": {
     "title": "Player Core 2",
-    "date": "2024-08"
+    "date": "2024-08",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=62"
   },
-  "group": "high-magic",
+  "group": "spellcasters",
   "keyAttributes": [
     "cha"
   ],
@@ -22,25 +23,28 @@
   "hp": 6,
   "ratings": {
     "offense": [
-      2,
-      3.5
+      3,
+      5
     ],
-    "defense": 1,
+    "defense": 2,
     "support": [
       3,
       5
     ],
-    "utility": 4,
-    "difficulty": 2.5
+    "utility": [
+      3,
+      5
+    ],
+    "difficulty": 3
   },
   "features": [
     {
       "title": "Born with magic",
-      "text": "Sorcerers carry power in their blood. The bloodline decides their tradition and much of their spell list."
+      "text": "Your bloodline determines your tradition, extra spells and blood magic effects. Choose a repertoire that fits a damage, healing, control or mixed role."
     },
     {
-      "title": "Blood magic",
-      "text": "Sorcerers get more spell slots than other casters, and bloodline spells trigger an extra themed effect."
+      "title": "Sorcerous Potency",
+      "text": "A generous supply of spell slots and a bonus to slotted spell damage or healing support powerful casting. Bloodline focus spells provide further signature abilities."
     }
   ],
   "iconic": {
@@ -57,5 +61,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=62"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Player Core 2",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=62"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "2–3.5 → 3–5. Offensive traditions and spell choices plus Sorcerous Potency enable exceptional area or burst damage.",
+      "defense": "1 → 2. Low HP and no initial armor training make positioning and protective spells important.",
+      "support": "3–5 → 3–5. Tradition and bloodline choices range from limited healing to excellent healing and control.",
+      "utility": "4 → 3–5. Tradition, repertoire and bloodline spells determine breadth outside combat.",
+      "difficulty": "2.5 → 3. Repertoire selection and resources require planning; casting itself is relatively flexible."
+    }
   }
 }

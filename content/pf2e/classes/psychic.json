@@ -4,10 +4,11 @@
   "name": "Psychic",
   "status": "expansion",
   "source": {
-    "title": "Dark Archive (Remastered)",
-    "date": "2026-02"
+    "title": "Dark Archives (Remastered)",
+    "date": "2026-02",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=68"
   },
-  "group": "high-magic",
+  "group": "spellcasters",
   "keyAttributes": [
     "int",
     "cha"
@@ -18,20 +19,29 @@
   "casting": "spontaneous",
   "hp": 6,
   "ratings": {
-    "offense": 4,
-    "defense": 1,
-    "support": 4,
-    "utility": 3,
+    "offense": [
+      3,
+      5
+    ],
+    "defense": 2,
+    "support": [
+      3,
+      4.5
+    ],
+    "utility": [
+      3,
+      4
+    ],
     "difficulty": 3.5
   },
   "features": [
     {
       "title": "Mind over matter",
-      "text": "Psychics cast occult magic from the power of their own minds. They know fewer spells than other casters but hit hard with them."
+      "text": "Occult spells and enhanced psi cantrips express your conscious mind. Some choices favor burst damage; others emphasize protection, movement or mental tricks."
     },
     {
       "title": "Amps and psyche",
-      "text": "Amps make special cantrips far stronger, and unleashing the psyche boosts spell damage for a while before leaving the psychic drained."
+      "text": "Spend focus points to amp psi cantrips. Unleash your psyche for a short surge of spell damage and special actions, followed by a recovery period with the stupefied condition."
     }
   ],
   "iconic": {
@@ -47,5 +57,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=68"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Dark Archives (Remastered)",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=68"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "4 → 3–5. Offensive conscious minds and unleashed spell damage can excel; utility-oriented minds invest elsewhere.",
+      "defense": "1 → 2. Limited armor and low HP require careful positioning and protective spells.",
+      "support": "4 → 3–4.5. Conscious mind and occult spell choices can emphasize control and party assistance.",
+      "utility": "3 → 3–4. Occult spells and mind-specific cantrips offer different exploration tools.",
+      "difficulty": "3.5 → 3.5. Track amps, focus points, unleash timing and the recovery period."
+    }
   }
 }

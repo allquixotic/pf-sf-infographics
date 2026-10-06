@@ -5,9 +5,10 @@
   "status": "core",
   "source": {
     "title": "Player Core",
-    "date": "2023-11"
+    "date": "2023-11",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=36"
   },
-  "group": "low-magic",
+  "group": "martial",
   "keyAttributes": [
     "str",
     "dex"
@@ -18,20 +19,32 @@
   "casting": null,
   "hp": 10,
   "ratings": {
-    "offense": 4.5,
-    "defense": 3.5,
-    "support": 2,
-    "utility": 3,
+    "offense": [
+      4,
+      5
+    ],
+    "defense": [
+      3,
+      4
+    ],
+    "support": [
+      2,
+      4
+    ],
+    "utility": [
+      2,
+      3
+    ],
     "difficulty": 2.5
   },
   "features": [
     {
-      "title": "Hunter",
-      "text": "Rangers are trackers and survivalists at home in the wild, fighting with a bow or twin blades, often beside an animal companion."
+      "title": "Focused hunter",
+      "text": "Track a chosen prey and fight with a style shaped by your hunter's edge. Bows, paired weapons, companions and optional focus spells offer different approaches."
     },
     {
       "title": "Hunt Prey",
-      "text": "Marking a target focuses every attack and check on it; the hunter's edge decides whether that means more damage, faster attacks or deeper knowledge."
+      "text": "Choose a target to improve pursuit and apply your edge's specific benefits. Your feats can emphasize damage, knowledge, teamwork or a companion."
     }
   ],
   "iconic": {
@@ -48,5 +61,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=36"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Player Core",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=36"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "4.5 → 4–5. Flurry and precision choices support excellent single-target damage; build determines the attack pattern.",
+      "defense": "3.5 → 3–4. Martial defenses are solid; feats, armor and engagement style shift resilience.",
+      "support": "2 → 2–4. Outwit, companion and shared-hunting options increase party support.",
+      "utility": "3 → 2–3. Tracking and perception are useful specialties; they do not imply broad skill mastery.",
+      "difficulty": "2.5 → 2.5. Hunt Prey is direct; companions and specialized combat routines add bookkeeping."
+    }
   }
 }

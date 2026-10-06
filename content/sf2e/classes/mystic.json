@@ -5,7 +5,8 @@
   "status": "core",
   "source": {
     "title": "Starfinder Player Core",
-    "date": "2025-07"
+    "date": "2025-07",
+    "url": "https://2e.aonsrd.com/classes/2-mystic"
   },
   "group": "spellcasters",
   "keyAttributes": [
@@ -21,12 +22,21 @@
   "hp": 6,
   "ratings": {
     "offense": [
-      2,
-      4
+      2.5,
+      4.5
     ],
-    "defense": 2,
-    "support": 5,
-    "utility": 4,
+    "defense": [
+      2.5,
+      3.5
+    ],
+    "support": [
+      4,
+      5
+    ],
+    "utility": [
+      3.5,
+      4.5
+    ],
     "difficulty": 3.5
   },
   "features": [
@@ -53,5 +63,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonsrd.com/classes/2-mystic"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Starfinder Player Core",
+    "sources": [
+      "https://2e.aonsrd.com/classes/2-mystic"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "2–4 → 2.5–4.5. Connection and spell choices vary between offensive casting and dedicated support.",
+      "defense": "2 → 2.5–3.5. Eight HP and defensive choices help, but resources spent protecting oneself compete with allies.",
+      "support": "5 → 4–5. The vitality network and spells make healing and party sustain defining strengths.",
+      "utility": "4 → 3.5–4.5. Connection and spell tradition shape noncombat flexibility.",
+      "difficulty": "3.5 → 3.5. Manage network healing, spell resources and connections."
+    }
   }
 }

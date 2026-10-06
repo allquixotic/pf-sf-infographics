@@ -1,0 +1,68 @@
+{
+  "$schema": "../../../../schema/class.schema.json",
+  "id": "champion",
+  "name": "Champion",
+  "status": "core",
+  "source": {
+    "title": "Player Core 2",
+    "date": "2024-08",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=58"
+  },
+  "group": "martial",
+  "keyAttributes": [
+    "str",
+    "dex"
+  ],
+  "traditions": [
+    "divine"
+  ],
+  "casting": null,
+  "hp": 10,
+  "ratings": {
+    "offense": 3,
+    "defense": 5,
+    "support": 3,
+    "utility": 1.5,
+    "difficulty": 2
+  },
+  "features": [
+    {
+      "title": "Sworn protector",
+      "text": "Champions pair strong armor with a cause and divine powers. Staying close enough to intervene can matter more than chasing an extra attack."
+    },
+    {
+      "title": "Reactions and devotion",
+      "text": "Your cause determines your reaction and priorities. Devotion spells can heal or harm; protection, punishment and support vary with your choices."
+    }
+  ],
+  "iconic": {
+    "name": "Seelah",
+    "ancestry": "human"
+  },
+  "art": {
+    "emblem": "../../../emblems/champion.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Champion - Seelah.png"
+    },
+    "local": "champion"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=58"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Player Core 2",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=58"
+    ],
+    "notes": "Original September 2026 numbers retained for comparison; corrected summaries and class families. These scores predate the revised rubric.",
+    "ratings": {
+      "offense": "Historical score: 3. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "defense": "Historical score: 5. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "support": "Historical score: 3. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "utility": "Historical score: 1.5. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "difficulty": "Historical score: 2. Preserved from the original project dataset; consult the revised set for a current rationale."
+    }
+  }
+}

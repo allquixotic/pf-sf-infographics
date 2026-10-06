@@ -84,7 +84,7 @@ describe('export layout regressions', () => {
       const pages = await textPages(result.files[0]!.data);
       const classPages = pages.filter((page) => page.some((item) => item.str.includes('HP/level')));
       expect(classPages.length).toBeGreaterThan(1);
-      const headings = classPages.filter((page) => page.some((item) => item.str === 'HIGH MAGIC ABILITY'));
+      const headings = classPages.filter((page) => page.some((item) => item.str === 'SPELLCASTERS'));
       expect(headings.length).toBe(repeatSectionTitles ? classPages.length : 1);
     }
   }, 60_000);
@@ -188,5 +188,18 @@ test('explicit Paizo upload credits survive legend removal, without crediting or
       .join(' ');
     expect(text.includes('Wayne Reynolds')).toBe(paizoCredit);
     expect(text.includes('Artwork © Paizo Inc.')).toBe(paizoCredit);
+  }
+}, 60_000);
+
+test('lightweight Auto queries preserve actual text sizes, page numbers and page coverage', async () => {
+  const { prepareDocument } = await import('@pfsf/engine');
+  const { TypstSession } = await import('../../engine/src/render/typst');
+  for (const layout of ['poster', 'booklet'] as const) {
+    const doc = prepareDocument({ content, options: { layout, fontScale: 1.3 } });
+    const session = await TypstSession.create(bunRuntime, doc.fonts, 'metrics-check');
+    const measured = await session.metrics<unknown[]>(doc.main, doc.files);
+    const actual = await session.metrics<unknown[]>(doc.main, doc.files, false);
+    expect(measured).toHaveLength(layout === 'poster' ? 30 : 29);
+    expect(measured).toEqual(actual);
   }
 }, 60_000);

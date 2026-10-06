@@ -5,9 +5,10 @@
   "status": "core",
   "source": {
     "title": "Player Core",
-    "date": "2023-11"
+    "date": "2023-11",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=39"
   },
-  "group": "high-magic",
+  "group": "spellcasters",
   "keyAttributes": [
     "int"
   ],
@@ -17,20 +18,26 @@
   "casting": "prepared",
   "hp": 6,
   "ratings": {
-    "offense": 3,
-    "defense": 1,
-    "support": 4.5,
+    "offense": [
+      3,
+      5
+    ],
+    "defense": 2,
+    "support": [
+      3.5,
+      5
+    ],
     "utility": 5,
     "difficulty": 3.5
   },
   "features": [
     {
       "title": "Arcane scholar",
-      "text": "Wizards study magic like a science and command the broadest spell list of all, at the cost of fragile bodies."
+      "text": "Prepare spells from a growing spellbook. You can specialize in damage, control or exploration, but the spells you prepare determine which answers you have today."
     },
     {
-      "title": "School and bond",
-      "text": "A school curriculum adds spells and a focus spell, and a bonded item lets the wizard recast a spell already used that day."
+      "title": "School and thesis",
+      "text": "Your curriculum and thesis shape your tools. A bonded item can recover a spell you have already used, giving limited flexibility when plans change."
     }
   ],
   "iconic": {
@@ -47,5 +54,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=39"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Player Core",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=39"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "3 → 3–5. Prepared offensive spells enable excellent area or burst damage; a control loadout deals less directly.",
+      "defense": "1 → 2. Low HP and no initial armor training make defensive spell choices important.",
+      "support": "4.5 → 3.5–5. Arcane control, debuffs and buffs offer exceptional support when prepared for it.",
+      "utility": "5 → 5. A broad arcane spellbook and Intelligence offer many noncombat answers, subject to preparation.",
+      "difficulty": "3.5 → 3.5. Spellbook choices, daily slots and school tools require ongoing preparation."
+    }
   }
 }

@@ -1,0 +1,76 @@
+{
+  "$schema": "../../../../schema/class.schema.json",
+  "id": "cleric",
+  "name": "Cleric",
+  "status": "core",
+  "source": {
+    "title": "Player Core",
+    "date": "2023-11",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=33"
+  },
+  "group": "spellcasters",
+  "keyAttributes": [
+    "wis"
+  ],
+  "traditions": [
+    "divine"
+  ],
+  "casting": "prepared",
+  "hp": 8,
+  "ratings": {
+    "offense": [
+      2,
+      3
+    ],
+    "defense": [
+      1,
+      3
+    ],
+    "support": [
+      4,
+      5
+    ],
+    "utility": 5,
+    "difficulty": 3
+  },
+  "features": [
+    {
+      "title": "Divine spellcaster",
+      "text": "Your deity grants divine magic and additional spell choices. Doctrine shapes your approach: focused casting as a cloistered cleric or armored combat as a warpriest."
+    },
+    {
+      "title": "Divine font",
+      "text": "Extra slots for heal or harm support your chosen role. Preparation can emphasize healing, protection or offensive magic; not every cleric plays as a healer."
+    }
+  ],
+  "iconic": {
+    "name": "Kyra",
+    "ancestry": "human"
+  },
+  "art": {
+    "emblem": "../../../emblems/cleric.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Cleric - Kyra.png"
+    },
+    "local": "cleric"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=33"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Player Core",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=33"
+    ],
+    "notes": "Original September 2026 numbers retained for comparison; corrected summaries and class families. These scores predate the revised rubric.",
+    "ratings": {
+      "offense": "Historical score: 2–3. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "defense": "Historical score: 1–3. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "support": "Historical score: 4–5. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "utility": "Historical score: 5. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "difficulty": "Historical score: 3. Preserved from the original project dataset; consult the revised set for a current rationale."
+    }
+  }
+}

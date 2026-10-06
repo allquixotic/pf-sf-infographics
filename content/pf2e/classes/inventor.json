@@ -5,9 +5,10 @@
   "status": "expansion",
   "source": {
     "title": "Guns & Gears (Remastered)",
-    "date": "2025-02"
+    "date": "2025-02",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=19"
   },
-  "group": "no-magic",
+  "group": "martial",
   "keyAttributes": [
     "int"
   ],
@@ -15,11 +16,23 @@
   "casting": null,
   "hp": 8,
   "ratings": {
-    "offense": 4,
-    "defense": 3.5,
-    "support": 3,
-    "utility": 3,
-    "difficulty": 3
+    "offense": [
+      3.5,
+      4.5
+    ],
+    "defense": [
+      3,
+      4.5
+    ],
+    "support": [
+      2,
+      3.5
+    ],
+    "utility": [
+      3,
+      4
+    ],
+    "difficulty": 3.5
   },
   "features": [
     {
@@ -28,7 +41,7 @@
     },
     {
       "title": "Overdrive",
-      "text": "They supercharge their gear with Crafting and take risky unstable actions such as Explode, which can jam the innovation until it is repaired."
+      "text": "Supercharge gear with Crafting and attempt unstable actions such as Explode. A failed flat check blocks further unstable actions until you spend 10 minutes retuning the innovation."
     }
   ],
   "iconic": {
@@ -44,5 +57,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=19"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Guns & Gears (Remastered)",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=19"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "4 → 3.5–4.5. Overdrive, unstable actions and innovation choices favor different damage patterns.",
+      "defense": "3.5 → 3–4.5. Armor innovations emphasize resilience; construct and weapon builds spend their features elsewhere.",
+      "support": "3 → 2–3.5. Construct positioning and selected gadgets or feats help the party to different degrees.",
+      "utility": "3 → 3–4. Crafting and invention offer practical solutions, especially with relevant feats and downtime.",
+      "difficulty": "3 → 3.5. Manage innovation modifications, Overdrive and unstable recovery."
+    }
   }
 }

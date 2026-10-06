@@ -4,7 +4,7 @@
  */
 import { mkdir, readdir, rename, stat } from 'node:fs/promises';
 import { basename, join } from 'node:path';
-import { ArtLibrary, ArtPack, type ContentBundle } from '@pfsf/engine';
+import { ArtLibrary, ArtPack, allGameBundles, type ContentBundle } from '@pfsf/engine';
 
 export const DEFAULT_ASSET_DIR = 'local-assets';
 
@@ -24,7 +24,8 @@ export async function loadLocalArt(
   log: (msg: string) => void = () => {},
 ): Promise<ArtLibrary> {
   const lib = new ArtLibrary();
-  for (const bundle of content.games.values()) {
+  const looseGames = new Set<string>();
+  for (const bundle of allGameBundles(content)) {
     for (const pack of bundle.game.artPacks) {
       if (!pack.fileName || lib.hasPack(pack.id)) continue;
       const path = join(dir, 'paizo', pack.fileName);
@@ -33,6 +34,8 @@ export async function loadLocalArt(
         log(`Using ${path}`);
       }
     }
+    if (looseGames.has(bundle.game.id)) continue;
+    looseGames.add(bundle.game.id);
     const looseDir = join(dir, 'art', bundle.game.id);
     if (await exists(looseDir)) {
       for (const name of await readdir(looseDir)) {
@@ -72,7 +75,7 @@ export async function fetchPaizoPacks(
   await mkdir(target, { recursive: true });
   const report: FetchReport = { downloaded: [], skipped: [] };
   const seen = new Set<string>();
-  for (const bundle of content.games.values()) {
+  for (const bundle of allGameBundles(content)) {
     for (const pack of bundle.game.artPacks) {
       if (pack.kind !== 'zip' || !pack.url || !pack.fileName || seen.has(pack.url)) continue;
       seen.add(pack.url);

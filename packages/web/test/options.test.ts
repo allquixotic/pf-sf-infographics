@@ -26,3 +26,18 @@ test('saved common preferences override stale legacy values; new games inherit t
   expect(restored.ui.exclude).toEqual([]);
   expect(restored.ui.title).toBe('');
 });
+
+test('old shared status filters migrate, then remain with the class selection', () => {
+  const restored = restoreOptions(
+    'pf2e',
+    {},
+    { includePlaytest: true },
+    {
+      pf2e: { exclude: [], title: '', asOf: '' },
+    },
+  );
+  expect(restored.ui.includePlaytest).toBe(true);
+  const split = splitOptions(restored.ui);
+  expect(split.game.includePlaytest).toBe(true);
+  expect(split.shared).not.toHaveProperty('includePlaytest');
+});

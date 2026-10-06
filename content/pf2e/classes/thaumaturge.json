@@ -4,10 +4,11 @@
   "name": "Thaumaturge",
   "status": "expansion",
   "source": {
-    "title": "Dark Archive (Remastered)",
-    "date": "2026-02"
+    "title": "Dark Archives (Remastered)",
+    "date": "2026-02",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=69"
   },
-  "group": "no-magic",
+  "group": "martial",
   "keyAttributes": [
     "cha"
   ],
@@ -15,20 +16,32 @@
   "casting": null,
   "hp": 8,
   "ratings": {
-    "offense": 4.5,
-    "defense": 2.5,
-    "support": 3,
-    "utility": 4,
+    "offense": [
+      4,
+      4.5
+    ],
+    "defense": [
+      2.5,
+      4
+    ],
+    "support": [
+      2,
+      4.5
+    ],
+    "utility": [
+      3.5,
+      4.5
+    ],
     "difficulty": 3.5
   },
   "features": [
     {
-      "title": "Folk-magic scholar",
-      "text": "Thaumaturges carry charms, talismans and implements, and know the hidden weakness of every creature."
+      "title": "Folk-magic martial",
+      "text": "Combine weapon attacks with esoterica and supernatural implements. Implement choices can emphasize defense, healing, knowledge or other specialized tricks."
     },
     {
       "title": "Exploit Vulnerability",
-      "text": "Finding a creature's weakness lets every strike hit where it hurts; implements such as a lantern or a mirror add unique tricks."
+      "text": "Use esoteric knowledge to exploit an existing weakness or create a personal antithesis. Manage your implements and setup actions to keep pressure on the right foe."
     }
   ],
   "iconic": {
@@ -44,5 +57,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=69"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Dark Archives (Remastered)",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=69"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "4.5 → 4–4.5. Exploiting weaknesses and implement empowerment support strong weapon damage.",
+      "defense": "2.5 → 2.5–4. Amulet, chalice and other implement choices alter personal resilience.",
+      "support": "3 → 2–4.5. Implements may emphasize healing, protection or party bonuses instead of personal offense.",
+      "utility": "4 → 3.5–4.5. Esoteric knowledge and implement choices provide specialized information and exploration tools.",
+      "difficulty": "3.5 → 3.5. Manage vulnerability setup, implements and hand requirements."
+    }
   }
 }

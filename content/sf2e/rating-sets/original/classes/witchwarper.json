@@ -1,0 +1,73 @@
+{
+  "$schema": "../../../../schema/class.schema.json",
+  "id": "witchwarper",
+  "name": "Witchwarper",
+  "status": "core",
+  "source": {
+    "title": "Starfinder Player Core",
+    "date": "2025-07",
+    "url": "https://2e.aonsrd.com/classes/6-witchwarper"
+  },
+  "group": "spellcasters",
+  "keyAttributes": [
+    "cha",
+    "int"
+  ],
+  "traditions": [
+    "arcane",
+    "occult"
+  ],
+  "traditionsChosen": true,
+  "casting": "spontaneous",
+  "hp": 8,
+  "ratings": {
+    "offense": [
+      3,
+      4
+    ],
+    "defense": 2.5,
+    "support": 4,
+    "utility": 4,
+    "difficulty": 4
+  },
+  "features": [
+    {
+      "title": "Reality bender",
+      "text": "Witchwarpers draw magic from alternate realities. Their paradox determines whether they cast arcane or occult spells and how their quantum field changes the battlefield."
+    },
+    {
+      "title": "Quantum field",
+      "text": "Keep this zone active to use warp focus spells. Casting one on your turn also sustains the field. Each spell sets its own targets and area."
+    }
+  ],
+  "iconic": {
+    "name": "Zemir",
+    "ancestry": "human"
+  },
+  "art": {
+    "emblem": "../../../emblems/witchwarper.svg",
+    "paizo": {
+      "pack": "cup-sf2e-iconics",
+      "file": "PNG/Witchwarper - Zemir.png"
+    },
+    "local": "witchwarper"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonsrd.com/classes/6-witchwarper"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Starfinder Player Core",
+    "sources": [
+      "https://2e.aonsrd.com/classes/6-witchwarper"
+    ],
+    "notes": "Original September 2026 numbers retained for comparison; corrected summaries and class families. These scores predate the revised rubric.",
+    "ratings": {
+      "offense": "Historical score: 3–4. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "defense": "Historical score: 2.5. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "support": "Historical score: 4. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "utility": "Historical score: 4. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "difficulty": "Historical score: 4. Preserved from the original project dataset; consult the revised set for a current rationale."
+    }
+  }
+}

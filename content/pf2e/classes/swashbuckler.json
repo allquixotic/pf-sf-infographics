@@ -5,9 +5,10 @@
   "status": "core",
   "source": {
     "title": "Player Core 2",
-    "date": "2024-08"
+    "date": "2024-08",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=63"
   },
-  "group": "no-magic",
+  "group": "martial",
   "keyAttributes": [
     "dex"
   ],
@@ -15,20 +16,32 @@
   "casting": null,
   "hp": 10,
   "ratings": {
-    "offense": 4,
-    "defense": 3.5,
-    "support": 3,
-    "utility": 2.5,
+    "offense": [
+      3.5,
+      4.5
+    ],
+    "defense": [
+      3.5,
+      4.5
+    ],
+    "support": [
+      2.5,
+      4.5
+    ],
+    "utility": [
+      2.5,
+      3.5
+    ],
     "difficulty": 3
   },
   "features": [
     {
       "title": "Daring duelist",
-      "text": "Swashbucklers make combat a performance, tumbling, taunting and feinting their way around the battlefield."
+      "text": "Your style turns a favored skill into a combat tool, from athletic maneuvers to social tricks. Build for precision damage, defense or helping allies create openings."
     },
     {
-      "title": "Panache",
-      "text": "Stylish skill actions earn panache, which boosts speed and damage and powers dramatic finishing blows."
+      "title": "Panache and finishers",
+      "text": "Build panache through bravado actions, then decide when to spend it on a finisher. Remaster rules make gaining panache more forgiving, but action order still matters."
     }
   ],
   "iconic": {
@@ -45,5 +58,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=63"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Player Core 2",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=63"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "4 → 3.5–4.5. Finishers enable strong precision damage; style and feat selections influence the routine.",
+      "defense": "3.5 → 3.5–4.5. Defensive reactions and dueling choices can prioritize avoiding damage.",
+      "support": "3 → 2.5–4.5. Gymnast maneuvers and social-skill styles support very different team roles.",
+      "utility": "2.5 → 2.5–3.5. Style skills provide strong specialties without the rogue's breadth.",
+      "difficulty": "3 → 3. Panache is more forgiving in the Remaster, but finisher timing and setup still matter."
+    }
   }
 }

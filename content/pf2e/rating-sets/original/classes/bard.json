@@ -1,0 +1,67 @@
+{
+  "$schema": "../../../../schema/class.schema.json",
+  "id": "bard",
+  "name": "Bard",
+  "status": "core",
+  "source": {
+    "title": "Player Core",
+    "date": "2023-11",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=32"
+  },
+  "group": "spellcasters",
+  "keyAttributes": [
+    "cha"
+  ],
+  "traditions": [
+    "occult"
+  ],
+  "casting": "spontaneous",
+  "hp": 8,
+  "ratings": {
+    "offense": 2,
+    "defense": 2,
+    "support": 5,
+    "utility": 4,
+    "difficulty": 3
+  },
+  "features": [
+    {
+      "title": "Magic of performance",
+      "text": "Bards weave occult magic into music, poetry and wit. They lift allies, rattle enemies and have a skill or spell for almost any social problem."
+    },
+    {
+      "title": "Composition spells",
+      "text": "Compositions such as a courageous anthem can be kept up every turn for very little cost, making the whole party hit harder or stand firmer."
+    }
+  ],
+  "iconic": {
+    "name": "Lem",
+    "ancestry": "halfling"
+  },
+  "art": {
+    "emblem": "../../../emblems/bard.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Bard - Lem.png"
+    },
+    "local": "bard"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=32"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Player Core",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=32"
+    ],
+    "notes": "Original September 2026 numbers retained for comparison; corrected summaries and class families. These scores predate the revised rubric.",
+    "ratings": {
+      "offense": "Historical score: 2. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "defense": "Historical score: 2. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "support": "Historical score: 5. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "utility": "Historical score: 4. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "difficulty": "Historical score: 3. Preserved from the original project dataset; consult the revised set for a current rationale."
+    }
+  }
+}

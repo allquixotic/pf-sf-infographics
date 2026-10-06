@@ -5,7 +5,8 @@
   "status": "core",
   "source": {
     "title": "Starfinder Player Core",
-    "date": "2025-07"
+    "date": "2025-07",
+    "url": "https://2e.aonsrd.com/classes/1-envoy"
   },
   "group": "tech",
   "keyAttributes": [
@@ -20,7 +21,10 @@
       3.5
     ],
     "defense": 2.5,
-    "support": 5,
+    "support": [
+      4,
+      5
+    ],
     "utility": 4.5,
     "difficulty": 3
   },
@@ -48,5 +52,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonsrd.com/classes/1-envoy"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Starfinder Player Core",
+    "sources": [
+      "https://2e.aonsrd.com/classes/1-envoy"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "2.5–3.5 → 2.5–3.5. Leadership styles can emphasize personal attacks, but ally-enabled damage primarily counts as support.",
+      "defense": "2.5 → 2.5. Eight HP and light armor favor positioning over absorbing attacks.",
+      "support": "5 → 4–5. Directives and leadership abilities improve allies' turns and coordinate the team.",
+      "utility": "4.5 → 4.5. Charisma, skills and social tools make interaction a defining strength.",
+      "difficulty": "3 → 3. Time directives and select when to lead with an action."
+    }
   }
 }

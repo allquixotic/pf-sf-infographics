@@ -10,7 +10,7 @@ download a PDF, SVG, PNG, JPG or WebP.
   can edit the content on a fork and see it immediately, without committing.
 - **CLI:** `./pfsf.sh` / `pfsf.bat` renders from the command line, handy for scripts and CI.
 
-Covered as of September 2026: all 29 printed Pathfinder 2e classes plus the daredevil and slayer playtest, and the
+Covered as of October 5, 2026: all 29 printed Pathfinder 2e classes plus the daredevil and slayer playtest, and the
 six Starfinder 2e Player Core classes plus the mechanic, technomancer and luminary playtests. See
 [docs/classes.md](docs/classes.md).
 
@@ -36,6 +36,7 @@ Community Use Package portraits into `local-assets/` (about 76 MB); say no to us
 ./pfsf.sh --game sf2e --layout booklet --size a4 --playtest   # A4 booklet, including playtest classes
 ./pfsf.sh --game pf2e --intent screen --size uhd --format png --theme dark --art paizo
 ./pfsf.sh --content you/pf-sf-infographics@my-branch          # render a fork's content straight from GitHub
+./pfsf.sh --game pf2e --rating-set original --max-complexity 2.5
 ./pfsf.sh fetch-art                                           # download the Community Use Package portraits
 ```
 
@@ -46,12 +47,14 @@ If you already have Bun, `bun install` then `bun run cli -- …`, `bun start` an
 | Option | Choices |
 | --- | --- |
 | Game | Pathfinder 2e, Starfinder 2e (separate tabs / `--game`) |
+| Rating set | one dropdown selects a complete perspective, with a description in its question-mark tooltip; CLI `--rating-set` |
+| Class selection | Player Core / Player Core + 2 / All published presets, individual checkboxes, maximum complexity |
 | Layout | poster (one sheet) or booklet (pages you can print on a home printer) |
 | Intent and size | print: Letter, Legal, Tabloid, 18×24, 24×36, 36×48 in, A5–A0; screen: Full HD, QHD, 4K, 8K, tablet, phone; fit to content; or any custom size |
 | Format | PDF (vector, selectable text), SVG (vector), PNG, JPG, WebP |
 | Artwork | official iconic art (from Paizo's Community Use Package, supplied by you), custom images or ZIPs, our generic SVG emblems, or none |
 | Look | light or dark, custom background and font colors, transparent output, classic / color-blind-safe / grayscale rating colors, text size |
-| Contents | include or exclude playtest classes or any individual class, group by magic ability or alphabetically, legend, hit points and sources, custom title and date |
+| Contents | include or exclude playtest classes or any individual class, group by class family or alphabetically, legend, hit points and sources, custom title and date |
 | Print | DPI for raster output, bleed, page numbers, repeat booklet section headings on continuation pages |
 | Attribution | credits and notices can be switched off, but please keep them when you share an image |
 
@@ -86,6 +89,11 @@ Everything the infographic says (class summaries, ratings, groupings, colors, fo
 from any GitHub repository or branch that follows [the content format](docs/content-format.md): open the
 "Content source" panel, or add `?repo=owner/repo@branch` to the URL.
 
+The bundled **Revised role estimates** use an explicit rubric and include sources and reasoning for all 40
+classes. **Original ratings (September 2026)** preserves the previous scores for comparison, alongside corrected
+class summaries. Scores are editorial judgments, not community consensus. Open **About these ratings** in the app
+or read [the rating guide](docs/ratings.md).
+
 ## Contributing
 
 Corrections to ratings and summaries, new classes, translations and better icons are all welcome. See
@@ -94,7 +102,7 @@ Corrections to ratings and summaries, new classes, translations and better icons
 ## Credits and licenses
 
 - **Design:** based on the [Pathfinder 2E Classes Infographic](https://willemsma.design/pathfinder/) by
-  **Rachelle Willemsma**, used with her permission. This project has been posted with permission of Rachelle Willemsma. The original chart concept was by u/Rednidedi.
+  **Rachelle Willemsma**, used with her permission. This project has been posted with permission of Rachelle Willemsma. The original chart concept was by u/Rednidedni.
 - **Code** (`packages/`, `tools/`, scripts): [Apache License 2.0](LICENSE).
 - **Content** (`content/`: class summaries, ratings, icons, emblems, data): [CC BY 4.0](LICENSES/CC-BY-4.0.txt),
   © pf-sf-infographics contributors. Fonts: Ultra (Apache-2.0) and Lexend (OFL-1.1), see `content/shared/fonts/`.
@@ -109,7 +117,7 @@ Paizo. For more information about Paizo Inc. and Paizo products, visit [paizo.co
 ### Printing and saved settings
 
 Layout, paper, appearance, artwork mode, text size and export settings are shared between game tabs. Class
-selections and custom title/date text remain specific to each game. Old saved settings migrate using the active
+selections, complexity limits and custom title/date text remain specific to each content source, game and rating set. Old saved settings migrate using the active
 game’s common values. Browser storage is local to the current site address.
 
 **Default** restores text size to 100%. **Auto** compares every 5% step from 80% through 130%, using the actual

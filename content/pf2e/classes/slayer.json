@@ -5,9 +5,10 @@
   "status": "playtest",
   "source": {
     "title": "Risks & Rewards Playtest",
-    "date": "2026-02"
+    "date": "2026-02",
+    "url": "https://downloads.paizo.com/RisksandRewards_Playtest.pdf"
   },
-  "group": "no-magic",
+  "group": "martial",
   "keyAttributes": [
     "str",
     "dex"
@@ -17,12 +18,18 @@
   "hp": 10,
   "ratings": {
     "offense": [
-      4,
+      3.5,
       4.5
     ],
     "defense": 3.5,
-    "support": 2,
-    "utility": 3.5,
+    "support": [
+      2,
+      3
+    ],
+    "utility": [
+      3,
+      4
+    ],
     "difficulty": 3.5
   },
   "features": [
@@ -38,5 +45,20 @@
   "art": {
     "emblem": "../emblems/slayer.svg",
     "local": "slayer"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Risks & Rewards Playtest",
+    "sources": [
+      "https://downloads.paizo.com/RisksandRewards_Playtest.pdf"
+    ],
+    "notes": "Provisional assessment of the named playtest, not the final class. The public playtest period has ended; the published rules may differ.",
+    "ratings": {
+      "offense": "4–4.5 → 3.5–4.5. Provisional playtest estimate: quarry preparation and hunting tools enable focused damage.",
+      "defense": "3.5 → 3.5. Ten HP and martial defenses support front-line resilience.",
+      "support": "2 → 2–3. Tool choices can assist the party, though hunting a quarry is the main focus.",
+      "utility": "3.5 → 3–4. Knowledge and monster-hunting tools help investigations and preparation.",
+      "difficulty": "3.5 → 3.5. Research, quarry restrictions and trophy management add preparation overhead."
+    }
   }
 }

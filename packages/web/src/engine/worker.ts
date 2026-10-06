@@ -10,17 +10,19 @@ import compilerWasm from '@myriaddreamin/typst-ts-web-compiler/wasm?url';
 import {
   ArtLibrary,
   ArtPack,
+  allGameBundles,
   type ContentBundle,
   type ContentSource,
   Engine,
   type EngineRuntime,
+  type GameBundle,
   GitHubContentSource,
   HttpContentSource,
   loadContent,
   parseGitHubLocation,
 } from '@pfsf/engine';
 import resvgWasm from '@resvg/resvg-wasm/index_bg.wasm?url';
-import type { ContentSummary, OutFile, Request, SourceSpec, WorkerMessage } from './protocol';
+import type { ContentSummary, GameSummary, OutFile, Request, SourceSpec, WorkerMessage } from './protocol';
 
 declare const self: DedicatedWorkerGlobalScope;
 
@@ -65,10 +67,12 @@ function registerZip(
 ): { packs: string[]; matched: number } {
   if (!content) return { packs: [], matched: 0 };
   const found: string[] = [];
+  const parsed = new Map<string, ArtPack>();
   let officialName = false;
-  for (const bundle of content.games.values()) {
+  for (const bundle of allGameBundles(content)) {
     for (const packDef of bundle.game.artPacks) {
-      const pack = ArtPack.fromZip(packDef.id, packDef.label, bytes);
+      const pack = parsed.get(packDef.id) ?? ArtPack.fromZip(packDef.id, packDef.label, bytes);
+      parsed.set(packDef.id, pack);
       const byName = packDef.fileName && name.toLowerCase() === packDef.fileName.toLowerCase();
       if (byName) officialName = true;
       const hits = bundle.classes.filter(
@@ -76,15 +80,18 @@ function registerZip(
       ).length;
       if (byName || hits > 0) {
         art.addPack(pack);
-        found.push(packDef.id);
+        if (!found.includes(packDef.id)) found.push(packDef.id);
       }
     }
   }
   const custom = ArtPack.fromZip(`custom:${name}`, name, bytes);
-  const matched =
-    content.games
-      .get(game)
-      ?.classes.filter((c) => custom.findByClassName(c.id) || custom.findByClassName(c.name)).length ?? 0;
+  const matched = new Set(
+    allGameBundles(content)
+      .filter((b) => b.game.id === game)
+      .flatMap((b) => b.classes)
+      .filter((c) => custom.findByClassName(c.id) || custom.findByClassName(c.name))
+      .map((c) => c.id),
+  ).size;
   // A custom archive can contain both official filenames and additional class images.
   if (!officialName && matched) art.addCustomPack(game, custom, paizoCredit);
   return { packs: found, matched };
@@ -96,6 +103,50 @@ function rebuildArt(): void {
   for (const img of images) art.addLocal(img.game, img.name, img.bytes, img.name, img.paizoCredit);
 }
 
+function gameSummary(b: GameBundle): GameSummary {
+  return {
+    id: b.game.id,
+    title: b.game.title,
+    shortName: b.game.shortName,
+    system: b.game.system,
+    asOf: b.game.asOf,
+    ratingSetId: b.ratingSet!.id,
+    ratingSetName: b.ratingSet!.name,
+    ratingSetDescription: b.ratingSet!.description,
+    methodology: b.game.methodology ?? b.game.legend.howToUse,
+    groups: b.game.groups.map((g) => ({ id: g.id, label: g.label })),
+    artPacks: b.game.artPacks.map((p) => ({
+      id: p.id,
+      label: p.label,
+      url: p.url,
+      fileName: p.fileName,
+      loaded: art.hasPack(p.id),
+    })),
+    classes: b.classes.map((c) => ({
+      id: c.id,
+      name: c.name,
+      status: c.status,
+      group: c.group,
+      iconic: c.iconic?.name ?? null,
+      source: c.source.title,
+      complexity:
+        c.ratings.difficulty === undefined
+          ? null
+          : Array.isArray(c.ratings.difficulty)
+            ? c.ratings.difficulty[1]
+            : c.ratings.difficulty,
+      review: c.review,
+      hasArt: !!art.resolve({
+        game: b.game.id,
+        classId: c.id,
+        className: c.name,
+        paizo: c.art.paizo,
+        local: c.art.local,
+      }),
+    })),
+  };
+}
+
 function summary(): ContentSummary {
   if (!content) throw new Error('No content loaded');
   return {
@@ -103,34 +154,8 @@ function summary(): ContentSummary {
     name: content.manifest.name,
     warnings: content.warnings,
     games: [...content.games.values()].map((b) => ({
-      id: b.game.id,
-      title: b.game.title,
-      shortName: b.game.shortName,
-      system: b.game.system,
-      asOf: b.game.asOf,
-      groups: b.game.groups.map((g) => ({ id: g.id, label: g.label })),
-      artPacks: b.game.artPacks.map((p) => ({
-        id: p.id,
-        label: p.label,
-        url: p.url,
-        fileName: p.fileName,
-        loaded: art.hasPack(p.id),
-      })),
-      classes: b.classes.map((c) => ({
-        id: c.id,
-        name: c.name,
-        status: c.status,
-        group: c.group,
-        iconic: c.iconic?.name ?? null,
-        source: c.source.title,
-        hasArt: !!art.resolve({
-          game: b.game.id,
-          classId: c.id,
-          className: c.name,
-          paizo: c.art.paizo,
-          local: c.art.local,
-        }),
-      })),
+      ...gameSummary(b),
+      ratingSets: [...content!.ratingSets.get(b.game.id)!.values()].map(gameSummary),
     })),
   };
 }

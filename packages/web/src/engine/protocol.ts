@@ -1,4 +1,4 @@
-import type { RenderOptionsInput } from '@pfsf/engine';
+import type { ClassDef, RenderOptionsInput } from '@pfsf/engine';
 
 export type SourceSpec =
   | { kind: 'bundled' }
@@ -12,6 +12,8 @@ export interface ClassSummary {
   group: string;
   iconic: string | null;
   source: string;
+  complexity: number | null;
+  review?: ClassDef['review'];
   /** Whether official or locally supplied art is currently available for this class. */
   hasArt: boolean;
 }
@@ -22,6 +24,11 @@ export interface GameSummary {
   shortName: string;
   system: string;
   asOf: string;
+  ratingSetId: string;
+  ratingSetName: string;
+  ratingSetDescription: string;
+  methodology: string;
+  ratingSets?: GameSummary[];
   groups: { id: string; label: string }[];
   classes: ClassSummary[];
   artPacks: { id: string; label: string; url?: string; fileName?: string; loaded: boolean }[];

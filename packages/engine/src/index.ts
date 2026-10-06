@@ -4,9 +4,11 @@
  */
 export { type ArtImage, ArtLibrary, ArtPack, type ArtRequest } from './art/library';
 export {
+  allGameBundles,
   type ContentBundle,
   ContentValidationError,
   type GameBundle,
+  getGameBundle,
   type LoadedClass,
   loadContent,
 } from './content/load';

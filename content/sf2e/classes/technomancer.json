@@ -4,8 +4,9 @@
   "name": "Technomancer",
   "status": "playtest",
   "source": {
-    "title": "Tech Class Playtest (Tech Core, Oct 2026)",
-    "date": "2025-04"
+    "title": "Tech Class Playtest",
+    "date": "2025-04",
+    "url": "https://paizo.com/blog/tech-class-playtest-errata-encounter"
   },
   "group": "spellcasters",
   "keyAttributes": [
@@ -19,13 +20,16 @@
   "ratings": {
     "offense": [
       3,
-      4
+      4.5
     ],
     "defense": [
       2,
       3
     ],
-    "support": 3.5,
+    "support": [
+      3.5,
+      4.5
+    ],
     "utility": [
       4,
       5
@@ -49,5 +53,22 @@
   "art": {
     "emblem": "../emblems/technomancer.svg",
     "local": "technomancer"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Tech Class Playtest",
+    "sources": [
+      "https://paizo.com/blog/starfinder-tech-class-playtest",
+      "https://paizo.com/blog/tech-class-playtest-errata-encounter",
+      "https://store.paizo.com/starfinder-tech-core/"
+    ],
+    "notes": "Provisional assessment of the named playtest, not the final class. Tech Core is scheduled for October 7, 2026; these entries still describe the playtest and require a separate final-rules update.",
+    "ratings": {
+      "offense": "3–4 → 3–4.5. Provisional playtest estimate: offensive arcane preparation can specialize in area damage.",
+      "defense": "2–3 → 2–3. Six HP and limited armor call for careful positioning and protective magic.",
+      "support": "3.5 → 3.5–4.5. Arcane spells and gear enhancements provide control and party assistance.",
+      "utility": "4–5 → 4–5. Arcane preparation plus technical knowledge offer broad noncombat solutions.",
+      "difficulty": "4.5 → 4.5. Manage prepared spells, programming language, overclock and jailbreak sequences."
+    }
   }
 }

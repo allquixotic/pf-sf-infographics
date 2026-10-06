@@ -1,0 +1,63 @@
+{
+  "$schema": "../../../../schema/class.schema.json",
+  "id": "mechanic",
+  "name": "Mechanic",
+  "status": "playtest",
+  "source": {
+    "title": "Tech Class Playtest",
+    "date": "2025-04",
+    "url": "https://paizo.com/blog/tech-class-playtest-errata-encounter"
+  },
+  "group": "tech",
+  "keyAttributes": [
+    "int"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 8,
+  "ratings": {
+    "offense": [
+      3,
+      4
+    ],
+    "defense": 3,
+    "support": 3,
+    "utility": 4.5,
+    "difficulty": 4
+  },
+  "features": [
+    {
+      "title": "Field engineer",
+      "text": "Mechanics hack and repair technology. Temporary modifications can improve a weapon's range or let armor hover above the ground."
+    },
+    {
+      "title": "Exocortex",
+      "text": "An exocortex links their mind to a drone, turret or set of mines. Directing it takes actions that could otherwise go toward attacks or repairs."
+    }
+  ],
+  "iconic": {
+    "name": "Quig",
+    "ancestry": "ysoki"
+  },
+  "art": {
+    "emblem": "../../../emblems/mechanic.svg",
+    "local": "mechanic"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Tech Class Playtest",
+    "sources": [
+      "https://paizo.com/blog/starfinder-tech-class-playtest",
+      "https://paizo.com/blog/tech-class-playtest-errata-encounter",
+      "https://store.paizo.com/starfinder-tech-core/"
+    ],
+    "notes": "Original September 2026 numbers retained for comparison; corrected summaries and class families. These scores predate the revised rubric.",
+    "ratings": {
+      "offense": "Historical score: 3–4. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "defense": "Historical score: 3. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "support": "Historical score: 3. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "utility": "Historical score: 4.5. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "difficulty": "Historical score: 4. Preserved from the original project dataset; consult the revised set for a current rationale."
+    }
+  }
+}

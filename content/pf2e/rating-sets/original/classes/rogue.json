@@ -1,0 +1,69 @@
+{
+  "$schema": "../../../../schema/class.schema.json",
+  "id": "rogue",
+  "name": "Rogue",
+  "status": "core",
+  "source": {
+    "title": "Player Core",
+    "date": "2023-11",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=37"
+  },
+  "group": "martial",
+  "keyAttributes": [
+    "dex",
+    "str",
+    "int",
+    "cha"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 8,
+  "ratings": {
+    "offense": 4,
+    "defense": 3,
+    "support": 3,
+    "utility": 4.5,
+    "difficulty": 2
+  },
+  "features": [
+    {
+      "title": "Skills and precision",
+      "text": "Frequent skill increases and skill feats let you cover many jobs outside combat. Your racket shapes your tactics and can offer Strength, Intelligence or Charisma as your key attribute instead of Dexterity."
+    },
+    {
+      "title": "Sneak Attack",
+      "text": "Deal extra precision damage against off-guard foes. Find ways to create that opening through allies, positioning or skills, then choose attacks and tricks that exploit it."
+    }
+  ],
+  "iconic": {
+    "name": "Merisiel",
+    "ancestry": "elf"
+  },
+  "art": {
+    "emblem": "../../../emblems/rogue.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Rogue - Merisiel.png"
+    },
+    "local": "rogue"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=37"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Player Core",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=37",
+      "https://2e.aonprd.com/Rackets.aspx"
+    ],
+    "notes": "Original September 2026 numbers retained for comparison; corrected summaries and class families. These scores predate the revised rubric.",
+    "ratings": {
+      "offense": "Historical score: 4. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "defense": "Historical score: 3. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "support": "Historical score: 3. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "utility": "Historical score: 4.5. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "difficulty": "Historical score: 2. Preserved from the original project dataset; consult the revised set for a current rationale."
+    }
+  }
+}

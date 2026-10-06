@@ -5,9 +5,10 @@
   "status": "expansion",
   "source": {
     "title": "Impossible Magic",
-    "date": "2026-07"
+    "date": "2026-07",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=75"
   },
-  "group": "high-magic",
+  "group": "spellcasters",
   "keyAttributes": [
     "int"
   ],
@@ -17,11 +18,14 @@
   "casting": "prepared",
   "hp": 8,
   "ratings": {
-    "offense": 3.5,
+    "offense": [
+      3,
+      4.5
+    ],
     "defense": 2,
     "support": [
-      3,
-      4
+      3.5,
+      4.5
     ],
     "utility": 4,
     "difficulty": 4.5
@@ -45,5 +49,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=75"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Impossible Magic",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=75"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "3.5 → 3–4.5. Offensive spells and consuming thralls enable damage-focused builds.",
+      "defense": "2 → 2. Eight HP helps, but caster armor access and positioning limit resilience.",
+      "support": "3–4 → 3.5–4.5. Thralls, occult control and chosen spells create support opportunities.",
+      "utility": "4 → 4. Prepared occult spells and Intelligence provide broad investigative options.",
+      "difficulty": "4.5 → 4.5. Manage thrall placement, consumption, focus resources and daily spells."
+    }
   }
 }

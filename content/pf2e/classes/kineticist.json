@@ -5,9 +5,10 @@
   "status": "expansion",
   "source": {
     "title": "Rage of Elements",
-    "date": "2023-08"
+    "date": "2023-08",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=23"
   },
-  "group": "moderate-magic",
+  "group": "specialist",
   "keyAttributes": [
     "con"
   ],
@@ -18,31 +19,31 @@
   "hp": 8,
   "ratings": {
     "offense": [
-      3,
-      4
+      2.5,
+      5
     ],
     "defense": [
       2.5,
-      4
+      5
     ],
     "support": [
       2,
-      4.5
+      5
     ],
     "utility": [
-      3,
-      4.5
+      2,
+      4
     ],
     "difficulty": 3.5
   },
   "features": [
     {
-      "title": "Elemental conduit",
-      "text": "Kineticists channel chosen elements through magical impulses instead of spell slots. They can master one element or learn others as they grow."
+      "title": "Elemental magic",
+      "text": "Use magical impulses instead of spell slots. Your chosen elements and feats can specialize in area damage, healing, protection or movement; you cannot excel at everything at once."
     },
     {
-      "title": "Channel and overflow",
-      "text": "Their elemental aura fuels powers that harm foes or help allies. Overflow impulses close the aura. Channel again to reopen it and use more impulses."
+      "title": "A repeating toolkit",
+      "text": "Impulses are repeatable, subject to their own limits. Manage your aura and stances, and reopen the aura after an overflow impulse. Elemental Blast is one option among many."
     }
   ],
   "iconic": {
@@ -58,5 +59,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=23"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Rage of Elements",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=23"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "3–4 → 2.5–5. Offensive fire and area-impulse builds can reach the top band; defensive or healing selections do not.",
+      "defense": "2.5–4 → 2.5–5. Earth and wood protection choices can create exceptional durability; other elements invest elsewhere.",
+      "support": "2–4.5 → 2–5. Water healing, wood protection and control impulses can specialize in support.",
+      "utility": "3–4.5 → 2–4. Air movement and chosen impulses solve particular problems, with less breadth than a full spell collection.",
+      "difficulty": "3.5 → 3.5. Choose synergistic impulses and manage aura, stances and overflow; no daily spell slots."
+    }
   }
 }

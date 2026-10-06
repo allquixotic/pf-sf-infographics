@@ -5,7 +5,8 @@
   "status": "core",
   "source": {
     "title": "Starfinder Player Core",
-    "date": "2025-07"
+    "date": "2025-07",
+    "url": "https://2e.aonsrd.com/classes/3-operative"
   },
   "group": "tech",
   "keyAttributes": [
@@ -15,13 +16,22 @@
   "casting": null,
   "hp": 8,
   "ratings": {
-    "offense": 5,
+    "offense": [
+      4.5,
+      5
+    ],
     "defense": [
       3,
       4
     ],
-    "support": 2,
-    "utility": 3.5,
+    "support": [
+      2,
+      3
+    ],
+    "utility": [
+      3.5,
+      4.5
+    ],
     "difficulty": 3
   },
   "features": [
@@ -48,5 +58,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonsrd.com/classes/3-operative"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Starfinder Player Core",
+    "sources": [
+      "https://2e.aonsrd.com/classes/3-operative"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "5 → 4.5–5. Aim and precision weapon play support exceptional focused damage.",
+      "defense": "3–4 → 3–4. Mobility and specialization choices influence exposure and defenses.",
+      "support": "2 → 2–3. Selected skills and feats assist allies; the core loop favors personal offense.",
+      "utility": "3.5 → 3.5–4.5. Dexterity skills and specialization tools support infiltration and scouting.",
+      "difficulty": "3 → 3. Aim, reload and movement choices require planning but form a clear loop."
+    }
   }
 }

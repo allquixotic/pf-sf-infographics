@@ -5,9 +5,10 @@
   "status": "playtest",
   "source": {
     "title": "Risks & Rewards Playtest",
-    "date": "2026-02"
+    "date": "2026-02",
+    "url": "https://downloads.paizo.com/RisksandRewards_Playtest.pdf"
   },
-  "group": "no-magic",
+  "group": "martial",
   "keyAttributes": [
     "str",
     "dex"
@@ -16,9 +17,15 @@
   "casting": null,
   "hp": 8,
   "ratings": {
-    "offense": 4,
+    "offense": [
+      3,
+      4
+    ],
     "defense": 3,
-    "support": 3,
+    "support": [
+      2.5,
+      3.5
+    ],
     "utility": 3,
     "difficulty": 4
   },
@@ -35,5 +42,20 @@
   "art": {
     "emblem": "../emblems/daredevil.svg",
     "local": "daredevil"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Risks & Rewards Playtest",
+    "sources": [
+      "https://downloads.paizo.com/RisksandRewards_Playtest.pdf"
+    ],
+    "notes": "Provisional assessment of the named playtest, not the final class. The public playtest period has ended; the published rules may differ.",
+    "ratings": {
+      "offense": "4 → 3–4. Provisional playtest estimate: stunt and press choices trade setup and risk for follow-up attacks.",
+      "defense": "3 → 3. Movement and defensive features help, but risky actions can expose an eight-HP martial.",
+      "support": "3 → 2.5–3.5. Stunt maneuvers reposition or restrain foes; chosen feats determine the emphasis.",
+      "utility": "3 → 3. Athletics, Acrobatics and broad starting skills support physical exploration.",
+      "difficulty": "4 → 4. Risky actions, adrenaline timing and movement requirements create a demanding action sequence."
+    }
   }
 }

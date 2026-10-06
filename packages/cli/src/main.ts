@@ -10,6 +10,7 @@ import {
   type ContentBundle,
   ContentValidationError,
   Engine,
+  getGameBundle,
   loadContent,
   OUTPUT_FORMATS,
   type OutputFormat,
@@ -39,6 +40,8 @@ Content and art:
 
 What to draw:
   --game <id>            pf2e | sf2e (default pf2e)
+  --rating-set <id>      Select a complete rating set (see list)
+  --max-complexity <n>   Only classes with complexity at most n (upper endpoint)
   --layout <l>           poster | booklet (default poster)
   --art <a>              paizo | generic | none (default generic)
   --playtest             Include playtest classes
@@ -50,7 +53,7 @@ What to draw:
   --no-stats             Hide hit points and source lines
   --no-attribution       Leave out credits and notices (please keep them when sharing!)
   --title <text>         Replace the title
-  --as-of <text>         Replace the "accurate as of" text
+  --as-of <text>         Replace the "content updated" text
 
 Look:
   --theme <t>            light | dark
@@ -123,6 +126,8 @@ async function main(argv: string[]): Promise<void> {
       out: { type: 'string' },
       name: { type: 'string' },
       game: { type: 'string' },
+      'rating-set': { type: 'string' },
+      'max-complexity': { type: 'string' },
       layout: { type: 'string' },
       art: { type: 'string' },
       playtest: { type: 'boolean' },
@@ -178,9 +183,16 @@ async function main(argv: string[]): Promise<void> {
 
   if (command === 'list') {
     const content = await load(v.content);
+    if (v.game) getGameBundle(content, v.game, v['rating-set']);
     for (const [id, g] of content.games) {
+      if (v.game && v.game !== id) continue;
       console.log(`\n${id} — ${g.game.title} (${g.game.system})`);
-      for (const c of g.classes) {
+      for (const set of content.ratingSets.get(id)!.values())
+        console.log(
+          `  Rating set: ${set.ratingSet!.id} — ${set.ratingSet!.name}: ${set.ratingSet!.description}`,
+        );
+      const selected = getGameBundle(content, id, v['rating-set']);
+      for (const c of selected.classes) {
         console.log(
           `  ${c.id.padEnd(14)} ${c.name.padEnd(14)} ${c.status.padEnd(10)} ${c.group.padEnd(16)} ${c.source.title}`,
         );
@@ -203,6 +215,8 @@ async function main(argv: string[]): Promise<void> {
   }
   const base: RenderOptionsInput = {
     game: v.game,
+    ratingSet: v['rating-set'],
+    maxComplexity: num(v['max-complexity']),
     layout: v.layout as RenderOptionsInput['layout'],
     art: v.art as RenderOptionsInput['art'],
     includePlaytest: v.playtest,
@@ -261,7 +275,7 @@ async function main(argv: string[]): Promise<void> {
     console.log(`Wrote Typst sources to ${outDir}`);
   }
 
-  const bundle = content.games.get(options.game ?? 'pf2e');
+  const bundle = getGameBundle(content, options.game ?? 'pf2e', options.ratingSet);
   if (bundle) {
     const chosen = selectClasses(bundle, resolveOptions(options));
     console.log(`${chosen.length} classes: ${chosen.map((c) => c.id).join(', ')}`);

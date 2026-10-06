@@ -5,9 +5,10 @@
   "status": "expansion",
   "source": {
     "title": "War of Immortals",
-    "date": "2024-10"
+    "date": "2024-10",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=64"
   },
-  "group": "high-magic",
+  "group": "spellcasters",
   "keyAttributes": [
     "wis"
   ],
@@ -18,12 +19,18 @@
   "hp": 8,
   "ratings": {
     "offense": [
-      2.5,
-      4
+      3,
+      4.5
     ],
     "defense": 3,
-    "support": 4.5,
-    "utility": 4.5,
+    "support": [
+      4,
+      5
+    ],
+    "utility": [
+      4,
+      5
+    ],
     "difficulty": 4.5
   },
   "features": [
@@ -49,5 +56,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=64"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "War of Immortals",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=64"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "2.5–4 → 3–4.5. Apparition spells and vessel choices enable stronger offensive builds than the divine list alone.",
+      "defense": "3 → 3. Eight HP and armor help, but standing in melee still has costs.",
+      "support": "4.5 → 4–5. Divine casting plus selected apparitions provide healing, control and party enhancements.",
+      "utility": "4.5 → 4–5. Changing apparitions changes Lore and spell access; daily choices govern the available tools.",
+      "difficulty": "4.5 → 4.5. Track prepared spells, apparition spells, vessel effects and daily spirit choices."
+    }
   }
 }

@@ -93,6 +93,10 @@ export function selectClasses(bundle: GameBundle, o: ResolvedOptions): LoadedCla
   const only = o.only?.length ? new Set(o.only) : undefined;
   const exclude = new Set(o.exclude);
   return bundle.classes.filter((c) => {
+    if (o.maxComplexity !== undefined) {
+      const complexity = c.ratings.difficulty;
+      if (complexity === undefined || ratingRange(complexity)[1] > o.maxComplexity) return false;
+    }
     if (only && !only.has(c.id)) return false;
     if (exclude.has(c.id)) return false;
     if (c.status === 'playtest' && !o.includePlaytest && !only?.has(c.id)) return false;
@@ -249,6 +253,12 @@ export function buildModel(bundle: GameBundle, o: ResolvedOptions, art: ArtLibra
           : null,
       }
     : null;
+
+  if (legend && bundle.ratingSet) {
+    legend.howToUse.body.push(
+      ...parseParagraphs(`Rating set: **${bundle.ratingSet.name}**. ${bundle.ratingSet.description}`),
+    );
+  }
 
   // The Community Use notice is included whenever attribution is on: the game names themselves are Paizo
   // trademarks, whether or not official art is shown.

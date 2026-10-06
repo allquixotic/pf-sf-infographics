@@ -69,13 +69,16 @@ export class TypstSession {
     return res.result;
   }
 
-  async metrics<T>(main: string, files: TypstFile[]): Promise<T> {
+  async metrics<T>(main: string, files: TypstFile[], measureOnly = true): Promise<T> {
     this.load(main, files);
-    return this.compiler.runWithWorld({ mainFilePath: '/main.typ' }, async (world) => {
-      const result = await world.compile({ diagnostics: 'full' });
-      if (result.hasError) throw new TypstError(result.diagnostics ?? []);
-      return world.query<T>({ selector: '<sizing>', field: 'value' });
-    });
+    return this.compiler.runWithWorld(
+      { mainFilePath: '/main.typ', inputs: { 'measure-only': String(measureOnly) } },
+      async (world) => {
+        const result = await world.compile({ diagnostics: 'full' });
+        if (result.hasError) throw new TypstError(result.diagnostics ?? []);
+        return world.query<T>({ selector: '<sizing>', field: 'value' });
+      },
+    );
   }
 
   async pdf(main: string, files: TypstFile[]): Promise<Uint8Array> {

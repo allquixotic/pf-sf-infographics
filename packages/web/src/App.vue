@@ -18,6 +18,7 @@ import {
   type UiOptions,
 } from './state/options';
 import { allArt, clearArt, loadJson, putArt, saveJson } from './state/persist';
+import { selectionKey, sourceKey } from './state/selection';
 
 const LOCAL = __PFSF_LOCAL__;
 const privacyUrl = `${import.meta.env.BASE_URL}privacy/`;
@@ -46,7 +47,36 @@ watch(
 );
 const source = ref<SourceSpec>(initialSource());
 
-const game = computed<GameSummary | undefined>(() => summary.value?.games.find((g) => g.id === gameId.value));
+const baseGame = computed(() => summary.value?.games.find((g) => g.id === gameId.value));
+const game = computed<GameSummary | undefined>(
+  () => baseGame.value?.ratingSets?.find((g) => g.ratingSetId === ui.value.ratingSet) ?? baseGame.value,
+);
+const setChoices = loadJson<Record<string, string>>('pfsf:rating-set-choices', {});
+let contextKey = '';
+
+function rememberSelection(): void {
+  if (contextKey) gameOptions[contextKey] = splitOptions(ui.value).game;
+}
+
+function activateSelection(set?: string): void {
+  const base = baseGame.value;
+  if (!base) return;
+  const choiceKey = JSON.stringify([sourceKey(source.value), gameId.value]);
+  const requested = set ?? setChoices[choiceKey];
+  const id = base.ratingSets?.find((s) => s.ratingSetId === requested)?.ratingSetId ?? base.ratingSetId;
+  contextKey = selectionKey(source.value, gameId.value, id);
+  const legacy =
+    source.value.kind === 'bundled' && id === base.ratingSetId ? gameOptions[gameId.value] : undefined;
+  const saved = gameOptions[contextKey] ?? legacy;
+  Object.assign(ui.value, splitOptions(defaultUiOptions()).game, saved, { ratingSet: id });
+  setChoices[choiceKey] = id;
+  saveJson('pfsf:rating-set-choices', setChoices);
+}
+
+function changeRatingSet(id: string): void {
+  rememberSelection();
+  activateSelection(id);
+}
 
 function initialSource(): SourceSpec {
   const q = new URLSearchParams(location.search);
@@ -65,11 +95,15 @@ function initialSource(): SourceSpec {
 async function loadSource(spec: SourceSpec): Promise<void> {
   loadError.value = '';
   try {
-    summary.value = await engine.call({ type: 'load', source: spec });
+    const loaded = await engine.call({ type: 'load', source: spec });
+    rememberSelection();
+    contextKey = '';
+    summary.value = loaded;
     source.value = spec;
     saveJson('pfsf:source', spec);
     if (!summary.value.games.some((g) => g.id === gameId.value))
       gameId.value = summary.value.games[0]?.id ?? 'pf2e';
+    activateSelection();
     const url = new URL(location.href);
     url.searchParams.delete('repo');
     url.searchParams.delete('content');
@@ -325,7 +359,7 @@ async function exportFile(): Promise<void> {
         level: 0,
       });
       download(
-        `${gameId.value}-${ui.value.layout}-${ui.value.format}.zip`,
+        `${gameId.value}-${ui.value.ratingSet}-${ui.value.layout}-${ui.value.format}.zip`,
         new Blob([zipped], { type: 'application/zip' }),
       );
     }
@@ -341,7 +375,7 @@ watch(
   ui,
   () => {
     const parts = splitOptions(ui.value);
-    gameOptions[gameId.value] = parts.game;
+    if (contextKey) gameOptions[contextKey] = parts.game;
     saveJson('pfsf:shared-options', parts.shared);
     saveJson('pfsf:game-options', gameOptions);
     schedulePreview();
@@ -350,9 +384,9 @@ watch(
 );
 watch(
   gameId,
-  (id, previous) => {
-    gameOptions[previous] = splitOptions(ui.value).game;
-    Object.assign(ui.value, gameOptions[id] ?? splitOptions(defaultUiOptions()).game);
+  (id) => {
+    rememberSelection();
+    activateSelection();
     autoMessage.value = '';
     saveJson('pfsf:game', { id });
     schedulePreview();
@@ -412,7 +446,7 @@ const theme = computed(() => ui.value.theme);
     <main class="layout">
       <aside class="sidebar">
         <template v-if="game">
-          <OptionsPanel v-model="ui" :game="game" :sizing="sizing" :auto-message="autoMessage" @auto="autoSize" />
+          <OptionsPanel v-model="ui" :game="game" :rating-sets="baseGame?.ratingSets ?? []" @rating-set="changeRatingSet" :sizing="sizing" :auto-message="autoMessage" @auto="autoSize" />
           <ArtPanel
             v-model:art="ui.art"
             :game="game"

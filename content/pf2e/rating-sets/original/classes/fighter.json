@@ -1,0 +1,66 @@
+{
+  "$schema": "../../../../schema/class.schema.json",
+  "id": "fighter",
+  "name": "Fighter",
+  "status": "core",
+  "source": {
+    "title": "Player Core",
+    "date": "2023-11",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=35"
+  },
+  "group": "martial",
+  "keyAttributes": [
+    "str",
+    "dex"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 10,
+  "ratings": {
+    "offense": 5,
+    "defense": 4,
+    "support": 2,
+    "utility": 1,
+    "difficulty": 1.5
+  },
+  "features": [
+    {
+      "title": "Weapon master",
+      "text": "Exceptional weapon accuracy makes ordinary attacks threatening. Your weapon and feats shape a style built around damage, shields, maneuvers or battlefield control."
+    },
+    {
+      "title": "Reactive Strike",
+      "text": "You can spend your reaction to punish nearby foes for certain movements and actions. Position and reach help you create those opportunities."
+    }
+  ],
+  "iconic": {
+    "name": "Valeros",
+    "ancestry": "human"
+  },
+  "art": {
+    "emblem": "../../../emblems/fighter.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Fighter - Valeros.png"
+    },
+    "local": "fighter"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=35"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Player Core",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=35"
+    ],
+    "notes": "Original September 2026 numbers retained for comparison; corrected summaries and class families. These scores predate the revised rubric.",
+    "ratings": {
+      "offense": "Historical score: 5. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "defense": "Historical score: 4. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "support": "Historical score: 2. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "utility": "Historical score: 1. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "difficulty": "Historical score: 1.5. Preserved from the original project dataset; consult the revised set for a current rationale."
+    }
+  }
+}

@@ -5,9 +5,10 @@
   "status": "expansion",
   "source": {
     "title": "Impossible Magic",
-    "date": "2026-07"
+    "date": "2026-07",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=74"
   },
-  "group": "moderate-magic",
+  "group": "specialist",
   "keyAttributes": [
     "str",
     "dex"
@@ -18,20 +19,32 @@
   "casting": "prepared",
   "hp": 8,
   "ratings": {
-    "offense": 5,
-    "defense": 3,
-    "support": 2,
-    "utility": 2.5,
-    "difficulty": 3.5
+    "offense": [
+      4,
+      5
+    ],
+    "defense": [
+      2.5,
+      4
+    ],
+    "support": [
+      2,
+      3
+    ],
+    "utility": [
+      2.5,
+      3.5
+    ],
+    "difficulty": 4
   },
   "features": [
     {
       "title": "Spellblade",
-      "text": "Magi blend swordplay with arcane study, trading breadth of magic for devastating combinations."
+      "text": "Combine martial attacks with prepared arcane spells. Your hybrid study shapes how you fight and which defensive or movement tools support your routine."
     },
     {
       "title": "Spellstrike",
-      "text": "A magus channels a spell through a weapon strike for huge burst damage, then recharges; Arcane Cascade keeps magic flowing into every hit."
+      "text": "Deliver a spell alongside a weapon attack, then recharge before using Spellstrike again. Balance that sequence with movement, defenses and Arcane Cascade."
     }
   ],
   "iconic": {
@@ -48,5 +61,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=74"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Impossible Magic",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=74"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "5 → 4–5. Spellstrike combines weapon damage and spells; recharge and movement affect sustained output.",
+      "defense": "3 → 2.5–4. Hybrid study, shields and spell choices alter defenses.",
+      "support": "2 → 2–3. Arcane spells can support allies, but compete with the actions used for Spellstrike.",
+      "utility": "2.5 → 2.5–3.5. Prepared arcane spells offer selected answers beyond weapon combat.",
+      "difficulty": "3.5 → 4. Spellstrike, recharge, movement and spell preparation compete for a tight action budget."
+    }
   }
 }

@@ -51,9 +51,17 @@ files point at `content/schema/*.schema.json`, so editors such as VS Code valida
 ### Edit a class
 
 1. Open `content/<game>/classes/<id>.json`.
-2. Change `ratings` (0–5 in steps of 0.5, or `[low, high]` for a subclass-dependent range) or `features`
+2. Change `ratings` (0–5 in steps of 0.5, or `[low, high]` for a build-dependent range) or `features`
    (two or three `{ "title", "text" }` entries, about 450 characters in total so they fit on the card).
-3. `bun run content:manifest`, then look at the result with `./start.sh` or `./pfsf.sh --format png`.
+3. Update `review` with the rules version, review date, source links and a rationale for every metric. Use
+   [the rating guide](docs/ratings.md), and explain which ordinary builds support a range.
+4. `bun run content:manifest`, then look at the result with `./start.sh` or `./pfsf.sh --format png`.
+
+### Add a perspective
+
+Use [rating sets](docs/content-format.md#multiple-rating-sets-in-one-repository) to offer another complete
+perspective in the same repository. Name it clearly, explain its assumptions and credit its contributors.
+Do not copy scores or prose from another chart without permission and attribution.
 
 ### Add a class
 
@@ -99,5 +107,8 @@ source panel) to render it straight from GitHub.
 
 ## Reporting problems
 
-Open an issue with the options you used (the CLI command, or the settings from the web UI), what you expected and
+Use the [content correction form](https://github.com/allquixotic/pf-sf-infographics/issues/new?template=content-correction.yml)
+for class text or ratings. Include the game, rating set, rules version and supporting evidence.
+
+For other problems, open an issue with the options you used (the CLI command, or the settings from the web UI), what you expected and
 what you got. For rules questions, link the relevant Archives of Nethys page.

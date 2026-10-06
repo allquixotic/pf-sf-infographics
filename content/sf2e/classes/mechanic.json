@@ -4,8 +4,9 @@
   "name": "Mechanic",
   "status": "playtest",
   "source": {
-    "title": "Tech Class Playtest (Tech Core, Oct 2026)",
-    "date": "2025-04"
+    "title": "Tech Class Playtest",
+    "date": "2025-04",
+    "url": "https://paizo.com/blog/tech-class-playtest-errata-encounter"
   },
   "group": "tech",
   "keyAttributes": [
@@ -19,9 +20,18 @@
       3,
       4
     ],
-    "defense": 3,
-    "support": 3,
-    "utility": 4.5,
+    "defense": [
+      3,
+      4
+    ],
+    "support": [
+      3,
+      4
+    ],
+    "utility": [
+      4,
+      5
+    ],
     "difficulty": 4
   },
   "features": [
@@ -41,5 +51,22 @@
   "art": {
     "emblem": "../emblems/mechanic.svg",
     "local": "mechanic"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Tech Class Playtest",
+    "sources": [
+      "https://paizo.com/blog/starfinder-tech-class-playtest",
+      "https://paizo.com/blog/tech-class-playtest-errata-encounter",
+      "https://store.paizo.com/starfinder-tech-core/"
+    ],
+    "notes": "Provisional assessment of the named playtest, not the final class. Tech Core is scheduled for October 7, 2026; these entries still describe the playtest and require a separate final-rules update.",
+    "ratings": {
+      "offense": "3–4 → 3–4. Provisional playtest estimate: drone, turret or mine choices change damage delivery.",
+      "defense": "3 → 3–4. Gear and exocortex choices can favor personal protection.",
+      "support": "3 → 3–4. Modifications and selected engineering options can assist allies.",
+      "utility": "4.5 → 4–5. Intelligence and technology expertise offer strong practical exploration tools.",
+      "difficulty": "4 → 4. Coordinate exocortex actions, modifications and technical options."
+    }
   }
 }

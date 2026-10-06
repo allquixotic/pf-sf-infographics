@@ -29,7 +29,7 @@ describe('rendering', () => {
   test('booklet renders several pages', async () => {
     const r = await engine.render({ content, options: { game: 'pf2e', layout: 'booklet', format: 'svg' } });
     expect(r.files.length).toBeGreaterThan(3);
-    expect(r.files[0]!.name).toBe('pf2e-booklet-p01.svg');
+    expect(r.files[0]!.name).toBe('pf2e-revised-booklet-p01.svg');
   }, 60_000);
 
   test('raster formats', async () => {

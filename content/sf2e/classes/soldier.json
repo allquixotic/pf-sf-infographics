@@ -5,7 +5,8 @@
   "status": "core",
   "source": {
     "title": "Starfinder Player Core",
-    "date": "2025-07"
+    "date": "2025-07",
+    "url": "https://2e.aonsrd.com/classes/5-soldier"
   },
   "group": "tech",
   "keyAttributes": [
@@ -16,11 +17,14 @@
   "hp": 10,
   "ratings": {
     "offense": [
-      3,
-      4.5
+      3.5,
+      5
     ],
     "defense": 5,
-    "support": 3,
+    "support": [
+      3,
+      4
+    ],
     "utility": 2,
     "difficulty": 3
   },
@@ -48,5 +52,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonsrd.com/classes/5-soldier"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Starfinder Player Core",
+    "sources": [
+      "https://2e.aonsrd.com/classes/5-soldier"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "3–4.5 → 3.5–5. Area weapons and close-quarters choices deliver different strong damage patterns; area offense can reach the top band.",
+      "defense": "5 → 5. High HP and heavy armor make absorbing punishment a defining strength.",
+      "support": "3 → 3–4. Suppression and chosen feats interfere with enemies and protect allies.",
+      "utility": "2 → 2. Most class features emphasize combat rather than broad exploration.",
+      "difficulty": "3 → 3. Place areas safely, track suppression and choose priority targets."
+    }
   }
 }

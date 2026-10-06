@@ -5,9 +5,10 @@
   "status": "core",
   "source": {
     "title": "Player Core",
-    "date": "2023-11"
+    "date": "2023-11",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=32"
   },
-  "group": "high-magic",
+  "group": "spellcasters",
   "keyAttributes": [
     "cha"
   ],
@@ -17,8 +18,11 @@
   "casting": "spontaneous",
   "hp": 8,
   "ratings": {
-    "offense": 2,
-    "defense": 2,
+    "offense": [
+      2,
+      3.5
+    ],
+    "defense": 2.5,
     "support": 5,
     "utility": 4,
     "difficulty": 3
@@ -47,5 +51,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=32"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Player Core",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=32"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "2 → 2–3.5. Damage-focused occult spells improve personal offense; anthem-enabled ally damage belongs in support.",
+      "defense": "2 → 2.5. Eight HP and light armor offer more resilience than the frailest casters.",
+      "support": "5 → 5. Compositions plus occult buffs, debuffs and control make party enhancement a defining strength.",
+      "utility": "4 → 4. Charisma skills and occult spells cover social and investigative problems well.",
+      "difficulty": "3 → 3. Balance compositions, spell selection and actions; extending compositions can ease the loop."
+    }
   }
 }

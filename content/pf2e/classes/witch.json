@@ -5,9 +5,10 @@
   "status": "core",
   "source": {
     "title": "Player Core",
-    "date": "2023-11"
+    "date": "2023-11",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=38"
   },
-  "group": "high-magic",
+  "group": "spellcasters",
   "keyAttributes": [
     "int"
   ],
@@ -22,25 +23,28 @@
   "hp": 6,
   "ratings": {
     "offense": [
-      2,
-      3.5
+      2.5,
+      4.5
     ],
-    "defense": 1,
+    "defense": 2,
     "support": [
-      3,
+      3.5,
       5
     ],
-    "utility": 5,
+    "utility": [
+      3.5,
+      5
+    ],
     "difficulty": 4
   },
   "features": [
     {
-      "title": "Patron's chosen",
-      "text": "Witches draw magic from a mysterious patron whose nature sets their tradition and themes."
+      "title": "Patron and familiar",
+      "text": "Your patron determines your magical tradition and grants distinctive hexes and familiar abilities. Prepare spells through your familiar to fit the day's challenges."
     },
     {
-      "title": "Familiar and hexes",
-      "text": "A familiar keeps the witch's spells, and hexes let the witch cast quick, flexible magic every turn."
+      "title": "A coordinated pair",
+      "text": "Use spells, hexes and your familiar's patron ability together. Position the familiar carefully and choose when its special effects help more than another direct attack."
     }
   ],
   "iconic": {
@@ -57,5 +61,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=38"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Player Core",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=38"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "2–3.5 → 2.5–4.5. Tradition and prepared spells allow offensive builds, while many patrons emphasize support.",
+      "defense": "1 → 2. Low HP and no initial armor training encourage protection and positioning.",
+      "support": "3–5 → 3.5–5. Hexes, familiar abilities and chosen spells give strong support options.",
+      "utility": "5 → 3.5–5. Patron tradition and daily preparation determine breadth; not every witch uses the occult list.",
+      "difficulty": "4 → 4. Manage prepared spells, hex timing and an active familiar."
+    }
   }
 }

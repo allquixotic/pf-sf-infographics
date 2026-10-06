@@ -5,9 +5,10 @@
   "status": "core",
   "source": {
     "title": "Player Core 2",
-    "date": "2024-08"
+    "date": "2024-08",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=57"
   },
-  "group": "no-magic",
+  "group": "martial",
   "keyAttributes": [
     "str"
   ],
@@ -16,19 +17,28 @@
   "hp": 12,
   "ratings": {
     "offense": 5,
-    "defense": 3.5,
-    "support": 2,
+    "defense": [
+      3,
+      4
+    ],
+    "support": [
+      1.5,
+      3
+    ],
     "utility": 2,
-    "difficulty": 1
+    "difficulty": [
+      1.5,
+      2.5
+    ]
   },
   "features": [
     {
       "title": "Unstoppable fury",
-      "text": "Barbarians win fights by hitting harder than anyone else. Huge hit points and simple, decisive choices make them a great first class."
+      "text": "Rage fuels heavy weapon hits and grants temporary hit points. It limits concentration, but no longer reduces Armor Class by itself."
     },
     {
-      "title": "Rage",
-      "text": "Rage adds damage and temporary hit points at the cost of some defense and concentration. The instinct decides where the fury comes from and what extra power it brings."
+      "title": "Follow your instinct",
+      "text": "Your instinct shapes your powers and tactics. Choose between a direct damage routine and feats that add movement, maneuvers or supernatural abilities."
     }
   ],
   "iconic": {
@@ -45,5 +55,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=57"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Player Core 2",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=57"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "5 → 5. Rage and martial scaling support exceptional sustained single-target damage.",
+      "defense": "3.5 → 3–4. Large HP, resistances and instinct choices shape durability; base Rage no longer penalizes AC.",
+      "support": "2 → 1.5–3. Athletics and control feats help allies; damage alone is counted under offense.",
+      "utility": "2 → 2. Athletics and survival skills help, but the class adds few general noncombat tools.",
+      "difficulty": "1 → 1.5–2.5. The basic attack loop is direct; instinct restrictions and maneuver builds add decisions."
+    }
   }
 }

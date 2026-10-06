@@ -5,9 +5,10 @@
   "status": "expansion",
   "source": {
     "title": "War of Immortals",
-    "date": "2024-10"
+    "date": "2024-10",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=65"
   },
-  "group": "moderate-magic",
+  "group": "martial",
   "keyAttributes": [
     "str",
     "dex"
@@ -22,7 +23,7 @@
     ],
     "defense": [
       3,
-      4
+      4.5
     ],
     "support": [
       2,
@@ -57,5 +58,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=65"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "War of Immortals",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=65"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "4–5 → 4–5. Weapon ikons and transcendence choices support strong martial damage.",
+      "defense": "3–4 → 3–4.5. Body and worn ikon choices can favor protection instead of offense.",
+      "support": "2–4 → 2–4. Some ikons offer healing or team benefits; weapon-heavy choices do less for allies.",
+      "utility": "2–3 → 2–3. Ikons and epithets add selected tricks rather than a broad spell repertoire.",
+      "difficulty": "3.5 → 3.5. Moving the divine spark and timing transcendence create a repeating but choice-rich loop."
+    }
   }
 }

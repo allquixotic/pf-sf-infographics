@@ -3,10 +3,17 @@ import { defaultSizeFor, SIZE_PRESETS } from '@pfsf/engine/presets';
 import { computed, watch } from 'vue';
 import type { GameSummary } from '../engine/protocol';
 import type { UiOptions } from '../state/options';
+import { eligibleClass, presetExclusions } from '../state/selection';
 import HelpTip from './HelpTip.vue';
+import RatingNotes from './RatingNotes.vue';
 
-const props = defineProps<{ game: GameSummary; sizing: boolean; autoMessage: string }>();
-const emit = defineEmits<{ auto: [] }>();
+const props = defineProps<{
+  game: GameSummary;
+  ratingSets: GameSummary[];
+  sizing: boolean;
+  autoMessage: string;
+}>();
+const emit = defineEmits<{ auto: []; ratingSet: [id: string] }>();
 const o = defineModel<UiOptions>({ required: true });
 
 const presets = computed(() => SIZE_PRESETS.filter((p) => p.intent === o.value.intent));
@@ -48,21 +55,34 @@ function setAll(on: boolean): void {
   o.value.exclude = on ? [] : props.game.classes.map((c) => c.id);
 }
 
+function applyPreset(preset: 'core1' | 'core12' | 'published'): void {
+  o.value.exclude = presetExclusions(props.game.classes, preset);
+  o.value.includePlaytest = false;
+  o.value.includeLegacy = false;
+  o.value.maxComplexity = '';
+}
+const eligible = (c: GameSummary['classes'][number]) =>
+  eligibleClass(c, o.value.includePlaytest, o.value.includeLegacy, o.value.maxComplexity);
 const hasStatus = (s: string) => props.game.classes.some((c) => c.status === s);
 
 /** Classes that will actually appear, taking the playtest/legacy switches into account. */
 const shown = computed(
-  () =>
-    props.game.classes.filter(
-      (c) =>
-        !o.value.exclude.includes(c.id) &&
-        (c.status !== 'playtest' || o.value.includePlaytest) &&
-        (c.status !== 'legacy' || o.value.includeLegacy),
-    ).length,
+  () => props.game.classes.filter((c) => !o.value.exclude.includes(c.id) && eligible(c)).length,
 );
 </script>
 
 <template>
+  <section class="panel">
+    <h2>Ratings</h2>
+    <div class="field">
+      <div class="field-label"><label for="rating-set">Rating set</label><HelpTip label="rating set" :text="game.ratingSetDescription" /></div>
+      <select id="rating-set" :value="game.ratingSetId" @change="emit('ratingSet', ($event.target as HTMLSelectElement).value)">
+        <option v-for="set in ratingSets" :key="set.ratingSetId" :value="set.ratingSetId" :title="set.ratingSetDescription">{{ set.ratingSetName }}</option>
+      </select>
+    </div>
+    <p class="hint">Each set supplies its own class roster, descriptions and scores.</p>
+    <RatingNotes :game="game" />
+  </section>
   <section class="panel">
     <h2>Layout</h2>
     <div class="seg" role="radiogroup" aria-label="Layout">
@@ -150,7 +170,7 @@ const shown = computed(
     <label class="field">
       Grouping
       <select v-model="o.grouping">
-        <option value="groups">By magic ability</option>
+        <option value="groups">By class family</option>
         <option value="alphabetical">Alphabetical</option>
       </select>
     </label>
@@ -163,10 +183,24 @@ const shown = computed(
       Please keep credits when sharing: the design is used with permission from Rachelle Willemsma, and included content and artwork retain their own attribution requirements.
     </p>
     <label class="field">Title <input v-model="o.title" type="text" :placeholder="game.title" /></label>
-    <label class="field">Accurate as of <input v-model="o.asOf" type="text" :placeholder="game.asOf" /></label>
+    <label class="field">Content updated <input v-model="o.asOf" type="text" :placeholder="game.asOf" /></label>
 
     <details class="classes">
-      <summary>Classes ({{ shown }} shown)</summary>
+      <summary class="class-summary"><svg class="disclosure" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" /></svg>Choose classes · {{ shown }} selected</summary>
+      <p class="hint">Select books, then customize the checkboxes. The count matches your export.</p>
+      <div class="row selection-presets">
+        <button v-if="game.classes.some(c => c.source === 'Player Core')" type="button" @click="applyPreset('core1')">Player Core</button>
+        <button v-if="game.classes.some(c => c.source === 'Player Core 2')" type="button" @click="applyPreset('core12')">Player Core + 2</button>
+        <button type="button" @click="applyPreset('published')">All published</button>
+      </div>
+      <div class="field">
+        <div class="field-label"><label for="complexity-limit">Maximum complexity</label><HelpTip label="maximum complexity" text="Uses the upper end of each class's complexity range. Classes without a complexity score are excluded when a limit is selected. Complexity describes preparation and decisions, not who is allowed to play a class." /></div>
+        <select id="complexity-limit" v-model="o.maxComplexity">
+          <option value="">Any complexity</option>
+          <option v-for="n in [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]" :key="n" :value="String(n)">{{ n }} or less</option>
+        </select>
+      </div>
+      <p v-if="shown === 0" class="hint" role="status">No classes match. Select classes or relax the filters to include cards in your export.</p>
       <div class="row">
         <button type="button" @click="setAll(true)">All</button>
         <button type="button" @click="setAll(false)">None</button>
@@ -176,11 +210,12 @@ const shown = computed(
         <label v-for="c in g.classes" :key="c.id" class="check" :title="`${c.source}${c.iconic ? ` · ${c.iconic}` : ''}`">
           <input
             type="checkbox"
-            :checked="!o.exclude.includes(c.id)"
+            :checked="!o.exclude.includes(c.id) && eligible(c)"
+            :disabled="!eligible(c)"
             @change="toggleClass(c.id, ($event.target as HTMLInputElement).checked)"
           />
-          {{ c.name }}
-          <span v-if="c.status === 'playtest'" class="badge">playtest</span>
+          <span class="class-choice-text">{{ c.name }}<small>{{ c.source }}</small><small v-if="!eligible(c)">Excluded by current filters</small></span>
+          <span v-if="c.status === 'playtest' || c.status === 'legacy'" class="badge">{{ c.status }}</span>
         </label>
       </fieldset>
     </details>

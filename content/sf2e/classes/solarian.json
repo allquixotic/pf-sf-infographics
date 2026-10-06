@@ -5,7 +5,8 @@
   "status": "core",
   "source": {
     "title": "Starfinder Player Core",
-    "date": "2025-07"
+    "date": "2025-07",
+    "url": "https://2e.aonsrd.com/classes/4-solarian"
   },
   "group": "supernatural",
   "keyAttributes": [
@@ -17,14 +18,20 @@
   "ratings": {
     "offense": [
       4,
+      5
+    ],
+    "defense": [
+      3.5,
       4.5
     ],
-    "defense": 3.5,
     "support": [
+      2,
+      3.5
+    ],
+    "utility": [
       2,
       3
     ],
-    "utility": 2,
     "difficulty": 3.5
   },
   "features": [
@@ -51,5 +58,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonsrd.com/classes/4-solarian"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Starfinder Player Core",
+    "sources": [
+      "https://2e.aonsrd.com/classes/4-solarian"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "4–4.5 → 4–5. Solar weapons and offensive stellar choices support strong martial damage.",
+      "defense": "3.5 → 3.5–4.5. Solar shield and defensive choices can substantially improve resilience.",
+      "support": "2–3 → 2–3.5. Selected stellar effects offer control or protection; offensive builds contribute less here.",
+      "utility": "2 → 2–3. Stellar mobility and selected abilities offer focused exploration tools.",
+      "difficulty": "3.5 → 3.5. Track attunement, graviton/photon choices and positioning."
+    }
   }
 }

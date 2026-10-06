@@ -5,9 +5,10 @@
   "status": "expansion",
   "source": {
     "title": "Impossible Magic",
-    "date": "2026-07"
+    "date": "2026-07",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=76"
   },
-  "group": "moderate-magic",
+  "group": "specialist",
   "keyAttributes": [
     "int"
   ],
@@ -15,10 +16,22 @@
   "casting": null,
   "hp": 8,
   "ratings": {
-    "offense": 3.5,
-    "defense": 3,
-    "support": 4,
-    "utility": 3.5,
+    "offense": [
+      3,
+      4.5
+    ],
+    "defense": [
+      3,
+      4
+    ],
+    "support": [
+      3,
+      4.5
+    ],
+    "utility": [
+      3,
+      4
+    ],
     "difficulty": 4.5
   },
   "features": [
@@ -40,5 +53,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=76"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Impossible Magic",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=76"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "3.5 → 3–4.5. Damage runes and invocation combinations can emphasize offense; supportive runes invest elsewhere.",
+      "defense": "3 → 3–4. Armor, shields and protective rune selections influence personal durability.",
+      "support": "4 → 3–4.5. Beneficial runes and debuffs offer several ways to enhance allies.",
+      "utility": "3.5 → 3–4. Crafting and selected runes provide useful but specialized exploration tools.",
+      "difficulty": "4.5 → 4.5. Track etched and traced runes, duration, placement and invocation timing."
+    }
   }
 }

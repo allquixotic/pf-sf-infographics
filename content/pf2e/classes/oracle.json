@@ -5,9 +5,10 @@
   "status": "core",
   "source": {
     "title": "Player Core 2",
-    "date": "2024-08"
+    "date": "2024-08",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=61"
   },
-  "group": "high-magic",
+  "group": "spellcasters",
   "keyAttributes": [
     "cha"
   ],
@@ -17,20 +18,32 @@
   "casting": "spontaneous",
   "hp": 8,
   "ratings": {
-    "offense": 2.5,
-    "defense": 2,
-    "support": 5,
-    "utility": 4,
-    "difficulty": 4
+    "offense": [
+      3,
+      4.5
+    ],
+    "defense": [
+      2.5,
+      3.5
+    ],
+    "support": [
+      3.5,
+      5
+    ],
+    "utility": [
+      3,
+      4
+    ],
+    "difficulty": 3.5
   },
   "features": [
     {
-      "title": "Touched by mystery",
-      "text": "Oracles draw divine power from a cosmic mystery rather than a single god, and pay for it with a curse."
+      "title": "Power through mystery",
+      "text": "Your mystery shapes divine spellcasting and grants revelation focus spells. You also gain cursebound abilities that draw power at a personal cost."
     },
     {
-      "title": "Cursebound",
-      "text": "Casting revelation spells tightens the curse, bringing both drawbacks and power. Managing it is the key to playing an oracle."
+      "title": "Choose when to push",
+      "text": "Cursebound abilities advance your curse; revelation spells do not do so merely for being focus spells. Refocusing eases the curse. Weigh each extra benefit against its drawbacks."
     }
   ],
   "iconic": {
@@ -47,5 +60,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=61"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Player Core 2",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=61"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "2.5 → 3–4.5. Mystery spells, revelation spells and offensive selections support stronger damage than the old flat score suggested.",
+      "defense": "2 → 2.5–3.5. Eight HP and light armor help; mystery and spell choices can improve survival.",
+      "support": "5 → 3.5–5. Divine spells and cursebound abilities support healing and party aid, depending on selections.",
+      "utility": "4 → 3–4. Divine magic plus mystery-granted spells offers useful but variable exploration tools.",
+      "difficulty": "4 → 3.5. Track cursebound abilities separately from focus spells; only the former advance the curse."
+    }
   }
 }

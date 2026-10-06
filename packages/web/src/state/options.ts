@@ -20,6 +20,8 @@ export interface UiOptions {
   includePlaytest: boolean;
   includeLegacy: boolean;
   exclude: string[];
+  ratingSet: string;
+  maxComplexity: string;
   grouping: 'groups' | 'alphabetical';
   palette: 'classic' | 'colorblind' | 'grayscale';
   legend: boolean;
@@ -54,6 +56,8 @@ export function defaultUiOptions(): UiOptions {
     includePlaytest: false,
     includeLegacy: false,
     exclude: [],
+    ratingSet: '',
+    maxComplexity: '',
     grouping: 'groups',
     palette: 'classic',
     legend: true,
@@ -73,6 +77,8 @@ export function defaultUiOptions(): UiOptions {
 export function toRenderOptions(game: string, ui: UiOptions, format: OutputFormat): RenderOptionsInput {
   return {
     game,
+    ratingSet: ui.ratingSet || undefined,
+    maxComplexity: ui.maxComplexity === '' ? undefined : Number(ui.maxComplexity),
     layout: ui.layout,
     format,
     intent: ui.intent,
@@ -103,27 +109,49 @@ export function toRenderOptions(game: string, ui: UiOptions, format: OutputForma
   };
 }
 
-export type GameOptions = Pick<UiOptions, 'exclude' | 'title' | 'asOf'>;
+export type GameOptions = Pick<UiOptions, 'exclude' | 'title' | 'asOf'> &
+  Partial<Pick<UiOptions, 'ratingSet' | 'maxComplexity' | 'includePlaytest' | 'includeLegacy'>>;
 export type SharedOptions = Omit<UiOptions, keyof GameOptions>;
 
-export function splitOptions({ exclude, title, asOf, ...shared }: UiOptions): {
+export function splitOptions({
+  exclude,
+  title,
+  asOf,
+  ratingSet,
+  maxComplexity,
+  includePlaytest,
+  includeLegacy,
+  ...shared
+}: UiOptions): {
   shared: SharedOptions;
   game: GameOptions;
 } {
-  return { shared, game: { exclude: [...exclude], title, asOf } };
+  return {
+    shared,
+    game: { exclude: [...exclude], title, asOf, ratingSet, maxComplexity, includePlaytest, includeLegacy },
+  };
 }
 
 /** Migrate old per-game preferences using the currently selected game's common settings. */
 export function restoreOptions(
   activeGame: string,
   legacy: Record<string, Partial<UiOptions>>,
-  shared: Partial<SharedOptions>,
+  shared: Partial<SharedOptions> & Partial<Pick<UiOptions, 'includePlaytest' | 'includeLegacy'>>,
   games: Record<string, GameOptions>,
 ): { ui: UiOptions; games: Record<string, GameOptions> } {
   const migrated = Object.fromEntries(
     Object.entries(legacy).map(([id, saved]) => [id, splitOptions({ ...defaultUiOptions(), ...saved }).game]),
   );
-  const perGame = { ...migrated, ...games };
+  const perGame = Object.fromEntries(
+    Object.entries({ ...migrated, ...games }).map(([id, saved]) => [
+      id,
+      {
+        includePlaytest: shared.includePlaytest ?? false,
+        includeLegacy: shared.includeLegacy ?? false,
+        ...saved,
+      },
+    ]),
+  );
   return {
     ui: {
       ...defaultUiOptions(),

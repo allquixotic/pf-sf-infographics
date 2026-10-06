@@ -1,0 +1,64 @@
+{
+  "$schema": "../../../../schema/class.schema.json",
+  "id": "guardian",
+  "name": "Guardian",
+  "status": "expansion",
+  "source": {
+    "title": "Battlecry!",
+    "date": "2025-07",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=67"
+  },
+  "group": "martial",
+  "keyAttributes": [
+    "str"
+  ],
+  "traditions": [],
+  "casting": null,
+  "hp": 12,
+  "ratings": {
+    "offense": 2.5,
+    "defense": 5,
+    "support": 3.5,
+    "utility": 1.5,
+    "difficulty": 3.5
+  },
+  "features": [
+    {
+      "title": "Living shield",
+      "text": "Guardians wear medium or heavy armor to resist physical damage and stay close enough to protect their allies."
+    },
+    {
+      "title": "Taunt and intercept",
+      "text": "Taunt penalizes enemies that attack allies instead of the guardian. Intercept Attack lets a guardian step beside a nearby ally and take physical damage in their place."
+    }
+  ],
+  "iconic": {
+    "name": "Grimmyr"
+  },
+  "art": {
+    "emblem": "../../../emblems/guardian.svg",
+    "paizo": {
+      "pack": "cup-pf2e-iconics",
+      "file": "PNG/Guardian - Grimmyr.png"
+    },
+    "local": "guardian"
+  },
+  "links": {
+    "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=67"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Battlecry!",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=67"
+    ],
+    "notes": "Original September 2026 numbers retained for comparison; corrected summaries and class families. These scores predate the revised rubric.",
+    "ratings": {
+      "offense": "Historical score: 2.5. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "defense": "Historical score: 5. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "support": "Historical score: 3.5. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "utility": "Historical score: 1.5. Preserved from the original project dataset; consult the revised set for a current rationale.",
+      "difficulty": "Historical score: 3.5. Preserved from the original project dataset; consult the revised set for a current rationale."
+    }
+  }
+}

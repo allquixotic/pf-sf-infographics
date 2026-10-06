@@ -5,9 +5,10 @@
   "status": "expansion",
   "source": {
     "title": "Battlecry!",
-    "date": "2025-07"
+    "date": "2025-07",
+    "url": "https://2e.aonprd.com/Classes.aspx?ID=67"
   },
-  "group": "no-magic",
+  "group": "martial",
   "keyAttributes": [
     "str"
   ],
@@ -17,7 +18,10 @@
   "ratings": {
     "offense": 2.5,
     "defense": 5,
-    "support": 3.5,
+    "support": [
+      4,
+      5
+    ],
     "utility": 1.5,
     "difficulty": 3.5
   },
@@ -44,5 +48,20 @@
   },
   "links": {
     "archivesOfNethys": "https://2e.aonprd.com/Classes.aspx?ID=67"
+  },
+  "review": {
+    "reviewedOn": "2026-10-05",
+    "rulesVersion": "Battlecry!",
+    "sources": [
+      "https://2e.aonprd.com/Classes.aspx?ID=67"
+    ],
+    "notes": "Editorial assessment of the class framework and ordinary builds. Rules references support mechanics; scores remain judgments.",
+    "ratings": {
+      "offense": "2.5 → 2.5. Personal damage is secondary to protection; do not credit intercepted damage as offense.",
+      "defense": "5 → 5. Armor and mitigation make personal durability a core strength.",
+      "support": "3.5 → 4–5. Intercepting attacks and redirecting enemy attention protect allies; build and positioning govern coverage.",
+      "utility": "1.5 → 1.5. The base class focuses on combat protection, with few extra exploration tools.",
+      "difficulty": "3.5 → 3.5. Threat assessment, positioning and deciding when to take an ally's hit require judgment."
+    }
   }
 }
